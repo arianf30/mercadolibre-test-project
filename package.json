@@ -22,5 +22,8 @@
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
     "typescript": "^4.8.3"
+  },
+  "lint-staged": {
+    "src/**/*.ts": "eslint"
   }
 }

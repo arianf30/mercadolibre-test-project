@@ -1,4 +1,4 @@
-function test ():number{
-  return 10;
+function testEslint (): number {
+  return 10
 }
-test()
+testEslint()
