@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app"
+    "lint": "eslint src/**/*.ts",
+    "start": "node app",
+    "prepare": "husky install"
   },
   "keywords": [],
   "author": "",
@@ -23,7 +25,15 @@
     "lint-staged": "^13.0.3",
     "typescript": "^4.8.3"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "lint-staged": {
-    "src/**/*.ts": "eslint"
+    "src/**/*.ts": [
+      "npm run lint",
+      "git add"
+    ]
   }
 }
