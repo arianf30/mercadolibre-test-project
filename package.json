@@ -4,9 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --watch",
+    "test": "jest --passWithNoTests --silent",
     "lint": "eslint src/**/*.ts",
     "start": "ts-node-dev --respawn --transpile-only --ignore-watch node_modules src/main/server/server.ts",
+    "test:all": "jest",
+    "test:coverage": "npm test -- --coverage",
+    "test:int": "npm test -- --watch -c jest-int-config.js",
+    "test:unit": "npm test -- --watch -c jest-unit-config.js",
     "prepare": "husky install"
   },
   "keywords": [],
