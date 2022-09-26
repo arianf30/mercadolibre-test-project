@@ -1,9 +1,52 @@
 import { Express, Router } from 'express'
-import fg from 'fast-glob'
+import itemRoutes from '../routes/item-routes'
+import { matchPath } from 'react-router-dom'
+import renderer from '../../client/helpers/renderer'
+import Routes from '../../client/router/routes'
+
+interface CurrentRoute {
+  index: number
+  pathFound?: {
+    path: string
+    url: string
+    isExact: boolean
+    params?: object
+  }
+}
 
 export default (app: Express): void => {
   const router = Router()
   app.use('/api', router)
+  // API routes
+  itemRoutes(router)
 
-  fg.sync('**/src/main/routes/**routes.ts').map(async file => (await import(`../../../${file}`)).default(router))
+  // Client routing
+  app.get('*', (req, res) => {
+    (async () => {
+      // Get Server Side Props
+      const getSsProps = async (): Promise<any> => {
+        // Path Find
+        let currentRoute: CurrentRoute = { index: 0 }
+        Routes.forEach((route, index) => {
+          const pathFound = matchPath(req.path, {
+            path: route.path,
+            exact: route.exact
+          })
+          currentRoute = { index, pathFound }
+          return currentRoute
+        })
+        const indexCurrentRoute: number = currentRoute.index
+        const route = Routes[`${indexCurrentRoute}`]
+        if (route?.getSsProps !== undefined) {
+          const params = currentRoute?.pathFound?.params
+          const getSsPropsRoute: { props: string | {} } = await route.getSsProps(params)
+          return getSsPropsRoute
+        }
+      }
+      const ssProps = await getSsProps()
+
+      // Print SSR Page
+      return res.send(renderer(req, ssProps))
+    })().catch(e => console.log(e))
+  })
 }
