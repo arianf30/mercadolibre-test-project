@@ -2,7 +2,7 @@
   "name": "mercadolibre-test-project",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "main/server/serverr.ts",
   "scripts": {
     "test": "jest --passWithNoTests --silent",
     "lint": "eslint src/**/*.ts",
