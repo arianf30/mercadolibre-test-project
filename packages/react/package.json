@@ -4,7 +4,8 @@
   "description": "",
   "main": "./lib/index.js",
   "scripts": {
-    "build": "rollup -c"
+    "build": "rollup -c",
+    "dev": "nodemon --watch src --exec npm run build"
   },
   "keywords": [],
   "author": "",

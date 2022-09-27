@@ -12,7 +12,7 @@ export const getItemByIdController = (getItemById: GetItemById): Controller => {
         const data = await getItemById.getItem(id)
         return success(data)
       } catch (error) {
-        return clientError(error.message)
+        return clientError(error)
       }
     }
   }

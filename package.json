@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint **/*.ts",
-    "start": "lerna run build --scope={app-meli}",
+    "build": "npx lerna run build",
+    "dev": "npx lerna run dev",
     "prepare": "husky install"
   },
   "keywords": [],
@@ -37,7 +38,7 @@
   "workspaces": {
     "packages": [
       "packages/*",
-      "app-meli/"
+      "app-meli"
     ],
     "nohoist": [
       "**/normalize-scss"

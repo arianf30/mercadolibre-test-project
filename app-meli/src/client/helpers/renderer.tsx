@@ -5,14 +5,15 @@ import { Helmet } from 'react-helmet'
 import { StaticRouter } from 'react-router-dom'
 import checkUserAgent from './checkUserAgent'
 import Router from '../router/Router'
+import { SsProps } from '../interfaces/server-side-props'
 
-export default (req: Request, ssProps: any): string => {
-  const userAgent: string = req.headers['user-agent'] || navigator.userAgent
+export default (req: Request, ssProps: SsProps): string => {
+  const userAgent: string = req?.headers['user-agent'] ?? navigator.userAgent
   const isBot: boolean = checkUserAgent(userAgent)
   const content = renderToString(
     <div>
       <StaticRouter location={req.path}>
-        <Router ssProps={ssProps} isBot={`${isBot}`} />
+        <Router ssProps={ssProps} isBot={isBot} />
       </StaticRouter>
     </div>
   )

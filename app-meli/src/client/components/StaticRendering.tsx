@@ -1,6 +1,10 @@
 import * as React from 'react'
 
-export default function StaticRendering({ children }) {
+interface PropsSR {
+  children: any
+}
+
+const StaticRendering: React.FC<PropsSR> = ({ children }): React.ReactElement => {
   if (typeof window === 'undefined') {
     return <div>{children}</div>
   }
@@ -12,3 +16,5 @@ export default function StaticRendering({ children }) {
     />
   )
 }
+
+export default StaticRendering

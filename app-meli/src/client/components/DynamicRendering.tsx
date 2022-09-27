@@ -1,9 +1,14 @@
 import * as React from 'react'
 import StaticRendering from './StaticRendering'
 
-export default function DynamicRendering({ children, isBot }) {
+interface PropsDR {
+  children: any
+  isBot: boolean
+}
+
+const DynamicRendering: React.FC<PropsDR> = ({ children, isBot }): React.ReactElement => {
   // BOT: return SSR Component
-  if (isBot === true) {
+  if (isBot) {
     return <StaticRendering>
       {children}
     </StaticRendering>
@@ -16,3 +21,5 @@ export default function DynamicRendering({ children, isBot }) {
     return <div />
   }
 }
+
+export default DynamicRendering

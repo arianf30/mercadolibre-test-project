@@ -27984,7 +27984,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
 
   // src/client/components/StaticRendering.tsx
   var React5 = __toESM(require_react());
-  function StaticRendering({ children }) {
+  var StaticRendering = ({ children }) => {
     if (typeof window === "undefined") {
       return /* @__PURE__ */ React5.createElement("div", null, children);
     }
@@ -27992,19 +27992,21 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       dangerouslySetInnerHTML: { __html: "" },
       suppressHydrationWarning: true
     });
-  }
+  };
+  var StaticRendering_default = StaticRendering;
 
   // src/client/components/DynamicRendering.tsx
-  function DynamicRendering({ children, isBot }) {
-    if (isBot === true) {
-      return /* @__PURE__ */ React6.createElement(StaticRendering, null, children);
+  var DynamicRendering = ({ children, isBot }) => {
+    if (isBot) {
+      return /* @__PURE__ */ React6.createElement(StaticRendering_default, null, children);
     }
     if (typeof window !== "undefined") {
       return /* @__PURE__ */ React6.createElement("div", null, children);
     } else {
       return /* @__PURE__ */ React6.createElement("div", null);
     }
-  }
+  };
+  var DynamicRendering_default = DynamicRendering;
 
   // src/client/pages/AdminPage.tsx
   var InsideComponent = ({ ssProps }) => {
@@ -28018,7 +28020,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     }, "Aumentar"));
   };
   var Admin = ({ ssProps, isBot }) => {
-    return /* @__PURE__ */ React7.createElement(DynamicRendering, {
+    return /* @__PURE__ */ React7.createElement(DynamicRendering_default, {
       isBot
     }, /* @__PURE__ */ React7.createElement(InsideComponent, {
       ssProps
@@ -28124,7 +28126,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     return /* @__PURE__ */ React10.createElement("div", null, "Hola!!");
   };
   var Item = () => {
-    return /* @__PURE__ */ React10.createElement(StaticRendering, null, /* @__PURE__ */ React10.createElement(InsideComponent2, null));
+    return /* @__PURE__ */ React10.createElement(StaticRendering_default, null, /* @__PURE__ */ React10.createElement(InsideComponent2, null));
   };
   var Item_default = {
     getSsrProps: null,
@@ -28165,7 +28167,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   ];
 
   // src/client/router/Router.tsx
-  function Router2({ ssProps, isBot }) {
+  var Router2 = ({ ssProps, isBot }) => {
     return /* @__PURE__ */ React11.createElement(Switch, null, routes_default.map((route, index2) => /* @__PURE__ */ React11.createElement(Route, {
       path: route.path,
       exact: route.exact,
@@ -28174,13 +28176,14 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       ssProps,
       isBot
     }))));
-  }
+  };
+  var Router_default = Router2;
 
   // src/client/_app.tsx
   var root = document.getElementById("root");
   var initialData = window && window.__INITIAL_DATA__;
   ReactDOM.hydrate(
-    /* @__PURE__ */ React12.createElement("div", null, /* @__PURE__ */ React12.createElement(BrowserRouter, null, /* @__PURE__ */ React12.createElement(Router2, {
+    /* @__PURE__ */ React12.createElement("div", null, /* @__PURE__ */ React12.createElement(BrowserRouter, null, /* @__PURE__ */ React12.createElement(Router_default, {
       ssProps: initialData.props,
       isBot: initialData.isBot
     }))),

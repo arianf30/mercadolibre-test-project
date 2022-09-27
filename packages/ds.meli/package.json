@@ -19,6 +19,6 @@
     "lint": "stylelint './**/*.scss'",
     "lint:fix": "npm run lint -- --fix",
     "build": "node src/scripts/builder.js",
-    "dev": "nodemon --watch src --exec yarn build -e scss"
+    "dev": "nodemon --watch src --exec npm run build -e scss"
   }
 }

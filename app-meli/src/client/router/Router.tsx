@@ -1,8 +1,10 @@
 import * as React from 'react'
 import { Route, Switch } from 'react-router-dom'
+import { RootProps } from '../interfaces/root-props'
+
 import Routes from './routes'
 
-export default function Router({ ssProps, isBot }) {
+const Router: React.FC<RootProps> = ({ ssProps, isBot }): React.ReactElement => {
   return (
     <Switch>
       {Routes.map((route, index) => (
@@ -13,3 +15,5 @@ export default function Router({ ssProps, isBot }) {
     </Switch>
   )
 }
+
+export default Router
