@@ -1,0 +1,39 @@
+/*=============================================
+=        Foundation - Typography              =
+=============================================*/
+
+/**
+ * This file defines the default font sizes to be used on headings and texts. The defaults come
+ * from the palette defined in _variables.scss.
+ */
+
+/*=============================================
+=            Body font family                  =
+=============================================*/
+
+$body-font-family: var(--dsmeli-body-font-family, $proxima-nova) !default;
+
+/*=============================================
+=            Body font sizes                  =
+=============================================*/
+
+$body-font-size: var(--dsmeli-body-font-size, $fs-sm) !default;
+$body-font-weight: var(--dsmeli-body-font-weight, $fw-normal) !default;
+
+/*=============================================
+=            Heading font sizes               =
+=============================================*/
+
+$h-1-font-size: var(--dsmeli-h1-font-size, $h-1) !default;
+$h-2-font-size: var(--dsmeli-h2-font-size, $h-2) !default;
+$h-3-font-size: var(--dsmeli-h3-font-size, $h-3) !default;
+$h-4-font-size: var(--dsmeli-h4-font-size, $h-4) !default;
+
+/*=============================================
+=            Head font weights                =
+=============================================*/
+
+$h-1-font-weight: var(--dsmeli-h1-text-weight, $fw-black) !default;
+$h-2-font-weight: var(--dsmeli-h2-text-weight, $fw-semibold) !default;
+$h-3-font-weight: var(--dsmeli-h3-text-weight, $fw-bold) !default;
+$h-4-font-weight: var(--dsmeli-h4-text-weight, $fw-medium) !default;

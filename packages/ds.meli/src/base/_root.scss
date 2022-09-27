@@ -1,0 +1,30 @@
+:root {
+  --dsmeli-body-text-color: #{$dark};
+  --dsmeli-body-bg-color: #{$white};
+
+  --dsmeli-btn-primary-color: #{$white};
+  --dsmeli-btn-primary-bg: #{$blue};
+  --dsmeli-btn-primary-bg-hover: #{$blue-dark};
+
+  --dsmeli-btn-secondary-color: #{$blue};
+  --dsmeli-btn-secondary-bg: #{$blue-light};
+
+  --dsmeli-form-color: #{$dark};
+  --dsmeli-form-bg: #{$white};
+  --dsmeli-form-error-color: #{$blue};
+  --dsmeli-form-error-border: #{$blue};
+  --dsmeli-form-border-focus-color: #{$blue-dark};
+
+  --dsmeli-body-font-size: #{$fs-base};
+  --dsmeli-body-font-weight: #{$fw-normal};
+
+  --dsmeli-h1-font-size: #{$h-1};
+  --dsmeli-h2-font-size: #{$h-2};
+  --dsmeli-h3-font-size: #{$h-3};
+  --dsmeli-h4-font-size: #{$h-4};
+
+  --dsmeli-h1-font-weight: #{$fw-medium};
+  --dsmeli-h2-font-weight: #{$fw-medium};
+  --dsmeli-h3-font-weight: #{$fw-medium};
+  --dsmeli-h4-font-weight: #{$fw-normal};
+}

@@ -3,6 +3,8 @@ import axios from 'axios'
 import { Helmet } from 'react-helmet'
 // Domain
 import { Items } from '../../domain/models/item/items'
+import { Button } from '@meli-project/ds.meli-react'
+import '@meli-project/ds.meli/lib/Button.css'
 
 export const Home = ({ ssProps }: { ssProps: any }): React.ReactElement => {
   const [counter, setCounter] = React.useState(0)
@@ -17,12 +19,13 @@ export const Home = ({ ssProps }: { ssProps: any }): React.ReactElement => {
     </Helmet>
     <ul className='tipo'>Resultados de la búsqueda: {counter}
       <li></li>
+      <Button label='Comprar' />
     </ul>
-    <button onClick={() => setCounter(prev => prev + 1)}>Sumar</button>
+    <button className='clase' style={{ color: 'green' }} onClick={() => setCounter(prev => prev + 1)}>Sumar</button>
   </>)
 }
 
-const getSsProps = async ({ query }: { query: string }): Promise<any> => {
+const getSsProps = async ({ query }: any): Promise<any> => {
   const response = await axios.get(`https://api.mercadolibre.com/sites/MLA/search?q=${query}`)
   const itemsResponse: Items = {
     author: {

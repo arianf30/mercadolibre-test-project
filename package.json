@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint src/**/*.ts",
+    "lint": "eslint **/*.ts",
     "start": "lerna run build --scope={app-meli}",
     "prepare": "husky install"
   },

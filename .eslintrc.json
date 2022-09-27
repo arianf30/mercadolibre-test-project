@@ -3,6 +3,9 @@
   "parserOptions": {
     "project": "./tsconfig.json"
   },
+  "ignorePatterns": [
+    "*.d.ts"
+  ],
   "rules": {
     "@typescript-eslint/no-redeclare": "off"
   }

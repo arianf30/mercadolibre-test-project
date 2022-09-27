@@ -33,6 +33,7 @@ export default (req: Request, ssProps: any): string => {
   ${title}
   ${meta}
   ${link}
+  <link rel="stylesheet" href="/dist/_app.css" />
 </head>
 
 <body>

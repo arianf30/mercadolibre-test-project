@@ -1,0 +1,45 @@
+/*=============================================
+=            Foundation - colors              =
+=============================================*/
+
+/**
+ * This file defines the actual colors that will be used for styling. They will default to the palette
+ * we defined in the _variable.scss file. This is our default palette, and devs can override this
+ * with their own variables.
+ */
+
+/*=============================================
+=            Global text colors               =
+=============================================*/
+$body-text-color: var(--dsmeli-body-text-color, $dark) !default;
+$body-bg-color: var(--dsmeli-body-bg-color, $grey-light) !default;
+
+/*=============================================
+=                 Buttons                     =
+=============================================*/
+$btn-primary-color: var(--dsmeli-btn-primary-color, $white) !default;
+$btn-primary-bg: var(--dsmeli-btn-primary-bg, $blue) !default;
+$btn-primary-bg-hover: var(--dsmeli-btn-primary-bg-hover, $blue-dark) !default;
+
+/*=============================================
+=                 Forms                       =
+=============================================*/
+$form-border-color: var(--dsmeli-form-border-color, $grey-light) !default;
+$form-bg-color: var(--dsmeli-form-bg-color, $white) !default;
+$form-bg-option-selected: var(
+  --dsmeli-form-bg-option-selected,
+  $green
+) !default;
+$form-color-option-selected: var(
+  --dsmeli-form-color-option-selected,
+  $white
+) !default;
+$form-bg-color-hover: var(--dsmeli-form-bg-color-hover, $grey-light) !default;
+$form-color: var(--dsmeli-form-color, $dark) !default;
+$form-bg: var(--dsmeli-form-bg, $white) !default;
+$form-error-color: var(--dsmeli-form-error-color, $blue) !default;
+$form-error-border: var(--dsmeli-form-error-border, $blue) !default;
+$form-border-focus-color: var(
+  --dsmeli-form-border-focus-color,
+  $blue-dark
+) !default;

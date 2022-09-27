@@ -1,0 +1,8 @@
+/* ../packages/ds.meli/lib/Button.css */
+.dsmeli-button-container {
+  display: flex;
+  background: var(--dsmeli-btn-primary-bg, #3483fa);
+  color: var(--dsmeli-btn-primary-color, #fff);
+  border: 0;
+  padding: 0.25rem;
+}

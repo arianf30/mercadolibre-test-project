@@ -32,21 +32,26 @@ export default (app: Express): void => {
             path: route.path,
             exact: route.exact
           })
-          currentRoute = { index, pathFound }
-          return currentRoute
+          if (pathFound !== null) {
+            currentRoute = { index, pathFound }
+            return currentRoute
+          }
         })
         const indexCurrentRoute: number = currentRoute.index
-        const route = Routes[`${indexCurrentRoute}`]
-        if (route?.getSsProps !== undefined) {
-          const params = currentRoute?.pathFound?.params
-          const getSsPropsRoute: { props: string | {} } = await route.getSsProps(params)
-          return getSsPropsRoute
+        if (indexCurrentRoute > 0) {
+          const route = Routes[`${indexCurrentRoute}`]
+          if (route?.getSsProps !== undefined) {
+            const params = currentRoute?.pathFound?.params
+            const getSsPropsRoute = await route.getSsProps(params)
+            return getSsPropsRoute
+          }
         }
       }
       const ssProps = await getSsProps()
 
       // Print SSR Page
       return res.send(renderer(req, ssProps))
-    })().catch(e => console.log(e))
+    })().catch(e =>
+      res.status(500).send('Internal server error.'))
   })
 }
