@@ -9,9 +9,14 @@
     "test:coverage": "npm test -- --coverage",
     "test:int": "npm test -- --watch -c jest-int-config.js",
     "test:unit": "npm test -- --watch -c jest-unit-config.js",
-    "build": "npm-run-all --parallel dev:*",
-    "dev:build-server": "nodemon --exec \"node -r esbuild-register ./src/main/server/server.ts\" -e .ts",
-    "dev:build-client": "node ./src/client/builder.ts"
+    "build": "npm-run-all --parallel build:*",
+    "build:build-server": "esbuild ./src/main/server/server.ts --bundle --outfile=build/server.js --platform=node",
+    "build:build-client": "esbuild ./src/client/_app.tsx --bundle --outdir=src/public/dist",
+    "start": "node ./build/server.js",
+    "dev": "npm-run-all --parallel dev:*",
+    "dev:build-server": "esbuild ./src/main/server/server.ts --bundle --outfile=build/server.js --platform=node --watch",
+    "dev:build-client": "esbuild ./src/client/_app.tsx --bundle --outdir=src/public/dist --watch",
+    "dev:start": "nodemon ./build/server.js"
   },
   "keywords": [],
   "author": "",
@@ -39,6 +44,8 @@
     "typescript": "^4.8.3"
   },
   "dependencies": {
+    "@meli-project/ds.meli": "*",
+    "@meli-project/ds.meli-react": "*",
     "axios": "^0.27.2",
     "express": "^4.18.1",
     "fast-glob": "^3.2.12",
