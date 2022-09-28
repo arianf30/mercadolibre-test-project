@@ -1,5 +1,5 @@
-import Button from './atoms/Button'
+import ButtonPrimary from './atoms/ButtonPrimary'
 
 export {
-  Button
+  ButtonPrimary
 }

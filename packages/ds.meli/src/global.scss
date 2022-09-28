@@ -26,3 +26,17 @@ body {
   font-size: $body-font-size;
   font-weight: $body-font-weight;
 }
+
+* {
+  transition: 0.3s;
+
+  &:focus-visible {
+    box-shadow: 0 0 0 2px $white, 0 0 0 3px $blue,
+      0 0 0 5px rgba(65, 137, 230, 0.3);
+    box-shadow: 0 0 0 2px $white, 0 0 0 3px $blue,
+      0 0 0 5px rgba(65, 137, 230, 0.3);
+    box-shadow: 0 0 0 2px $white, 0 0 0 3px $blue,
+      0 0 0 5px rgba(65, 137, 230, 0.3);
+    outline: none;
+  }
+}

@@ -1,7 +1,7 @@
 {
   "name": "@meli-project/ds.meli",
   "version": "0.1.5",
-  "main": "index.js",
+  "main": "lib/index.js",
   "license": "ISC",
   "dependencies": {
     "normalize-scss": "^7.0.1"

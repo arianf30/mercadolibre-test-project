@@ -1,2 +1,2 @@
-import Button from './atoms/Button';
-export { Button };
+import ButtonPrimary from './atoms/ButtonPrimary';
+export { ButtonPrimary };

@@ -1,56 +1,45 @@
 import * as React from 'react'
-import axios from 'axios'
 import { Helmet } from 'react-helmet'
-// Domain
-import { Items } from '../../domain/models/item/items'
-import { Button } from '@meli-project/ds.meli-react'
-import '@meli-project/ds.meli/lib/Button.css'
+import Navbar from '@meli-project/ds.meli-react/src/organisms/Navbar'
 
 export const Home = ({ ssProps }: { ssProps: any }): React.ReactElement => {
-  const [counter, setCounter] = React.useState(0)
-  React.useEffect(() => {
-    console.log(ssProps)
-  }, [])
-
   return (<>
     <Helmet>
-      <title>HomePage of de Local</title>
+      <title>Mercado Libre Argentina - Envíos gratis en el día</title>
       <meta property='og:title' content="HomePage of de Local" />
     </Helmet>
-    <ul className='tipo'>Resultados de la búsqueda: {counter}
-      <li></li>
-      <Button label='Comprar' />
-    </ul>
-    <button className='clase' style={{ color: 'green' }} onClick={() => setCounter(prev => prev + 1)}>Sumar</button>
+    <header role='banner'>
+      <Navbar logoSrc='/assets/Logo_ML@2x.png.png.png' logoThumb='/assets/Logo_ML.png' />
+    </header>
   </>)
 }
 
-const getSsProps = async ({ query }: any): Promise<any> => {
-  const response = await axios.get(`https://api.mercadolibre.com/sites/MLA/search?q=${query}`)
-  const itemsResponse: Items = {
-    author: {
-      name: 'Arián',
-      lastname: 'Fernández'
-    },
-    categories: [],
-    items: []
-  }
-  response.data.results.forEach((item: any) => {
-    itemsResponse.items.push({
-      id: item.id,
-      title: item.title,
-      price: {
-        currency: item.current_id,
-        amount: item.price,
-        decimals: item.price.toString().split('.')[1]?.length ?? 0
-      },
-      picture: item.thumbnail,
-      condition: item.condition,
-      free_shipping: item.shipping.free_shipping
-    })
-  })
+const getSsProps = async (): Promise<any> => {
+  // const response = await axios.get(`https://api.mercadolibre.com/sites/MLA/search?q=${query}`)
+  // const itemsResponse: Items = {
+  //   author: {
+  //     name: 'Arián',
+  //     lastname: 'Fernández'
+  //   },
+  //   categories: [],
+  //   items: []
+  // }
+  // response.data.results.forEach((item: any) => {
+  //   itemsResponse.items.push({
+  //     id: item.id,
+  //     title: item.title,
+  //     price: {
+  //       currency: item.current_id,
+  //       amount: item.price,
+  //       decimals: item.price.toString().split('.')[1]?.length ?? 0
+  //     },
+  //     picture: item.thumbnail,
+  //     condition: item.condition,
+  //     free_shipping: item.shipping.free_shipping
+  //   })
+  // })
 
-  return { props: itemsResponse }
+  return { props: 'holus' }
 }
 
 export default {

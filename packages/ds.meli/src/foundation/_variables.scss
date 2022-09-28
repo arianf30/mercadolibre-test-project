@@ -28,13 +28,14 @@
  =============================================*/
 
 /* Brand colors */
-$yellow: #fff159;
+$yellow: #ffe600;
 
 /* Neutral colors */
 $white: #fff;
+$grey-dark: #333;
 $grey: #666;
 $grey-light: #999;
-$grey-extra-light: #ebebeb;
+$grey-extra-light: #eee;
 $dark: #000;
 
 /* Utility colors */
@@ -65,6 +66,14 @@ $fs-sm: 0.875rem; // 14px
 $fs-base: 1rem; // 16px
 $fs-lg: 1.125rem; // 18px
 $fs-xl: 1.5rem; // 24px
+
+$fs: (
+  xs: 0.75rem,
+  sm: 0.875rem,
+  base: 1rem,
+  lg: 1.125rem,
+  xl: 1.5rem,
+);
 
 /* Heading font sizes */
 $h-1: 22px; // 22px

@@ -519,7 +519,7 @@
             }
             return element;
           };
-          function createElement9(type, config, children) {
+          function createElement12(type, config, children) {
             var propName;
             var props = {};
             var key = null;
@@ -1068,7 +1068,7 @@
             }
             return dispatcher.useContext(Context, unstable_observedBits);
           }
-          function useState3(initialState) {
+          function useState2(initialState) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useState(initialState);
           }
@@ -1080,7 +1080,7 @@
             var dispatcher = resolveDispatcher();
             return dispatcher.useRef(initialValue);
           }
-          function useEffect2(create, deps) {
+          function useEffect(create, deps) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useEffect(create, deps);
           }
@@ -1570,7 +1570,7 @@
                 error("React.createElement: type is invalid -- expected a string (for built-in components) or a class/function (for composite components) but got: %s.%s", typeString, info);
               }
             }
-            var element = createElement9.apply(this, arguments);
+            var element = createElement12.apply(this, arguments);
             if (element == null) {
               return element;
             }
@@ -1650,13 +1650,13 @@
           exports.useCallback = useCallback;
           exports.useContext = useContext2;
           exports.useDebugValue = useDebugValue;
-          exports.useEffect = useEffect2;
+          exports.useEffect = useEffect;
           exports.useImperativeHandle = useImperativeHandle;
           exports.useLayoutEffect = useLayoutEffect;
           exports.useMemo = useMemo;
           exports.useReducer = useReducer;
           exports.useRef = useRef;
-          exports.useState = useState3;
+          exports.useState = useState2;
           exports.version = ReactVersion;
         })();
       }
@@ -2464,11 +2464,11 @@
       if (true) {
         (function() {
           "use strict";
-          var React13 = require_react();
+          var React16 = require_react();
           var _assign = require_object_assign();
           var Scheduler = require_scheduler();
           var tracing = require_tracing();
-          var ReactSharedInternals = React13.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+          var ReactSharedInternals = React16.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
           function warn3(format) {
             {
               for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
@@ -2500,7 +2500,7 @@
               Function.prototype.apply.call(console[level], console, argsWithFormat);
             }
           }
-          if (!React13) {
+          if (!React16) {
             {
               throw Error("ReactDOM was loaded before React. Make sure you load the React package before loading ReactDOM.");
             }
@@ -2512,7 +2512,7 @@
           var HostPortal = 4;
           var HostComponent = 5;
           var HostText = 6;
-          var Fragment3 = 7;
+          var Fragment4 = 7;
           var Mode = 8;
           var ContextConsumer = 9;
           var ContextProvider = 10;
@@ -3836,7 +3836,7 @@
           var didWarnInvalidChild = false;
           function flattenChildren(children) {
             var content = "";
-            React13.Children.forEach(children, function(child) {
+            React16.Children.forEach(children, function(child) {
               if (child == null) {
                 return;
               }
@@ -3847,7 +3847,7 @@
           function validateProps(element, props) {
             {
               if (typeof props.children === "object" && props.children !== null) {
-                React13.Children.forEach(props.children, function(child) {
+                React16.Children.forEach(props.children, function(child) {
                   if (child == null) {
                     return;
                   }
@@ -8611,7 +8611,7 @@
               }
             }
           }
-          function createElement9(type, props, rootContainerElement, parentNamespace) {
+          function createElement12(type, props, rootContainerElement, parentNamespace) {
             var isCustomComponentTag;
             var ownerDocument = getOwnerDocumentFromRootContainer(rootContainerElement);
             var domElement;
@@ -9488,7 +9488,7 @@
               }
               parentNamespace = hostContextDev.namespace;
             }
-            var domElement = createElement9(type, props, rootContainerInstance, parentNamespace);
+            var domElement = createElement12(type, props, rootContainerInstance, parentNamespace);
             precacheFiberNode(internalInstanceHandle, domElement);
             updateFiberProps(domElement, props);
             return domElement;
@@ -11050,7 +11050,7 @@
           }
           var fakeInternalInstance = {};
           var isArray = Array.isArray;
-          var emptyRefsObject = new React13.Component().refs;
+          var emptyRefsObject = new React16.Component().refs;
           var didWarnAboutStateAssignmentForComponent;
           var didWarnAboutUninitializedState;
           var didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate;
@@ -11826,7 +11826,7 @@
               }
             }
             function updateFragment2(returnFiber, current2, fragment, lanes, key) {
-              if (current2 === null || current2.tag !== Fragment3) {
+              if (current2 === null || current2.tag !== Fragment4) {
                 var created = createFiberFromFragment(fragment, returnFiber.mode, lanes, key);
                 created.return = returnFiber;
                 return created;
@@ -12194,7 +12194,7 @@
               while (child !== null) {
                 if (child.key === key) {
                   switch (child.tag) {
-                    case Fragment3: {
+                    case Fragment4: {
                       if (element.type === REACT_FRAGMENT_TYPE) {
                         deleteRemainingChildren(returnFiber, child.sibling);
                         var existing = useFiber(child, element.props.children);
@@ -15861,7 +15861,7 @@
                 var _resolvedProps2 = workInProgress2.elementType === type ? _unresolvedProps2 : resolveDefaultProps(type, _unresolvedProps2);
                 return updateForwardRef(current2, workInProgress2, type, _resolvedProps2, renderLanes2);
               }
-              case Fragment3:
+              case Fragment4:
                 return updateFragment(current2, workInProgress2, renderLanes2);
               case Mode:
                 return updateMode(current2, workInProgress2, renderLanes2);
@@ -16033,7 +16033,7 @@
               case SimpleMemoComponent:
               case FunctionComponent:
               case ForwardRef:
-              case Fragment3:
+              case Fragment4:
               case Mode:
               case Profiler:
               case ContextConsumer:
@@ -19737,7 +19737,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
             return fiber;
           }
           function createFiberFromFragment(elements, mode, lanes, key) {
-            var fiber = createFiber(Fragment3, elements, key, mode);
+            var fiber = createFiber(Fragment4, elements, key, mode);
             fiber.lanes = lanes;
             return fiber;
           }
@@ -20714,7 +20714,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
           var ContextProvider = REACT_PROVIDER_TYPE;
           var Element2 = REACT_ELEMENT_TYPE;
           var ForwardRef = REACT_FORWARD_REF_TYPE;
-          var Fragment3 = REACT_FRAGMENT_TYPE;
+          var Fragment4 = REACT_FRAGMENT_TYPE;
           var Lazy = REACT_LAZY_TYPE;
           var Memo = REACT_MEMO_TYPE;
           var Portal = REACT_PORTAL_TYPE;
@@ -20773,7 +20773,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
           exports.ContextProvider = ContextProvider;
           exports.Element = Element2;
           exports.ForwardRef = ForwardRef;
-          exports.Fragment = Fragment3;
+          exports.Fragment = Fragment4;
           exports.Lazy = Lazy;
           exports.Memo = Memo;
           exports.Portal = Portal;
@@ -21668,7 +21668,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
           var ContextProvider = REACT_PROVIDER_TYPE;
           var Element2 = REACT_ELEMENT_TYPE;
           var ForwardRef = REACT_FORWARD_REF_TYPE;
-          var Fragment3 = REACT_FRAGMENT_TYPE;
+          var Fragment4 = REACT_FRAGMENT_TYPE;
           var Lazy = REACT_LAZY_TYPE;
           var Memo = REACT_MEMO_TYPE;
           var Portal = REACT_PORTAL_TYPE;
@@ -21727,7 +21727,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
           exports.ContextProvider = ContextProvider;
           exports.Element = Element2;
           exports.ForwardRef = ForwardRef;
-          exports.Fragment = Fragment3;
+          exports.Fragment = Fragment4;
           exports.Lazy = Lazy;
           exports.Memo = Memo;
           exports.Portal = Portal;
@@ -21834,7 +21834,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
           var ContextProvider = REACT_PROVIDER_TYPE;
           var Element2 = REACT_ELEMENT_TYPE;
           var ForwardRef = REACT_FORWARD_REF_TYPE;
-          var Fragment3 = REACT_FRAGMENT_TYPE;
+          var Fragment4 = REACT_FRAGMENT_TYPE;
           var Lazy = REACT_LAZY_TYPE;
           var Memo = REACT_MEMO_TYPE;
           var Portal = REACT_PORTAL_TYPE;
@@ -21893,7 +21893,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
           exports.ContextProvider = ContextProvider;
           exports.Element = Element2;
           exports.ForwardRef = ForwardRef;
-          exports.Fragment = Fragment3;
+          exports.Fragment = Fragment4;
           exports.Lazy = Lazy;
           exports.Memo = Memo;
           exports.Portal = Portal;
@@ -23474,22 +23474,22 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
         };
         return instance;
       }
-      var axios3 = createInstance(defaults);
-      axios3.Axios = Axios;
-      axios3.CanceledError = require_CanceledError();
-      axios3.CancelToken = require_CancelToken();
-      axios3.isCancel = require_isCancel();
-      axios3.VERSION = require_data().version;
-      axios3.toFormData = require_toFormData();
-      axios3.AxiosError = require_AxiosError();
-      axios3.Cancel = axios3.CanceledError;
-      axios3.all = function all(promises) {
+      var axios2 = createInstance(defaults);
+      axios2.Axios = Axios;
+      axios2.CanceledError = require_CanceledError();
+      axios2.CancelToken = require_CancelToken();
+      axios2.isCancel = require_isCancel();
+      axios2.VERSION = require_data().version;
+      axios2.toFormData = require_toFormData();
+      axios2.AxiosError = require_AxiosError();
+      axios2.Cancel = axios2.CanceledError;
+      axios2.all = function all(promises) {
         return Promise.all(promises);
       };
-      axios3.spread = require_spread();
-      axios3.isAxiosError = require_isAxiosError();
-      module.exports = axios3;
-      module.exports.default = axios3;
+      axios2.spread = require_spread();
+      axios2.isAxiosError = require_isAxiosError();
+      module.exports = axios2;
+      module.exports.default = axios2;
     }
   });
 
@@ -23507,8 +23507,8 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       function _interopDefault(ex) {
         return ex && typeof ex === "object" && "default" in ex ? ex["default"] : ex;
       }
-      var React13 = require_react();
-      var React__default = _interopDefault(React13);
+      var React16 = require_react();
+      var React__default = _interopDefault(React16);
       function _defineProperty(obj, key, value) {
         if (key in obj) {
           Object.defineProperty(obj, key, {
@@ -23591,7 +23591,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               return React__default.createElement(WrappedComponent, this.props);
             };
             return SideEffect2;
-          }(React13.PureComponent);
+          }(React16.PureComponent);
           _defineProperty(SideEffect, "displayName", "SideEffect(" + getDisplayName(WrappedComponent) + ")");
           _defineProperty(SideEffect, "canUseDOM", canUseDOM2);
           return SideEffect;
@@ -24122,7 +24122,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
             }
             return element;
           };
-          function createElement9(type, config, children) {
+          function createElement12(type, config, children) {
             var propName;
             var props = {};
             var key = null;
@@ -24675,7 +24675,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
             }
             return dispatcher.useContext(Context);
           }
-          function useState3(initialState) {
+          function useState2(initialState) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useState(initialState);
           }
@@ -24687,7 +24687,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
             var dispatcher = resolveDispatcher();
             return dispatcher.useRef(initialValue);
           }
-          function useEffect2(create, deps) {
+          function useEffect(create, deps) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useEffect(create, deps);
           }
@@ -25198,7 +25198,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                 error("React.createElement: type is invalid -- expected a string (for built-in components) or a class/function (for composite components) but got: %s.%s", typeString, info);
               }
             }
-            var element = createElement9.apply(this, arguments);
+            var element = createElement12.apply(this, arguments);
             if (element == null) {
               return element;
             }
@@ -25467,7 +25467,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
           exports.useContext = useContext2;
           exports.useDebugValue = useDebugValue;
           exports.useDeferredValue = useDeferredValue;
-          exports.useEffect = useEffect2;
+          exports.useEffect = useEffect;
           exports.useId = useId;
           exports.useImperativeHandle = useImperativeHandle;
           exports.useInsertionEffect = useInsertionEffect;
@@ -25475,7 +25475,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
           exports.useMemo = useMemo;
           exports.useReducer = useReducer;
           exports.useRef = useRef;
-          exports.useState = useState3;
+          exports.useState = useState2;
           exports.useSyncExternalStore = useSyncExternalStore;
           exports.useTransition = useTransition;
           exports.version = ReactVersion;
@@ -25500,7 +25500,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   });
 
   // src/client/_app.tsx
-  var React12 = __toESM(require_react());
+  var React15 = __toESM(require_react());
   var ReactDOM = __toESM(require_react_dom());
 
   // ../node_modules/@babel/runtime/helpers/esm/setPrototypeOf.js
@@ -27272,7 +27272,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   var ariaCurrentType;
 
   // src/client/router/Router.tsx
-  var React11 = __toESM(require_react());
+  var React14 = __toESM(require_react());
 
   // src/client/pages/AdminPage.tsx
   var import_axios = __toESM(require_axios2());
@@ -28059,60 +28059,105 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   };
 
   // src/client/pages/HomePage.tsx
-  var React9 = __toESM(require_react());
-  var import_axios2 = __toESM(require_axios2());
+  var React12 = __toESM(require_react());
 
-  // ../packages/react/lib/atoms/Button.js
+  // ../packages/react/src/organisms/Navbar/Navbar.tsx
+  var React11 = __toESM(require_react2());
+
+  // ../packages/react/src/atoms/Image/Image.tsx
   var React8 = __toESM(require_react2());
-  var Button = ({ label }) => {
-    return React8.createElement("button", { className: "dsmeli-button-container" }, label);
+  var Image = ({ src, thumb, alt = "", width = "", height = "" }) => {
+    const className = "dsmeli-image-container";
+    return /* @__PURE__ */ React8.createElement(React8.Fragment, null, /* @__PURE__ */ React8.createElement("img", {
+      className,
+      alt,
+      height,
+      width,
+      src
+    }));
   };
+  var Image_default = Image;
+
+  // ../packages/react/src/molecules/SearchForm/SearchForm.tsx
+  var React10 = __toESM(require_react2());
+
+  // ../packages/react/src/atoms/InputSearch/InputSearch.tsx
+  var React9 = __toESM(require_react2());
+  var InputSearch = ({ placeholder = "", ariaLabel, tabIndex }) => {
+    const className = "dsmeli-inputsearch";
+    return /* @__PURE__ */ React9.createElement("input", {
+      className,
+      placeholder,
+      "aria-label": ariaLabel,
+      maxLength: 120,
+      tabIndex
+    });
+  };
+  var InputSearch_default = InputSearch;
+
+  // ../packages/react/src/molecules/SearchForm/SearchForm.tsx
+  var SearchForm = ({ placeholder, ariaLabel, tabIndex }) => {
+    const className = "dsmeli-searchform-container";
+    return /* @__PURE__ */ React10.createElement("div", {
+      className
+    }, /* @__PURE__ */ React10.createElement("form", {
+      action: "/"
+    }, /* @__PURE__ */ React10.createElement(InputSearch_default, {
+      placeholder,
+      ariaLabel,
+      tabIndex
+    }), /* @__PURE__ */ React10.createElement("div", {
+      className: "dsmeli-searchform-icon"
+    }, /* @__PURE__ */ React10.createElement(Image_default, {
+      src: "/assets/ic_Search@2x.png.png.png",
+      thumb: "",
+      alt: "Icono de b\xFAsqueda"
+    }))));
+  };
+  var SearchForm_default = SearchForm;
+
+  // ../packages/react/src/organisms/Navbar/Navbar.tsx
+  var Navbar = ({ logoSrc, logoThumb }) => {
+    return /* @__PURE__ */ React11.createElement("div", {
+      className: "dsmeli-navbar-container"
+    }, /* @__PURE__ */ React11.createElement("div", {
+      className: "container"
+    }, /* @__PURE__ */ React11.createElement("div", {
+      className: "row"
+    }, /* @__PURE__ */ React11.createElement("div", {
+      className: "col-1-xl"
+    }), /* @__PURE__ */ React11.createElement("div", {
+      className: "col-1-xl"
+    }, /* @__PURE__ */ React11.createElement(Image_default, {
+      src: logoSrc,
+      thumb: logoThumb,
+      height: 36,
+      width: 53,
+      alt: "Logo de Mercado Libre"
+    })), /* @__PURE__ */ React11.createElement("div", {
+      className: "col-9-xl"
+    }, /* @__PURE__ */ React11.createElement(SearchForm_default, {
+      placeholder: "Nunca dejes de buscar"
+    })), /* @__PURE__ */ React11.createElement("div", {
+      className: "col-1-xl"
+    }))));
+  };
+  var Navbar_default = Navbar;
 
   // src/client/pages/HomePage.tsx
   var Home = ({ ssProps }) => {
-    const [counter, setCounter] = React9.useState(0);
-    React9.useEffect(() => {
-      console.log(ssProps);
-    }, []);
-    return /* @__PURE__ */ React9.createElement(React9.Fragment, null, /* @__PURE__ */ React9.createElement(HelmetExport, null, /* @__PURE__ */ React9.createElement("title", null, "HomePage of de Local"), /* @__PURE__ */ React9.createElement("meta", {
+    return /* @__PURE__ */ React12.createElement(React12.Fragment, null, /* @__PURE__ */ React12.createElement(HelmetExport, null, /* @__PURE__ */ React12.createElement("title", null, "Mercado Libre Argentina - Env\xEDos gratis en el d\xEDa"), /* @__PURE__ */ React12.createElement("meta", {
       property: "og:title",
       content: "HomePage of de Local"
-    })), /* @__PURE__ */ React9.createElement("ul", {
-      className: "tipo"
-    }, "Resultados de la b\xFAsqueda: ", counter, /* @__PURE__ */ React9.createElement("li", null), /* @__PURE__ */ React9.createElement(Button, {
-      label: "Comprar"
-    })), /* @__PURE__ */ React9.createElement("button", {
-      className: "clase",
-      style: { color: "green" },
-      onClick: () => setCounter((prev) => prev + 1)
-    }, "Sumar"));
+    })), /* @__PURE__ */ React12.createElement("header", {
+      role: "banner"
+    }, /* @__PURE__ */ React12.createElement(Navbar_default, {
+      logoSrc: "/assets/Logo_ML@2x.png.png.png",
+      logoThumb: "/assets/Logo_ML.png"
+    })));
   };
-  var getSsProps2 = (_0) => __async(void 0, [_0], function* ({ query }) {
-    const response = yield import_axios2.default.get(`https://api.mercadolibre.com/sites/MLA/search?q=${query}`);
-    const itemsResponse = {
-      author: {
-        name: "Ari\xE1n",
-        lastname: "Fern\xE1ndez"
-      },
-      categories: [],
-      items: []
-    };
-    response.data.results.forEach((item) => {
-      var _a, _b;
-      itemsResponse.items.push({
-        id: item.id,
-        title: item.title,
-        price: {
-          currency: item.current_id,
-          amount: item.price,
-          decimals: (_b = (_a = item.price.toString().split(".")[1]) == null ? void 0 : _a.length) != null ? _b : 0
-        },
-        picture: item.thumbnail,
-        condition: item.condition,
-        free_shipping: item.shipping.free_shipping
-      });
-    });
-    return { props: itemsResponse };
+  var getSsProps2 = () => __async(void 0, null, function* () {
+    return { props: "holus" };
   });
   var HomePage_default = {
     getSsProps: getSsProps2,
@@ -28120,13 +28165,13 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   };
 
   // src/client/pages/Item.tsx
-  var React10 = __toESM(require_react());
+  var React13 = __toESM(require_react());
   var InsideComponent2 = () => {
     console.log("cliente");
-    return /* @__PURE__ */ React10.createElement("div", null, "Hola!!");
+    return /* @__PURE__ */ React13.createElement("div", null, "Hola!!");
   };
   var Item = () => {
-    return /* @__PURE__ */ React10.createElement(StaticRendering_default, null, /* @__PURE__ */ React10.createElement(InsideComponent2, null));
+    return /* @__PURE__ */ React13.createElement(StaticRendering_default, null, /* @__PURE__ */ React13.createElement(InsideComponent2, null));
   };
   var Item_default = {
     getSsrProps: null,
@@ -28168,11 +28213,11 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
 
   // src/client/router/Router.tsx
   var Router2 = ({ ssProps, isBot }) => {
-    return /* @__PURE__ */ React11.createElement(Switch, null, routes_default.map((route, index2) => /* @__PURE__ */ React11.createElement(Route, {
+    return /* @__PURE__ */ React14.createElement(Switch, null, routes_default.map((route, index2) => /* @__PURE__ */ React14.createElement(Route, {
       path: route.path,
       exact: route.exact,
       key: index2
-    }, /* @__PURE__ */ React11.createElement(route.component, {
+    }, /* @__PURE__ */ React14.createElement(route.component, {
       ssProps,
       isBot
     }))));
@@ -28183,7 +28228,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   var root = document.getElementById("root");
   var initialData = window && window.__INITIAL_DATA__;
   ReactDOM.hydrate(
-    /* @__PURE__ */ React12.createElement("div", null, /* @__PURE__ */ React12.createElement(BrowserRouter, null, /* @__PURE__ */ React12.createElement(Router_default, {
+    /* @__PURE__ */ React15.createElement("div", null, /* @__PURE__ */ React15.createElement(BrowserRouter, null, /* @__PURE__ */ React15.createElement(Router_default, {
       ssProps: initialData.props,
       isBot: initialData.isBot
     }))),

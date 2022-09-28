@@ -1,2 +1,2 @@
-export { default as Button } from './atoms/Button.js';
+export { default as ButtonPrimary } from './atoms/ButtonPrimary/ButtonPrimary.js';
 //# sourceMappingURL=index.js.map

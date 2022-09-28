@@ -1,0 +1,10 @@
+@import "foundation/all";
+
+@each $size, $value in $spacing {
+  .dsmeli-width-#{size} {
+    width: $value;
+  }
+  .dsmeli-height-#{size} {
+    height: $value;
+  }
+}

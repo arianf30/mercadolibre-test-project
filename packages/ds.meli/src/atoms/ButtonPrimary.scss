@@ -1,0 +1,25 @@
+@import "foundation/all";
+
+.dsmeli-button-container {
+  align-items: center;
+  background: $btn-primary-bg;
+  border: 0;
+  border-radius: 6px;
+  color: $btn-primary-color;
+  cursor: pointer;
+  display: flex;
+  font-size: map-get($spacing, "sm");
+  height: map-get($spacing, "xl");
+  justify-content: center;
+  padding: map-get($spacing, "xxxs");
+  transition: 0.3s;
+  width: 100%;
+
+  &:hover {
+    background: $btn-primary-bg-hover;
+  }
+
+  &:active {
+    background: $btn-primary-bg-hover;
+  }
+}

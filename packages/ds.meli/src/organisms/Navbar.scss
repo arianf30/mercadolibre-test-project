@@ -1,0 +1,10 @@
+@import "foundation/all";
+
+.dsmeli-navbar-container {
+  background: $yellow;
+  padding: map-get($spacing, 'xxs') 0;
+  &container{
+    display: flex;
+    align-items: center;
+  }
+}
