@@ -26,9 +26,14 @@
   background: #fff159;
   padding: 0.5rem 0;
 }
-.dsmeli-navbar-containercontainer {
-  display: flex;
-  align-items: center;
+.dsmeli-navbar-container::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 55px;
+  left: 0;
+  top: 0;
+  box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.1);
 }
 .dsmeli-navbar-logo {
   display: flex;
