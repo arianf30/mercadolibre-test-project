@@ -1,7 +1,7 @@
 import * as React from 'react'
 
 interface ImageProps {
-  src: string
+  src?: string
   thumb: string
   alt?: string
   width?: string | number
@@ -9,26 +9,22 @@ interface ImageProps {
 }
 
 const Image: React.FC<ImageProps> = ({ src, thumb, alt = '', width = '', height = '' }): React.ReactElement => {
-  // const [isLoaded, setIsLoaded] = React.useState<boolean>(false)
   const className = 'dsmeli-image-container'
+  const handler = (e: any): void => {
+    const url = new URL(e.target.src)
+    if (url.pathname === thumb) {
+      e.target.src = src
+    }
+  }
 
   return <>
-    {/* <img
+    <img
+      onLoad={(e) => handler(e)}
       className={className}
-      style={{ display: `${isLoaded ? 'none' : 'block'}` }}
       alt={alt}
       height={height}
       width={width}
       src={thumb}
-    /> */}
-    <img
-      // onLoad={() => setIsLoaded(true)}
-      className={className}
-      // style={{ display: `${isLoaded ? 'block' : 'none'}` }}
-      alt={alt}
-      height={height}
-      width={width}
-      src={src}
     />
   </>
 }

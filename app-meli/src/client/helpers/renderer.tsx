@@ -31,9 +31,12 @@ export default (req: Request, ssProps: SsProps): string => {
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
   ${title}
   ${meta}
   ${link}
+  <link href="https://http2.mlstatic.com/frontend-assets/ml-web-navigation/ui-navigation/5.19.5/mercadolibre/favicon.svg" rel="icon" data-head-react="true"/>
+  <link href="https://http2.mlstatic.com/frontend-assets/ml-web-navigation/ui-navigation/5.19.5/mercadolibre/180x180.png" rel="apple-touch-icon" data-head-react="true"/>
   <link rel="stylesheet" href="/dist/_app.css" />
 </head>
 

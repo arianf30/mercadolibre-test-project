@@ -519,7 +519,7 @@
             }
             return element;
           };
-          function createElement12(type, config, children) {
+          function createElement18(type, config, children) {
             var propName;
             var props = {};
             var key = null;
@@ -1068,7 +1068,7 @@
             }
             return dispatcher.useContext(Context, unstable_observedBits);
           }
-          function useState2(initialState) {
+          function useState3(initialState) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useState(initialState);
           }
@@ -1080,7 +1080,7 @@
             var dispatcher = resolveDispatcher();
             return dispatcher.useRef(initialValue);
           }
-          function useEffect(create, deps) {
+          function useEffect3(create, deps) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useEffect(create, deps);
           }
@@ -1570,7 +1570,7 @@
                 error("React.createElement: type is invalid -- expected a string (for built-in components) or a class/function (for composite components) but got: %s.%s", typeString, info);
               }
             }
-            var element = createElement12.apply(this, arguments);
+            var element = createElement18.apply(this, arguments);
             if (element == null) {
               return element;
             }
@@ -1650,13 +1650,13 @@
           exports.useCallback = useCallback;
           exports.useContext = useContext2;
           exports.useDebugValue = useDebugValue;
-          exports.useEffect = useEffect;
+          exports.useEffect = useEffect3;
           exports.useImperativeHandle = useImperativeHandle;
           exports.useLayoutEffect = useLayoutEffect;
           exports.useMemo = useMemo;
           exports.useReducer = useReducer;
           exports.useRef = useRef;
-          exports.useState = useState2;
+          exports.useState = useState3;
           exports.version = ReactVersion;
         })();
       }
@@ -2464,11 +2464,11 @@
       if (true) {
         (function() {
           "use strict";
-          var React16 = require_react();
+          var React22 = require_react();
           var _assign = require_object_assign();
           var Scheduler = require_scheduler();
           var tracing = require_tracing();
-          var ReactSharedInternals = React16.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+          var ReactSharedInternals = React22.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
           function warn3(format) {
             {
               for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
@@ -2500,7 +2500,7 @@
               Function.prototype.apply.call(console[level], console, argsWithFormat);
             }
           }
-          if (!React16) {
+          if (!React22) {
             {
               throw Error("ReactDOM was loaded before React. Make sure you load the React package before loading ReactDOM.");
             }
@@ -2512,7 +2512,7 @@
           var HostPortal = 4;
           var HostComponent = 5;
           var HostText = 6;
-          var Fragment4 = 7;
+          var Fragment5 = 7;
           var Mode = 8;
           var ContextConsumer = 9;
           var ContextProvider = 10;
@@ -3836,7 +3836,7 @@
           var didWarnInvalidChild = false;
           function flattenChildren(children) {
             var content = "";
-            React16.Children.forEach(children, function(child) {
+            React22.Children.forEach(children, function(child) {
               if (child == null) {
                 return;
               }
@@ -3847,7 +3847,7 @@
           function validateProps(element, props) {
             {
               if (typeof props.children === "object" && props.children !== null) {
-                React16.Children.forEach(props.children, function(child) {
+                React22.Children.forEach(props.children, function(child) {
                   if (child == null) {
                     return;
                   }
@@ -8611,7 +8611,7 @@
               }
             }
           }
-          function createElement12(type, props, rootContainerElement, parentNamespace) {
+          function createElement18(type, props, rootContainerElement, parentNamespace) {
             var isCustomComponentTag;
             var ownerDocument = getOwnerDocumentFromRootContainer(rootContainerElement);
             var domElement;
@@ -9488,7 +9488,7 @@
               }
               parentNamespace = hostContextDev.namespace;
             }
-            var domElement = createElement12(type, props, rootContainerInstance, parentNamespace);
+            var domElement = createElement18(type, props, rootContainerInstance, parentNamespace);
             precacheFiberNode(internalInstanceHandle, domElement);
             updateFiberProps(domElement, props);
             return domElement;
@@ -11050,7 +11050,7 @@
           }
           var fakeInternalInstance = {};
           var isArray = Array.isArray;
-          var emptyRefsObject = new React16.Component().refs;
+          var emptyRefsObject = new React22.Component().refs;
           var didWarnAboutStateAssignmentForComponent;
           var didWarnAboutUninitializedState;
           var didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate;
@@ -11826,7 +11826,7 @@
               }
             }
             function updateFragment2(returnFiber, current2, fragment, lanes, key) {
-              if (current2 === null || current2.tag !== Fragment4) {
+              if (current2 === null || current2.tag !== Fragment5) {
                 var created = createFiberFromFragment(fragment, returnFiber.mode, lanes, key);
                 created.return = returnFiber;
                 return created;
@@ -12194,7 +12194,7 @@
               while (child !== null) {
                 if (child.key === key) {
                   switch (child.tag) {
-                    case Fragment4: {
+                    case Fragment5: {
                       if (element.type === REACT_FRAGMENT_TYPE) {
                         deleteRemainingChildren(returnFiber, child.sibling);
                         var existing = useFiber(child, element.props.children);
@@ -15861,7 +15861,7 @@
                 var _resolvedProps2 = workInProgress2.elementType === type ? _unresolvedProps2 : resolveDefaultProps(type, _unresolvedProps2);
                 return updateForwardRef(current2, workInProgress2, type, _resolvedProps2, renderLanes2);
               }
-              case Fragment4:
+              case Fragment5:
                 return updateFragment(current2, workInProgress2, renderLanes2);
               case Mode:
                 return updateMode(current2, workInProgress2, renderLanes2);
@@ -16033,7 +16033,7 @@
               case SimpleMemoComponent:
               case FunctionComponent:
               case ForwardRef:
-              case Fragment4:
+              case Fragment5:
               case Mode:
               case Profiler:
               case ContextConsumer:
@@ -19737,7 +19737,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
             return fiber;
           }
           function createFiberFromFragment(elements, mode, lanes, key) {
-            var fiber = createFiber(Fragment4, elements, key, mode);
+            var fiber = createFiber(Fragment5, elements, key, mode);
             fiber.lanes = lanes;
             return fiber;
           }
@@ -20714,7 +20714,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
           var ContextProvider = REACT_PROVIDER_TYPE;
           var Element2 = REACT_ELEMENT_TYPE;
           var ForwardRef = REACT_FORWARD_REF_TYPE;
-          var Fragment4 = REACT_FRAGMENT_TYPE;
+          var Fragment5 = REACT_FRAGMENT_TYPE;
           var Lazy = REACT_LAZY_TYPE;
           var Memo = REACT_MEMO_TYPE;
           var Portal = REACT_PORTAL_TYPE;
@@ -20773,7 +20773,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
           exports.ContextProvider = ContextProvider;
           exports.Element = Element2;
           exports.ForwardRef = ForwardRef;
-          exports.Fragment = Fragment4;
+          exports.Fragment = Fragment5;
           exports.Lazy = Lazy;
           exports.Memo = Memo;
           exports.Portal = Portal;
@@ -21668,7 +21668,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
           var ContextProvider = REACT_PROVIDER_TYPE;
           var Element2 = REACT_ELEMENT_TYPE;
           var ForwardRef = REACT_FORWARD_REF_TYPE;
-          var Fragment4 = REACT_FRAGMENT_TYPE;
+          var Fragment5 = REACT_FRAGMENT_TYPE;
           var Lazy = REACT_LAZY_TYPE;
           var Memo = REACT_MEMO_TYPE;
           var Portal = REACT_PORTAL_TYPE;
@@ -21727,7 +21727,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
           exports.ContextProvider = ContextProvider;
           exports.Element = Element2;
           exports.ForwardRef = ForwardRef;
-          exports.Fragment = Fragment4;
+          exports.Fragment = Fragment5;
           exports.Lazy = Lazy;
           exports.Memo = Memo;
           exports.Portal = Portal;
@@ -21834,7 +21834,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
           var ContextProvider = REACT_PROVIDER_TYPE;
           var Element2 = REACT_ELEMENT_TYPE;
           var ForwardRef = REACT_FORWARD_REF_TYPE;
-          var Fragment4 = REACT_FRAGMENT_TYPE;
+          var Fragment5 = REACT_FRAGMENT_TYPE;
           var Lazy = REACT_LAZY_TYPE;
           var Memo = REACT_MEMO_TYPE;
           var Portal = REACT_PORTAL_TYPE;
@@ -21893,7 +21893,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
           exports.ContextProvider = ContextProvider;
           exports.Element = Element2;
           exports.ForwardRef = ForwardRef;
-          exports.Fragment = Fragment4;
+          exports.Fragment = Fragment5;
           exports.Lazy = Lazy;
           exports.Memo = Memo;
           exports.Portal = Portal;
@@ -22017,6 +22017,2005 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
         return targetComponent;
       }
       module.exports = hoistNonReactStatics;
+    }
+  });
+
+  // ../node_modules/react-side-effect/lib/index.js
+  var require_lib = __commonJS({
+    "../node_modules/react-side-effect/lib/index.js"(exports, module) {
+      "use strict";
+      function _interopDefault(ex) {
+        return ex && typeof ex === "object" && "default" in ex ? ex["default"] : ex;
+      }
+      var React22 = require_react();
+      var React__default2 = _interopDefault(React22);
+      function _defineProperty(obj, key, value) {
+        if (key in obj) {
+          Object.defineProperty(obj, key, {
+            value,
+            enumerable: true,
+            configurable: true,
+            writable: true
+          });
+        } else {
+          obj[key] = value;
+        }
+        return obj;
+      }
+      function _inheritsLoose2(subClass, superClass) {
+        subClass.prototype = Object.create(superClass.prototype);
+        subClass.prototype.constructor = subClass;
+        subClass.__proto__ = superClass;
+      }
+      var canUseDOM2 = !!(typeof window !== "undefined" && window.document && window.document.createElement);
+      function withSideEffect2(reducePropsToState3, handleStateChangeOnClient, mapStateOnServer3) {
+        if (typeof reducePropsToState3 !== "function") {
+          throw new Error("Expected reducePropsToState to be a function.");
+        }
+        if (typeof handleStateChangeOnClient !== "function") {
+          throw new Error("Expected handleStateChangeOnClient to be a function.");
+        }
+        if (typeof mapStateOnServer3 !== "undefined" && typeof mapStateOnServer3 !== "function") {
+          throw new Error("Expected mapStateOnServer to either be undefined or a function.");
+        }
+        function getDisplayName(WrappedComponent) {
+          return WrappedComponent.displayName || WrappedComponent.name || "Component";
+        }
+        return function wrap(WrappedComponent) {
+          if (typeof WrappedComponent !== "function") {
+            throw new Error("Expected WrappedComponent to be a React component.");
+          }
+          var mountedInstances = [];
+          var state;
+          function emitChange() {
+            state = reducePropsToState3(mountedInstances.map(function(instance) {
+              return instance.props;
+            }));
+            if (SideEffect.canUseDOM) {
+              handleStateChangeOnClient(state);
+            } else if (mapStateOnServer3) {
+              state = mapStateOnServer3(state);
+            }
+          }
+          var SideEffect = /* @__PURE__ */ function(_PureComponent) {
+            _inheritsLoose2(SideEffect2, _PureComponent);
+            function SideEffect2() {
+              return _PureComponent.apply(this, arguments) || this;
+            }
+            SideEffect2.peek = function peek() {
+              return state;
+            };
+            SideEffect2.rewind = function rewind() {
+              if (SideEffect2.canUseDOM) {
+                throw new Error("You may only call rewind() on the server. Call peek() to read the current state.");
+              }
+              var recordedState = state;
+              state = void 0;
+              mountedInstances = [];
+              return recordedState;
+            };
+            var _proto = SideEffect2.prototype;
+            _proto.UNSAFE_componentWillMount = function UNSAFE_componentWillMount() {
+              mountedInstances.push(this);
+              emitChange();
+            };
+            _proto.componentDidUpdate = function componentDidUpdate() {
+              emitChange();
+            };
+            _proto.componentWillUnmount = function componentWillUnmount() {
+              var index2 = mountedInstances.indexOf(this);
+              mountedInstances.splice(index2, 1);
+              emitChange();
+            };
+            _proto.render = function render() {
+              return React__default2.createElement(WrappedComponent, this.props);
+            };
+            return SideEffect2;
+          }(React22.PureComponent);
+          _defineProperty(SideEffect, "displayName", "SideEffect(" + getDisplayName(WrappedComponent) + ")");
+          _defineProperty(SideEffect, "canUseDOM", canUseDOM2);
+          return SideEffect;
+        };
+      }
+      module.exports = withSideEffect2;
+    }
+  });
+
+  // ../node_modules/react-fast-compare/index.js
+  var require_react_fast_compare = __commonJS({
+    "../node_modules/react-fast-compare/index.js"(exports, module) {
+      var hasElementType = typeof Element !== "undefined";
+      var hasMap = typeof Map === "function";
+      var hasSet = typeof Set === "function";
+      var hasArrayBuffer = typeof ArrayBuffer === "function" && !!ArrayBuffer.isView;
+      function equal(a, b) {
+        if (a === b)
+          return true;
+        if (a && b && typeof a == "object" && typeof b == "object") {
+          if (a.constructor !== b.constructor)
+            return false;
+          var length, i, keys;
+          if (Array.isArray(a)) {
+            length = a.length;
+            if (length != b.length)
+              return false;
+            for (i = length; i-- !== 0; )
+              if (!equal(a[i], b[i]))
+                return false;
+            return true;
+          }
+          var it;
+          if (hasMap && a instanceof Map && b instanceof Map) {
+            if (a.size !== b.size)
+              return false;
+            it = a.entries();
+            while (!(i = it.next()).done)
+              if (!b.has(i.value[0]))
+                return false;
+            it = a.entries();
+            while (!(i = it.next()).done)
+              if (!equal(i.value[1], b.get(i.value[0])))
+                return false;
+            return true;
+          }
+          if (hasSet && a instanceof Set && b instanceof Set) {
+            if (a.size !== b.size)
+              return false;
+            it = a.entries();
+            while (!(i = it.next()).done)
+              if (!b.has(i.value[0]))
+                return false;
+            return true;
+          }
+          if (hasArrayBuffer && ArrayBuffer.isView(a) && ArrayBuffer.isView(b)) {
+            length = a.length;
+            if (length != b.length)
+              return false;
+            for (i = length; i-- !== 0; )
+              if (a[i] !== b[i])
+                return false;
+            return true;
+          }
+          if (a.constructor === RegExp)
+            return a.source === b.source && a.flags === b.flags;
+          if (a.valueOf !== Object.prototype.valueOf)
+            return a.valueOf() === b.valueOf();
+          if (a.toString !== Object.prototype.toString)
+            return a.toString() === b.toString();
+          keys = Object.keys(a);
+          length = keys.length;
+          if (length !== Object.keys(b).length)
+            return false;
+          for (i = length; i-- !== 0; )
+            if (!Object.prototype.hasOwnProperty.call(b, keys[i]))
+              return false;
+          if (hasElementType && a instanceof Element)
+            return false;
+          for (i = length; i-- !== 0; ) {
+            if ((keys[i] === "_owner" || keys[i] === "__v" || keys[i] === "__o") && a.$$typeof) {
+              continue;
+            }
+            if (!equal(a[keys[i]], b[keys[i]]))
+              return false;
+          }
+          return true;
+        }
+        return a !== a && b !== b;
+      }
+      module.exports = function isEqual2(a, b) {
+        try {
+          return equal(a, b);
+        } catch (error) {
+          if ((error.message || "").match(/stack|recursion/i)) {
+            console.warn("react-fast-compare cannot handle circular refs");
+            return false;
+          }
+          throw error;
+        }
+      };
+    }
+  });
+
+  // ../packages/react/node_modules/react/cjs/react.development.js
+  var require_react_development2 = __commonJS({
+    "../packages/react/node_modules/react/cjs/react.development.js"(exports, module) {
+      "use strict";
+      if (true) {
+        (function() {
+          "use strict";
+          if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart === "function") {
+            __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(new Error());
+          }
+          var ReactVersion = "18.2.0";
+          var REACT_ELEMENT_TYPE = Symbol.for("react.element");
+          var REACT_PORTAL_TYPE = Symbol.for("react.portal");
+          var REACT_FRAGMENT_TYPE = Symbol.for("react.fragment");
+          var REACT_STRICT_MODE_TYPE = Symbol.for("react.strict_mode");
+          var REACT_PROFILER_TYPE = Symbol.for("react.profiler");
+          var REACT_PROVIDER_TYPE = Symbol.for("react.provider");
+          var REACT_CONTEXT_TYPE = Symbol.for("react.context");
+          var REACT_FORWARD_REF_TYPE = Symbol.for("react.forward_ref");
+          var REACT_SUSPENSE_TYPE = Symbol.for("react.suspense");
+          var REACT_SUSPENSE_LIST_TYPE = Symbol.for("react.suspense_list");
+          var REACT_MEMO_TYPE = Symbol.for("react.memo");
+          var REACT_LAZY_TYPE = Symbol.for("react.lazy");
+          var REACT_OFFSCREEN_TYPE = Symbol.for("react.offscreen");
+          var MAYBE_ITERATOR_SYMBOL = Symbol.iterator;
+          var FAUX_ITERATOR_SYMBOL = "@@iterator";
+          function getIteratorFn(maybeIterable) {
+            if (maybeIterable === null || typeof maybeIterable !== "object") {
+              return null;
+            }
+            var maybeIterator = MAYBE_ITERATOR_SYMBOL && maybeIterable[MAYBE_ITERATOR_SYMBOL] || maybeIterable[FAUX_ITERATOR_SYMBOL];
+            if (typeof maybeIterator === "function") {
+              return maybeIterator;
+            }
+            return null;
+          }
+          var ReactCurrentDispatcher = {
+            current: null
+          };
+          var ReactCurrentBatchConfig = {
+            transition: null
+          };
+          var ReactCurrentActQueue = {
+            current: null,
+            isBatchingLegacy: false,
+            didScheduleLegacyUpdate: false
+          };
+          var ReactCurrentOwner = {
+            current: null
+          };
+          var ReactDebugCurrentFrame = {};
+          var currentExtraStackFrame = null;
+          function setExtraStackFrame(stack) {
+            {
+              currentExtraStackFrame = stack;
+            }
+          }
+          {
+            ReactDebugCurrentFrame.setExtraStackFrame = function(stack) {
+              {
+                currentExtraStackFrame = stack;
+              }
+            };
+            ReactDebugCurrentFrame.getCurrentStack = null;
+            ReactDebugCurrentFrame.getStackAddendum = function() {
+              var stack = "";
+              if (currentExtraStackFrame) {
+                stack += currentExtraStackFrame;
+              }
+              var impl = ReactDebugCurrentFrame.getCurrentStack;
+              if (impl) {
+                stack += impl() || "";
+              }
+              return stack;
+            };
+          }
+          var enableScopeAPI = false;
+          var enableCacheElement = false;
+          var enableTransitionTracing = false;
+          var enableLegacyHidden = false;
+          var enableDebugTracing = false;
+          var ReactSharedInternals = {
+            ReactCurrentDispatcher,
+            ReactCurrentBatchConfig,
+            ReactCurrentOwner
+          };
+          {
+            ReactSharedInternals.ReactDebugCurrentFrame = ReactDebugCurrentFrame;
+            ReactSharedInternals.ReactCurrentActQueue = ReactCurrentActQueue;
+          }
+          function warn3(format) {
+            {
+              {
+                for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+                  args[_key - 1] = arguments[_key];
+                }
+                printWarning("warn", format, args);
+              }
+            }
+          }
+          function error(format) {
+            {
+              {
+                for (var _len2 = arguments.length, args = new Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++) {
+                  args[_key2 - 1] = arguments[_key2];
+                }
+                printWarning("error", format, args);
+              }
+            }
+          }
+          function printWarning(level, format, args) {
+            {
+              var ReactDebugCurrentFrame2 = ReactSharedInternals.ReactDebugCurrentFrame;
+              var stack = ReactDebugCurrentFrame2.getStackAddendum();
+              if (stack !== "") {
+                format += "%s";
+                args = args.concat([stack]);
+              }
+              var argsWithFormat = args.map(function(item) {
+                return String(item);
+              });
+              argsWithFormat.unshift("Warning: " + format);
+              Function.prototype.apply.call(console[level], console, argsWithFormat);
+            }
+          }
+          var didWarnStateUpdateForUnmountedComponent = {};
+          function warnNoop(publicInstance, callerName) {
+            {
+              var _constructor = publicInstance.constructor;
+              var componentName = _constructor && (_constructor.displayName || _constructor.name) || "ReactClass";
+              var warningKey = componentName + "." + callerName;
+              if (didWarnStateUpdateForUnmountedComponent[warningKey]) {
+                return;
+              }
+              error("Can't call %s on a component that is not yet mounted. This is a no-op, but it might indicate a bug in your application. Instead, assign to `this.state` directly or define a `state = {};` class property with the desired state in the %s component.", callerName, componentName);
+              didWarnStateUpdateForUnmountedComponent[warningKey] = true;
+            }
+          }
+          var ReactNoopUpdateQueue = {
+            isMounted: function(publicInstance) {
+              return false;
+            },
+            enqueueForceUpdate: function(publicInstance, callback, callerName) {
+              warnNoop(publicInstance, "forceUpdate");
+            },
+            enqueueReplaceState: function(publicInstance, completeState, callback, callerName) {
+              warnNoop(publicInstance, "replaceState");
+            },
+            enqueueSetState: function(publicInstance, partialState, callback, callerName) {
+              warnNoop(publicInstance, "setState");
+            }
+          };
+          var assign = Object.assign;
+          var emptyObject = {};
+          {
+            Object.freeze(emptyObject);
+          }
+          function Component2(props, context2, updater) {
+            this.props = props;
+            this.context = context2;
+            this.refs = emptyObject;
+            this.updater = updater || ReactNoopUpdateQueue;
+          }
+          Component2.prototype.isReactComponent = {};
+          Component2.prototype.setState = function(partialState, callback) {
+            if (typeof partialState !== "object" && typeof partialState !== "function" && partialState != null) {
+              throw new Error("setState(...): takes an object of state variables to update or a function which returns an object of state variables.");
+            }
+            this.updater.enqueueSetState(this, partialState, callback, "setState");
+          };
+          Component2.prototype.forceUpdate = function(callback) {
+            this.updater.enqueueForceUpdate(this, callback, "forceUpdate");
+          };
+          {
+            var deprecatedAPIs = {
+              isMounted: ["isMounted", "Instead, make sure to clean up subscriptions and pending requests in componentWillUnmount to prevent memory leaks."],
+              replaceState: ["replaceState", "Refactor your code to use setState instead (see https://github.com/facebook/react/issues/3236)."]
+            };
+            var defineDeprecationWarning = function(methodName, info) {
+              Object.defineProperty(Component2.prototype, methodName, {
+                get: function() {
+                  warn3("%s(...) is deprecated in plain JavaScript React classes. %s", info[0], info[1]);
+                  return void 0;
+                }
+              });
+            };
+            for (var fnName in deprecatedAPIs) {
+              if (deprecatedAPIs.hasOwnProperty(fnName)) {
+                defineDeprecationWarning(fnName, deprecatedAPIs[fnName]);
+              }
+            }
+          }
+          function ComponentDummy() {
+          }
+          ComponentDummy.prototype = Component2.prototype;
+          function PureComponent(props, context2, updater) {
+            this.props = props;
+            this.context = context2;
+            this.refs = emptyObject;
+            this.updater = updater || ReactNoopUpdateQueue;
+          }
+          var pureComponentPrototype = PureComponent.prototype = new ComponentDummy();
+          pureComponentPrototype.constructor = PureComponent;
+          assign(pureComponentPrototype, Component2.prototype);
+          pureComponentPrototype.isPureReactComponent = true;
+          function createRef() {
+            var refObject = {
+              current: null
+            };
+            {
+              Object.seal(refObject);
+            }
+            return refObject;
+          }
+          var isArrayImpl = Array.isArray;
+          function isArray(a) {
+            return isArrayImpl(a);
+          }
+          function typeName(value) {
+            {
+              var hasToStringTag = typeof Symbol === "function" && Symbol.toStringTag;
+              var type = hasToStringTag && value[Symbol.toStringTag] || value.constructor.name || "Object";
+              return type;
+            }
+          }
+          function willCoercionThrow(value) {
+            {
+              try {
+                testStringCoercion(value);
+                return false;
+              } catch (e) {
+                return true;
+              }
+            }
+          }
+          function testStringCoercion(value) {
+            return "" + value;
+          }
+          function checkKeyStringCoercion(value) {
+            {
+              if (willCoercionThrow(value)) {
+                error("The provided key is an unsupported type %s. This value must be coerced to a string before before using it here.", typeName(value));
+                return testStringCoercion(value);
+              }
+            }
+          }
+          function getWrappedName(outerType, innerType, wrapperName) {
+            var displayName = outerType.displayName;
+            if (displayName) {
+              return displayName;
+            }
+            var functionName = innerType.displayName || innerType.name || "";
+            return functionName !== "" ? wrapperName + "(" + functionName + ")" : wrapperName;
+          }
+          function getContextName(type) {
+            return type.displayName || "Context";
+          }
+          function getComponentNameFromType(type) {
+            if (type == null) {
+              return null;
+            }
+            {
+              if (typeof type.tag === "number") {
+                error("Received an unexpected object in getComponentNameFromType(). This is likely a bug in React. Please file an issue.");
+              }
+            }
+            if (typeof type === "function") {
+              return type.displayName || type.name || null;
+            }
+            if (typeof type === "string") {
+              return type;
+            }
+            switch (type) {
+              case REACT_FRAGMENT_TYPE:
+                return "Fragment";
+              case REACT_PORTAL_TYPE:
+                return "Portal";
+              case REACT_PROFILER_TYPE:
+                return "Profiler";
+              case REACT_STRICT_MODE_TYPE:
+                return "StrictMode";
+              case REACT_SUSPENSE_TYPE:
+                return "Suspense";
+              case REACT_SUSPENSE_LIST_TYPE:
+                return "SuspenseList";
+            }
+            if (typeof type === "object") {
+              switch (type.$$typeof) {
+                case REACT_CONTEXT_TYPE:
+                  var context2 = type;
+                  return getContextName(context2) + ".Consumer";
+                case REACT_PROVIDER_TYPE:
+                  var provider = type;
+                  return getContextName(provider._context) + ".Provider";
+                case REACT_FORWARD_REF_TYPE:
+                  return getWrappedName(type, type.render, "ForwardRef");
+                case REACT_MEMO_TYPE:
+                  var outerName = type.displayName || null;
+                  if (outerName !== null) {
+                    return outerName;
+                  }
+                  return getComponentNameFromType(type.type) || "Memo";
+                case REACT_LAZY_TYPE: {
+                  var lazyComponent = type;
+                  var payload = lazyComponent._payload;
+                  var init = lazyComponent._init;
+                  try {
+                    return getComponentNameFromType(init(payload));
+                  } catch (x) {
+                    return null;
+                  }
+                }
+              }
+            }
+            return null;
+          }
+          var hasOwnProperty = Object.prototype.hasOwnProperty;
+          var RESERVED_PROPS = {
+            key: true,
+            ref: true,
+            __self: true,
+            __source: true
+          };
+          var specialPropKeyWarningShown, specialPropRefWarningShown, didWarnAboutStringRefs;
+          {
+            didWarnAboutStringRefs = {};
+          }
+          function hasValidRef(config) {
+            {
+              if (hasOwnProperty.call(config, "ref")) {
+                var getter = Object.getOwnPropertyDescriptor(config, "ref").get;
+                if (getter && getter.isReactWarning) {
+                  return false;
+                }
+              }
+            }
+            return config.ref !== void 0;
+          }
+          function hasValidKey(config) {
+            {
+              if (hasOwnProperty.call(config, "key")) {
+                var getter = Object.getOwnPropertyDescriptor(config, "key").get;
+                if (getter && getter.isReactWarning) {
+                  return false;
+                }
+              }
+            }
+            return config.key !== void 0;
+          }
+          function defineKeyPropWarningGetter(props, displayName) {
+            var warnAboutAccessingKey = function() {
+              {
+                if (!specialPropKeyWarningShown) {
+                  specialPropKeyWarningShown = true;
+                  error("%s: `key` is not a prop. Trying to access it will result in `undefined` being returned. If you need to access the same value within the child component, you should pass it as a different prop. (https://reactjs.org/link/special-props)", displayName);
+                }
+              }
+            };
+            warnAboutAccessingKey.isReactWarning = true;
+            Object.defineProperty(props, "key", {
+              get: warnAboutAccessingKey,
+              configurable: true
+            });
+          }
+          function defineRefPropWarningGetter(props, displayName) {
+            var warnAboutAccessingRef = function() {
+              {
+                if (!specialPropRefWarningShown) {
+                  specialPropRefWarningShown = true;
+                  error("%s: `ref` is not a prop. Trying to access it will result in `undefined` being returned. If you need to access the same value within the child component, you should pass it as a different prop. (https://reactjs.org/link/special-props)", displayName);
+                }
+              }
+            };
+            warnAboutAccessingRef.isReactWarning = true;
+            Object.defineProperty(props, "ref", {
+              get: warnAboutAccessingRef,
+              configurable: true
+            });
+          }
+          function warnIfStringRefCannotBeAutoConverted(config) {
+            {
+              if (typeof config.ref === "string" && ReactCurrentOwner.current && config.__self && ReactCurrentOwner.current.stateNode !== config.__self) {
+                var componentName = getComponentNameFromType(ReactCurrentOwner.current.type);
+                if (!didWarnAboutStringRefs[componentName]) {
+                  error('Component "%s" contains the string ref "%s". Support for string refs will be removed in a future major release. This case cannot be automatically converted to an arrow function. We ask you to manually fix this case by using useRef() or createRef() instead. Learn more about using refs safely here: https://reactjs.org/link/strict-mode-string-ref', componentName, config.ref);
+                  didWarnAboutStringRefs[componentName] = true;
+                }
+              }
+            }
+          }
+          var ReactElement = function(type, key, ref, self, source, owner, props) {
+            var element = {
+              $$typeof: REACT_ELEMENT_TYPE,
+              type,
+              key,
+              ref,
+              props,
+              _owner: owner
+            };
+            {
+              element._store = {};
+              Object.defineProperty(element._store, "validated", {
+                configurable: false,
+                enumerable: false,
+                writable: true,
+                value: false
+              });
+              Object.defineProperty(element, "_self", {
+                configurable: false,
+                enumerable: false,
+                writable: false,
+                value: self
+              });
+              Object.defineProperty(element, "_source", {
+                configurable: false,
+                enumerable: false,
+                writable: false,
+                value: source
+              });
+              if (Object.freeze) {
+                Object.freeze(element.props);
+                Object.freeze(element);
+              }
+            }
+            return element;
+          };
+          function createElement18(type, config, children) {
+            var propName;
+            var props = {};
+            var key = null;
+            var ref = null;
+            var self = null;
+            var source = null;
+            if (config != null) {
+              if (hasValidRef(config)) {
+                ref = config.ref;
+                {
+                  warnIfStringRefCannotBeAutoConverted(config);
+                }
+              }
+              if (hasValidKey(config)) {
+                {
+                  checkKeyStringCoercion(config.key);
+                }
+                key = "" + config.key;
+              }
+              self = config.__self === void 0 ? null : config.__self;
+              source = config.__source === void 0 ? null : config.__source;
+              for (propName in config) {
+                if (hasOwnProperty.call(config, propName) && !RESERVED_PROPS.hasOwnProperty(propName)) {
+                  props[propName] = config[propName];
+                }
+              }
+            }
+            var childrenLength = arguments.length - 2;
+            if (childrenLength === 1) {
+              props.children = children;
+            } else if (childrenLength > 1) {
+              var childArray = Array(childrenLength);
+              for (var i = 0; i < childrenLength; i++) {
+                childArray[i] = arguments[i + 2];
+              }
+              {
+                if (Object.freeze) {
+                  Object.freeze(childArray);
+                }
+              }
+              props.children = childArray;
+            }
+            if (type && type.defaultProps) {
+              var defaultProps = type.defaultProps;
+              for (propName in defaultProps) {
+                if (props[propName] === void 0) {
+                  props[propName] = defaultProps[propName];
+                }
+              }
+            }
+            {
+              if (key || ref) {
+                var displayName = typeof type === "function" ? type.displayName || type.name || "Unknown" : type;
+                if (key) {
+                  defineKeyPropWarningGetter(props, displayName);
+                }
+                if (ref) {
+                  defineRefPropWarningGetter(props, displayName);
+                }
+              }
+            }
+            return ReactElement(type, key, ref, self, source, ReactCurrentOwner.current, props);
+          }
+          function cloneAndReplaceKey(oldElement, newKey) {
+            var newElement = ReactElement(oldElement.type, newKey, oldElement.ref, oldElement._self, oldElement._source, oldElement._owner, oldElement.props);
+            return newElement;
+          }
+          function cloneElement(element, config, children) {
+            if (element === null || element === void 0) {
+              throw new Error("React.cloneElement(...): The argument must be a React element, but you passed " + element + ".");
+            }
+            var propName;
+            var props = assign({}, element.props);
+            var key = element.key;
+            var ref = element.ref;
+            var self = element._self;
+            var source = element._source;
+            var owner = element._owner;
+            if (config != null) {
+              if (hasValidRef(config)) {
+                ref = config.ref;
+                owner = ReactCurrentOwner.current;
+              }
+              if (hasValidKey(config)) {
+                {
+                  checkKeyStringCoercion(config.key);
+                }
+                key = "" + config.key;
+              }
+              var defaultProps;
+              if (element.type && element.type.defaultProps) {
+                defaultProps = element.type.defaultProps;
+              }
+              for (propName in config) {
+                if (hasOwnProperty.call(config, propName) && !RESERVED_PROPS.hasOwnProperty(propName)) {
+                  if (config[propName] === void 0 && defaultProps !== void 0) {
+                    props[propName] = defaultProps[propName];
+                  } else {
+                    props[propName] = config[propName];
+                  }
+                }
+              }
+            }
+            var childrenLength = arguments.length - 2;
+            if (childrenLength === 1) {
+              props.children = children;
+            } else if (childrenLength > 1) {
+              var childArray = Array(childrenLength);
+              for (var i = 0; i < childrenLength; i++) {
+                childArray[i] = arguments[i + 2];
+              }
+              props.children = childArray;
+            }
+            return ReactElement(element.type, key, ref, self, source, owner, props);
+          }
+          function isValidElement(object) {
+            return typeof object === "object" && object !== null && object.$$typeof === REACT_ELEMENT_TYPE;
+          }
+          var SEPARATOR = ".";
+          var SUBSEPARATOR = ":";
+          function escape(key) {
+            var escapeRegex = /[=:]/g;
+            var escaperLookup = {
+              "=": "=0",
+              ":": "=2"
+            };
+            var escapedString = key.replace(escapeRegex, function(match) {
+              return escaperLookup[match];
+            });
+            return "$" + escapedString;
+          }
+          var didWarnAboutMaps = false;
+          var userProvidedKeyEscapeRegex = /\/+/g;
+          function escapeUserProvidedKey(text) {
+            return text.replace(userProvidedKeyEscapeRegex, "$&/");
+          }
+          function getElementKey(element, index2) {
+            if (typeof element === "object" && element !== null && element.key != null) {
+              {
+                checkKeyStringCoercion(element.key);
+              }
+              return escape("" + element.key);
+            }
+            return index2.toString(36);
+          }
+          function mapIntoArray(children, array, escapedPrefix, nameSoFar, callback) {
+            var type = typeof children;
+            if (type === "undefined" || type === "boolean") {
+              children = null;
+            }
+            var invokeCallback = false;
+            if (children === null) {
+              invokeCallback = true;
+            } else {
+              switch (type) {
+                case "string":
+                case "number":
+                  invokeCallback = true;
+                  break;
+                case "object":
+                  switch (children.$$typeof) {
+                    case REACT_ELEMENT_TYPE:
+                    case REACT_PORTAL_TYPE:
+                      invokeCallback = true;
+                  }
+              }
+            }
+            if (invokeCallback) {
+              var _child = children;
+              var mappedChild = callback(_child);
+              var childKey = nameSoFar === "" ? SEPARATOR + getElementKey(_child, 0) : nameSoFar;
+              if (isArray(mappedChild)) {
+                var escapedChildKey = "";
+                if (childKey != null) {
+                  escapedChildKey = escapeUserProvidedKey(childKey) + "/";
+                }
+                mapIntoArray(mappedChild, array, escapedChildKey, "", function(c) {
+                  return c;
+                });
+              } else if (mappedChild != null) {
+                if (isValidElement(mappedChild)) {
+                  {
+                    if (mappedChild.key && (!_child || _child.key !== mappedChild.key)) {
+                      checkKeyStringCoercion(mappedChild.key);
+                    }
+                  }
+                  mappedChild = cloneAndReplaceKey(
+                    mappedChild,
+                    escapedPrefix + (mappedChild.key && (!_child || _child.key !== mappedChild.key) ? escapeUserProvidedKey("" + mappedChild.key) + "/" : "") + childKey
+                  );
+                }
+                array.push(mappedChild);
+              }
+              return 1;
+            }
+            var child;
+            var nextName;
+            var subtreeCount = 0;
+            var nextNamePrefix = nameSoFar === "" ? SEPARATOR : nameSoFar + SUBSEPARATOR;
+            if (isArray(children)) {
+              for (var i = 0; i < children.length; i++) {
+                child = children[i];
+                nextName = nextNamePrefix + getElementKey(child, i);
+                subtreeCount += mapIntoArray(child, array, escapedPrefix, nextName, callback);
+              }
+            } else {
+              var iteratorFn = getIteratorFn(children);
+              if (typeof iteratorFn === "function") {
+                var iterableChildren = children;
+                {
+                  if (iteratorFn === iterableChildren.entries) {
+                    if (!didWarnAboutMaps) {
+                      warn3("Using Maps as children is not supported. Use an array of keyed ReactElements instead.");
+                    }
+                    didWarnAboutMaps = true;
+                  }
+                }
+                var iterator = iteratorFn.call(iterableChildren);
+                var step;
+                var ii = 0;
+                while (!(step = iterator.next()).done) {
+                  child = step.value;
+                  nextName = nextNamePrefix + getElementKey(child, ii++);
+                  subtreeCount += mapIntoArray(child, array, escapedPrefix, nextName, callback);
+                }
+              } else if (type === "object") {
+                var childrenString = String(children);
+                throw new Error("Objects are not valid as a React child (found: " + (childrenString === "[object Object]" ? "object with keys {" + Object.keys(children).join(", ") + "}" : childrenString) + "). If you meant to render a collection of children, use an array instead.");
+              }
+            }
+            return subtreeCount;
+          }
+          function mapChildren(children, func, context2) {
+            if (children == null) {
+              return children;
+            }
+            var result = [];
+            var count = 0;
+            mapIntoArray(children, result, "", "", function(child) {
+              return func.call(context2, child, count++);
+            });
+            return result;
+          }
+          function countChildren(children) {
+            var n = 0;
+            mapChildren(children, function() {
+              n++;
+            });
+            return n;
+          }
+          function forEachChildren(children, forEachFunc, forEachContext) {
+            mapChildren(children, function() {
+              forEachFunc.apply(this, arguments);
+            }, forEachContext);
+          }
+          function toArray(children) {
+            return mapChildren(children, function(child) {
+              return child;
+            }) || [];
+          }
+          function onlyChild2(children) {
+            if (!isValidElement(children)) {
+              throw new Error("React.Children.only expected to receive a single React element child.");
+            }
+            return children;
+          }
+          function createContext(defaultValue) {
+            var context2 = {
+              $$typeof: REACT_CONTEXT_TYPE,
+              _currentValue: defaultValue,
+              _currentValue2: defaultValue,
+              _threadCount: 0,
+              Provider: null,
+              Consumer: null,
+              _defaultValue: null,
+              _globalName: null
+            };
+            context2.Provider = {
+              $$typeof: REACT_PROVIDER_TYPE,
+              _context: context2
+            };
+            var hasWarnedAboutUsingNestedContextConsumers = false;
+            var hasWarnedAboutUsingConsumerProvider = false;
+            var hasWarnedAboutDisplayNameOnConsumer = false;
+            {
+              var Consumer = {
+                $$typeof: REACT_CONTEXT_TYPE,
+                _context: context2
+              };
+              Object.defineProperties(Consumer, {
+                Provider: {
+                  get: function() {
+                    if (!hasWarnedAboutUsingConsumerProvider) {
+                      hasWarnedAboutUsingConsumerProvider = true;
+                      error("Rendering <Context.Consumer.Provider> is not supported and will be removed in a future major release. Did you mean to render <Context.Provider> instead?");
+                    }
+                    return context2.Provider;
+                  },
+                  set: function(_Provider) {
+                    context2.Provider = _Provider;
+                  }
+                },
+                _currentValue: {
+                  get: function() {
+                    return context2._currentValue;
+                  },
+                  set: function(_currentValue) {
+                    context2._currentValue = _currentValue;
+                  }
+                },
+                _currentValue2: {
+                  get: function() {
+                    return context2._currentValue2;
+                  },
+                  set: function(_currentValue2) {
+                    context2._currentValue2 = _currentValue2;
+                  }
+                },
+                _threadCount: {
+                  get: function() {
+                    return context2._threadCount;
+                  },
+                  set: function(_threadCount) {
+                    context2._threadCount = _threadCount;
+                  }
+                },
+                Consumer: {
+                  get: function() {
+                    if (!hasWarnedAboutUsingNestedContextConsumers) {
+                      hasWarnedAboutUsingNestedContextConsumers = true;
+                      error("Rendering <Context.Consumer.Consumer> is not supported and will be removed in a future major release. Did you mean to render <Context.Consumer> instead?");
+                    }
+                    return context2.Consumer;
+                  }
+                },
+                displayName: {
+                  get: function() {
+                    return context2.displayName;
+                  },
+                  set: function(displayName) {
+                    if (!hasWarnedAboutDisplayNameOnConsumer) {
+                      warn3("Setting `displayName` on Context.Consumer has no effect. You should set it directly on the context with Context.displayName = '%s'.", displayName);
+                      hasWarnedAboutDisplayNameOnConsumer = true;
+                    }
+                  }
+                }
+              });
+              context2.Consumer = Consumer;
+            }
+            {
+              context2._currentRenderer = null;
+              context2._currentRenderer2 = null;
+            }
+            return context2;
+          }
+          var Uninitialized = -1;
+          var Pending = 0;
+          var Resolved = 1;
+          var Rejected = 2;
+          function lazyInitializer(payload) {
+            if (payload._status === Uninitialized) {
+              var ctor = payload._result;
+              var thenable = ctor();
+              thenable.then(function(moduleObject2) {
+                if (payload._status === Pending || payload._status === Uninitialized) {
+                  var resolved = payload;
+                  resolved._status = Resolved;
+                  resolved._result = moduleObject2;
+                }
+              }, function(error2) {
+                if (payload._status === Pending || payload._status === Uninitialized) {
+                  var rejected = payload;
+                  rejected._status = Rejected;
+                  rejected._result = error2;
+                }
+              });
+              if (payload._status === Uninitialized) {
+                var pending = payload;
+                pending._status = Pending;
+                pending._result = thenable;
+              }
+            }
+            if (payload._status === Resolved) {
+              var moduleObject = payload._result;
+              {
+                if (moduleObject === void 0) {
+                  error("lazy: Expected the result of a dynamic import() call. Instead received: %s\n\nYour code should look like: \n  const MyComponent = lazy(() => import('./MyComponent'))\n\nDid you accidentally put curly braces around the import?", moduleObject);
+                }
+              }
+              {
+                if (!("default" in moduleObject)) {
+                  error("lazy: Expected the result of a dynamic import() call. Instead received: %s\n\nYour code should look like: \n  const MyComponent = lazy(() => import('./MyComponent'))", moduleObject);
+                }
+              }
+              return moduleObject.default;
+            } else {
+              throw payload._result;
+            }
+          }
+          function lazy(ctor) {
+            var payload = {
+              _status: Uninitialized,
+              _result: ctor
+            };
+            var lazyType = {
+              $$typeof: REACT_LAZY_TYPE,
+              _payload: payload,
+              _init: lazyInitializer
+            };
+            {
+              var defaultProps;
+              var propTypes;
+              Object.defineProperties(lazyType, {
+                defaultProps: {
+                  configurable: true,
+                  get: function() {
+                    return defaultProps;
+                  },
+                  set: function(newDefaultProps) {
+                    error("React.lazy(...): It is not supported to assign `defaultProps` to a lazy component import. Either specify them where the component is defined, or create a wrapping component around it.");
+                    defaultProps = newDefaultProps;
+                    Object.defineProperty(lazyType, "defaultProps", {
+                      enumerable: true
+                    });
+                  }
+                },
+                propTypes: {
+                  configurable: true,
+                  get: function() {
+                    return propTypes;
+                  },
+                  set: function(newPropTypes) {
+                    error("React.lazy(...): It is not supported to assign `propTypes` to a lazy component import. Either specify them where the component is defined, or create a wrapping component around it.");
+                    propTypes = newPropTypes;
+                    Object.defineProperty(lazyType, "propTypes", {
+                      enumerable: true
+                    });
+                  }
+                }
+              });
+            }
+            return lazyType;
+          }
+          function forwardRef2(render) {
+            {
+              if (render != null && render.$$typeof === REACT_MEMO_TYPE) {
+                error("forwardRef requires a render function but received a `memo` component. Instead of forwardRef(memo(...)), use memo(forwardRef(...)).");
+              } else if (typeof render !== "function") {
+                error("forwardRef requires a render function but was given %s.", render === null ? "null" : typeof render);
+              } else {
+                if (render.length !== 0 && render.length !== 2) {
+                  error("forwardRef render functions accept exactly two parameters: props and ref. %s", render.length === 1 ? "Did you forget to use the ref parameter?" : "Any additional parameter will be undefined.");
+                }
+              }
+              if (render != null) {
+                if (render.defaultProps != null || render.propTypes != null) {
+                  error("forwardRef render functions do not support propTypes or defaultProps. Did you accidentally pass a React component?");
+                }
+              }
+            }
+            var elementType = {
+              $$typeof: REACT_FORWARD_REF_TYPE,
+              render
+            };
+            {
+              var ownName;
+              Object.defineProperty(elementType, "displayName", {
+                enumerable: false,
+                configurable: true,
+                get: function() {
+                  return ownName;
+                },
+                set: function(name) {
+                  ownName = name;
+                  if (!render.name && !render.displayName) {
+                    render.displayName = name;
+                  }
+                }
+              });
+            }
+            return elementType;
+          }
+          var REACT_MODULE_REFERENCE;
+          {
+            REACT_MODULE_REFERENCE = Symbol.for("react.module.reference");
+          }
+          function isValidElementType2(type) {
+            if (typeof type === "string" || typeof type === "function") {
+              return true;
+            }
+            if (type === REACT_FRAGMENT_TYPE || type === REACT_PROFILER_TYPE || enableDebugTracing || type === REACT_STRICT_MODE_TYPE || type === REACT_SUSPENSE_TYPE || type === REACT_SUSPENSE_LIST_TYPE || enableLegacyHidden || type === REACT_OFFSCREEN_TYPE || enableScopeAPI || enableCacheElement || enableTransitionTracing) {
+              return true;
+            }
+            if (typeof type === "object" && type !== null) {
+              if (type.$$typeof === REACT_LAZY_TYPE || type.$$typeof === REACT_MEMO_TYPE || type.$$typeof === REACT_PROVIDER_TYPE || type.$$typeof === REACT_CONTEXT_TYPE || type.$$typeof === REACT_FORWARD_REF_TYPE || type.$$typeof === REACT_MODULE_REFERENCE || type.getModuleId !== void 0) {
+                return true;
+              }
+            }
+            return false;
+          }
+          function memo(type, compare) {
+            {
+              if (!isValidElementType2(type)) {
+                error("memo: The first argument must be a component. Instead received: %s", type === null ? "null" : typeof type);
+              }
+            }
+            var elementType = {
+              $$typeof: REACT_MEMO_TYPE,
+              type,
+              compare: compare === void 0 ? null : compare
+            };
+            {
+              var ownName;
+              Object.defineProperty(elementType, "displayName", {
+                enumerable: false,
+                configurable: true,
+                get: function() {
+                  return ownName;
+                },
+                set: function(name) {
+                  ownName = name;
+                  if (!type.name && !type.displayName) {
+                    type.displayName = name;
+                  }
+                }
+              });
+            }
+            return elementType;
+          }
+          function resolveDispatcher() {
+            var dispatcher = ReactCurrentDispatcher.current;
+            {
+              if (dispatcher === null) {
+                error("Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:\n1. You might have mismatching versions of React and the renderer (such as React DOM)\n2. You might be breaking the Rules of Hooks\n3. You might have more than one copy of React in the same app\nSee https://reactjs.org/link/invalid-hook-call for tips about how to debug and fix this problem.");
+              }
+            }
+            return dispatcher;
+          }
+          function useContext2(Context) {
+            var dispatcher = resolveDispatcher();
+            {
+              if (Context._context !== void 0) {
+                var realContext = Context._context;
+                if (realContext.Consumer === Context) {
+                  error("Calling useContext(Context.Consumer) is not supported, may cause bugs, and will be removed in a future major release. Did you mean to call useContext(Context) instead?");
+                } else if (realContext.Provider === Context) {
+                  error("Calling useContext(Context.Provider) is not supported. Did you mean to call useContext(Context) instead?");
+                }
+              }
+            }
+            return dispatcher.useContext(Context);
+          }
+          function useState3(initialState) {
+            var dispatcher = resolveDispatcher();
+            return dispatcher.useState(initialState);
+          }
+          function useReducer(reducer, initialArg, init) {
+            var dispatcher = resolveDispatcher();
+            return dispatcher.useReducer(reducer, initialArg, init);
+          }
+          function useRef(initialValue) {
+            var dispatcher = resolveDispatcher();
+            return dispatcher.useRef(initialValue);
+          }
+          function useEffect3(create, deps) {
+            var dispatcher = resolveDispatcher();
+            return dispatcher.useEffect(create, deps);
+          }
+          function useInsertionEffect(create, deps) {
+            var dispatcher = resolveDispatcher();
+            return dispatcher.useInsertionEffect(create, deps);
+          }
+          function useLayoutEffect(create, deps) {
+            var dispatcher = resolveDispatcher();
+            return dispatcher.useLayoutEffect(create, deps);
+          }
+          function useCallback(callback, deps) {
+            var dispatcher = resolveDispatcher();
+            return dispatcher.useCallback(callback, deps);
+          }
+          function useMemo(create, deps) {
+            var dispatcher = resolveDispatcher();
+            return dispatcher.useMemo(create, deps);
+          }
+          function useImperativeHandle(ref, create, deps) {
+            var dispatcher = resolveDispatcher();
+            return dispatcher.useImperativeHandle(ref, create, deps);
+          }
+          function useDebugValue(value, formatterFn) {
+            {
+              var dispatcher = resolveDispatcher();
+              return dispatcher.useDebugValue(value, formatterFn);
+            }
+          }
+          function useTransition() {
+            var dispatcher = resolveDispatcher();
+            return dispatcher.useTransition();
+          }
+          function useDeferredValue(value) {
+            var dispatcher = resolveDispatcher();
+            return dispatcher.useDeferredValue(value);
+          }
+          function useId() {
+            var dispatcher = resolveDispatcher();
+            return dispatcher.useId();
+          }
+          function useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot) {
+            var dispatcher = resolveDispatcher();
+            return dispatcher.useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
+          }
+          var disabledDepth = 0;
+          var prevLog;
+          var prevInfo;
+          var prevWarn;
+          var prevError;
+          var prevGroup;
+          var prevGroupCollapsed;
+          var prevGroupEnd;
+          function disabledLog() {
+          }
+          disabledLog.__reactDisabledLog = true;
+          function disableLogs() {
+            {
+              if (disabledDepth === 0) {
+                prevLog = console.log;
+                prevInfo = console.info;
+                prevWarn = console.warn;
+                prevError = console.error;
+                prevGroup = console.group;
+                prevGroupCollapsed = console.groupCollapsed;
+                prevGroupEnd = console.groupEnd;
+                var props = {
+                  configurable: true,
+                  enumerable: true,
+                  value: disabledLog,
+                  writable: true
+                };
+                Object.defineProperties(console, {
+                  info: props,
+                  log: props,
+                  warn: props,
+                  error: props,
+                  group: props,
+                  groupCollapsed: props,
+                  groupEnd: props
+                });
+              }
+              disabledDepth++;
+            }
+          }
+          function reenableLogs() {
+            {
+              disabledDepth--;
+              if (disabledDepth === 0) {
+                var props = {
+                  configurable: true,
+                  enumerable: true,
+                  writable: true
+                };
+                Object.defineProperties(console, {
+                  log: assign({}, props, {
+                    value: prevLog
+                  }),
+                  info: assign({}, props, {
+                    value: prevInfo
+                  }),
+                  warn: assign({}, props, {
+                    value: prevWarn
+                  }),
+                  error: assign({}, props, {
+                    value: prevError
+                  }),
+                  group: assign({}, props, {
+                    value: prevGroup
+                  }),
+                  groupCollapsed: assign({}, props, {
+                    value: prevGroupCollapsed
+                  }),
+                  groupEnd: assign({}, props, {
+                    value: prevGroupEnd
+                  })
+                });
+              }
+              if (disabledDepth < 0) {
+                error("disabledDepth fell below zero. This is a bug in React. Please file an issue.");
+              }
+            }
+          }
+          var ReactCurrentDispatcher$1 = ReactSharedInternals.ReactCurrentDispatcher;
+          var prefix2;
+          function describeBuiltInComponentFrame(name, source, ownerFn) {
+            {
+              if (prefix2 === void 0) {
+                try {
+                  throw Error();
+                } catch (x) {
+                  var match = x.stack.trim().match(/\n( *(at )?)/);
+                  prefix2 = match && match[1] || "";
+                }
+              }
+              return "\n" + prefix2 + name;
+            }
+          }
+          var reentry = false;
+          var componentFrameCache;
+          {
+            var PossiblyWeakMap = typeof WeakMap === "function" ? WeakMap : Map;
+            componentFrameCache = new PossiblyWeakMap();
+          }
+          function describeNativeComponentFrame(fn, construct) {
+            if (!fn || reentry) {
+              return "";
+            }
+            {
+              var frame = componentFrameCache.get(fn);
+              if (frame !== void 0) {
+                return frame;
+              }
+            }
+            var control;
+            reentry = true;
+            var previousPrepareStackTrace = Error.prepareStackTrace;
+            Error.prepareStackTrace = void 0;
+            var previousDispatcher;
+            {
+              previousDispatcher = ReactCurrentDispatcher$1.current;
+              ReactCurrentDispatcher$1.current = null;
+              disableLogs();
+            }
+            try {
+              if (construct) {
+                var Fake = function() {
+                  throw Error();
+                };
+                Object.defineProperty(Fake.prototype, "props", {
+                  set: function() {
+                    throw Error();
+                  }
+                });
+                if (typeof Reflect === "object" && Reflect.construct) {
+                  try {
+                    Reflect.construct(Fake, []);
+                  } catch (x) {
+                    control = x;
+                  }
+                  Reflect.construct(fn, [], Fake);
+                } else {
+                  try {
+                    Fake.call();
+                  } catch (x) {
+                    control = x;
+                  }
+                  fn.call(Fake.prototype);
+                }
+              } else {
+                try {
+                  throw Error();
+                } catch (x) {
+                  control = x;
+                }
+                fn();
+              }
+            } catch (sample) {
+              if (sample && control && typeof sample.stack === "string") {
+                var sampleLines = sample.stack.split("\n");
+                var controlLines = control.stack.split("\n");
+                var s = sampleLines.length - 1;
+                var c = controlLines.length - 1;
+                while (s >= 1 && c >= 0 && sampleLines[s] !== controlLines[c]) {
+                  c--;
+                }
+                for (; s >= 1 && c >= 0; s--, c--) {
+                  if (sampleLines[s] !== controlLines[c]) {
+                    if (s !== 1 || c !== 1) {
+                      do {
+                        s--;
+                        c--;
+                        if (c < 0 || sampleLines[s] !== controlLines[c]) {
+                          var _frame = "\n" + sampleLines[s].replace(" at new ", " at ");
+                          if (fn.displayName && _frame.includes("<anonymous>")) {
+                            _frame = _frame.replace("<anonymous>", fn.displayName);
+                          }
+                          {
+                            if (typeof fn === "function") {
+                              componentFrameCache.set(fn, _frame);
+                            }
+                          }
+                          return _frame;
+                        }
+                      } while (s >= 1 && c >= 0);
+                    }
+                    break;
+                  }
+                }
+              }
+            } finally {
+              reentry = false;
+              {
+                ReactCurrentDispatcher$1.current = previousDispatcher;
+                reenableLogs();
+              }
+              Error.prepareStackTrace = previousPrepareStackTrace;
+            }
+            var name = fn ? fn.displayName || fn.name : "";
+            var syntheticFrame = name ? describeBuiltInComponentFrame(name) : "";
+            {
+              if (typeof fn === "function") {
+                componentFrameCache.set(fn, syntheticFrame);
+              }
+            }
+            return syntheticFrame;
+          }
+          function describeFunctionComponentFrame(fn, source, ownerFn) {
+            {
+              return describeNativeComponentFrame(fn, false);
+            }
+          }
+          function shouldConstruct(Component3) {
+            var prototype = Component3.prototype;
+            return !!(prototype && prototype.isReactComponent);
+          }
+          function describeUnknownElementTypeFrameInDEV(type, source, ownerFn) {
+            if (type == null) {
+              return "";
+            }
+            if (typeof type === "function") {
+              {
+                return describeNativeComponentFrame(type, shouldConstruct(type));
+              }
+            }
+            if (typeof type === "string") {
+              return describeBuiltInComponentFrame(type);
+            }
+            switch (type) {
+              case REACT_SUSPENSE_TYPE:
+                return describeBuiltInComponentFrame("Suspense");
+              case REACT_SUSPENSE_LIST_TYPE:
+                return describeBuiltInComponentFrame("SuspenseList");
+            }
+            if (typeof type === "object") {
+              switch (type.$$typeof) {
+                case REACT_FORWARD_REF_TYPE:
+                  return describeFunctionComponentFrame(type.render);
+                case REACT_MEMO_TYPE:
+                  return describeUnknownElementTypeFrameInDEV(type.type, source, ownerFn);
+                case REACT_LAZY_TYPE: {
+                  var lazyComponent = type;
+                  var payload = lazyComponent._payload;
+                  var init = lazyComponent._init;
+                  try {
+                    return describeUnknownElementTypeFrameInDEV(init(payload), source, ownerFn);
+                  } catch (x) {
+                  }
+                }
+              }
+            }
+            return "";
+          }
+          var loggedTypeFailures = {};
+          var ReactDebugCurrentFrame$1 = ReactSharedInternals.ReactDebugCurrentFrame;
+          function setCurrentlyValidatingElement(element) {
+            {
+              if (element) {
+                var owner = element._owner;
+                var stack = describeUnknownElementTypeFrameInDEV(element.type, element._source, owner ? owner.type : null);
+                ReactDebugCurrentFrame$1.setExtraStackFrame(stack);
+              } else {
+                ReactDebugCurrentFrame$1.setExtraStackFrame(null);
+              }
+            }
+          }
+          function checkPropTypes(typeSpecs, values, location, componentName, element) {
+            {
+              var has = Function.call.bind(hasOwnProperty);
+              for (var typeSpecName in typeSpecs) {
+                if (has(typeSpecs, typeSpecName)) {
+                  var error$1 = void 0;
+                  try {
+                    if (typeof typeSpecs[typeSpecName] !== "function") {
+                      var err = Error((componentName || "React class") + ": " + location + " type `" + typeSpecName + "` is invalid; it must be a function, usually from the `prop-types` package, but received `" + typeof typeSpecs[typeSpecName] + "`.This often happens because of typos such as `PropTypes.function` instead of `PropTypes.func`.");
+                      err.name = "Invariant Violation";
+                      throw err;
+                    }
+                    error$1 = typeSpecs[typeSpecName](values, typeSpecName, componentName, location, null, "SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED");
+                  } catch (ex) {
+                    error$1 = ex;
+                  }
+                  if (error$1 && !(error$1 instanceof Error)) {
+                    setCurrentlyValidatingElement(element);
+                    error("%s: type specification of %s `%s` is invalid; the type checker function must return `null` or an `Error` but returned a %s. You may have forgotten to pass an argument to the type checker creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and shape all require an argument).", componentName || "React class", location, typeSpecName, typeof error$1);
+                    setCurrentlyValidatingElement(null);
+                  }
+                  if (error$1 instanceof Error && !(error$1.message in loggedTypeFailures)) {
+                    loggedTypeFailures[error$1.message] = true;
+                    setCurrentlyValidatingElement(element);
+                    error("Failed %s type: %s", location, error$1.message);
+                    setCurrentlyValidatingElement(null);
+                  }
+                }
+              }
+            }
+          }
+          function setCurrentlyValidatingElement$1(element) {
+            {
+              if (element) {
+                var owner = element._owner;
+                var stack = describeUnknownElementTypeFrameInDEV(element.type, element._source, owner ? owner.type : null);
+                setExtraStackFrame(stack);
+              } else {
+                setExtraStackFrame(null);
+              }
+            }
+          }
+          var propTypesMisspellWarningShown;
+          {
+            propTypesMisspellWarningShown = false;
+          }
+          function getDeclarationErrorAddendum() {
+            if (ReactCurrentOwner.current) {
+              var name = getComponentNameFromType(ReactCurrentOwner.current.type);
+              if (name) {
+                return "\n\nCheck the render method of `" + name + "`.";
+              }
+            }
+            return "";
+          }
+          function getSourceInfoErrorAddendum(source) {
+            if (source !== void 0) {
+              var fileName = source.fileName.replace(/^.*[\\\/]/, "");
+              var lineNumber = source.lineNumber;
+              return "\n\nCheck your code at " + fileName + ":" + lineNumber + ".";
+            }
+            return "";
+          }
+          function getSourceInfoErrorAddendumForProps(elementProps) {
+            if (elementProps !== null && elementProps !== void 0) {
+              return getSourceInfoErrorAddendum(elementProps.__source);
+            }
+            return "";
+          }
+          var ownerHasKeyUseWarning = {};
+          function getCurrentComponentErrorInfo(parentType) {
+            var info = getDeclarationErrorAddendum();
+            if (!info) {
+              var parentName = typeof parentType === "string" ? parentType : parentType.displayName || parentType.name;
+              if (parentName) {
+                info = "\n\nCheck the top-level render call using <" + parentName + ">.";
+              }
+            }
+            return info;
+          }
+          function validateExplicitKey(element, parentType) {
+            if (!element._store || element._store.validated || element.key != null) {
+              return;
+            }
+            element._store.validated = true;
+            var currentComponentErrorInfo = getCurrentComponentErrorInfo(parentType);
+            if (ownerHasKeyUseWarning[currentComponentErrorInfo]) {
+              return;
+            }
+            ownerHasKeyUseWarning[currentComponentErrorInfo] = true;
+            var childOwner = "";
+            if (element && element._owner && element._owner !== ReactCurrentOwner.current) {
+              childOwner = " It was passed a child from " + getComponentNameFromType(element._owner.type) + ".";
+            }
+            {
+              setCurrentlyValidatingElement$1(element);
+              error('Each child in a list should have a unique "key" prop.%s%s See https://reactjs.org/link/warning-keys for more information.', currentComponentErrorInfo, childOwner);
+              setCurrentlyValidatingElement$1(null);
+            }
+          }
+          function validateChildKeys(node, parentType) {
+            if (typeof node !== "object") {
+              return;
+            }
+            if (isArray(node)) {
+              for (var i = 0; i < node.length; i++) {
+                var child = node[i];
+                if (isValidElement(child)) {
+                  validateExplicitKey(child, parentType);
+                }
+              }
+            } else if (isValidElement(node)) {
+              if (node._store) {
+                node._store.validated = true;
+              }
+            } else if (node) {
+              var iteratorFn = getIteratorFn(node);
+              if (typeof iteratorFn === "function") {
+                if (iteratorFn !== node.entries) {
+                  var iterator = iteratorFn.call(node);
+                  var step;
+                  while (!(step = iterator.next()).done) {
+                    if (isValidElement(step.value)) {
+                      validateExplicitKey(step.value, parentType);
+                    }
+                  }
+                }
+              }
+            }
+          }
+          function validatePropTypes(element) {
+            {
+              var type = element.type;
+              if (type === null || type === void 0 || typeof type === "string") {
+                return;
+              }
+              var propTypes;
+              if (typeof type === "function") {
+                propTypes = type.propTypes;
+              } else if (typeof type === "object" && (type.$$typeof === REACT_FORWARD_REF_TYPE || type.$$typeof === REACT_MEMO_TYPE)) {
+                propTypes = type.propTypes;
+              } else {
+                return;
+              }
+              if (propTypes) {
+                var name = getComponentNameFromType(type);
+                checkPropTypes(propTypes, element.props, "prop", name, element);
+              } else if (type.PropTypes !== void 0 && !propTypesMisspellWarningShown) {
+                propTypesMisspellWarningShown = true;
+                var _name = getComponentNameFromType(type);
+                error("Component %s declared `PropTypes` instead of `propTypes`. Did you misspell the property assignment?", _name || "Unknown");
+              }
+              if (typeof type.getDefaultProps === "function" && !type.getDefaultProps.isReactClassApproved) {
+                error("getDefaultProps is only used on classic React.createClass definitions. Use a static property named `defaultProps` instead.");
+              }
+            }
+          }
+          function validateFragmentProps(fragment) {
+            {
+              var keys = Object.keys(fragment.props);
+              for (var i = 0; i < keys.length; i++) {
+                var key = keys[i];
+                if (key !== "children" && key !== "key") {
+                  setCurrentlyValidatingElement$1(fragment);
+                  error("Invalid prop `%s` supplied to `React.Fragment`. React.Fragment can only have `key` and `children` props.", key);
+                  setCurrentlyValidatingElement$1(null);
+                  break;
+                }
+              }
+              if (fragment.ref !== null) {
+                setCurrentlyValidatingElement$1(fragment);
+                error("Invalid attribute `ref` supplied to `React.Fragment`.");
+                setCurrentlyValidatingElement$1(null);
+              }
+            }
+          }
+          function createElementWithValidation(type, props, children) {
+            var validType = isValidElementType2(type);
+            if (!validType) {
+              var info = "";
+              if (type === void 0 || typeof type === "object" && type !== null && Object.keys(type).length === 0) {
+                info += " You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports.";
+              }
+              var sourceInfo = getSourceInfoErrorAddendumForProps(props);
+              if (sourceInfo) {
+                info += sourceInfo;
+              } else {
+                info += getDeclarationErrorAddendum();
+              }
+              var typeString;
+              if (type === null) {
+                typeString = "null";
+              } else if (isArray(type)) {
+                typeString = "array";
+              } else if (type !== void 0 && type.$$typeof === REACT_ELEMENT_TYPE) {
+                typeString = "<" + (getComponentNameFromType(type.type) || "Unknown") + " />";
+                info = " Did you accidentally export a JSX literal instead of a component?";
+              } else {
+                typeString = typeof type;
+              }
+              {
+                error("React.createElement: type is invalid -- expected a string (for built-in components) or a class/function (for composite components) but got: %s.%s", typeString, info);
+              }
+            }
+            var element = createElement18.apply(this, arguments);
+            if (element == null) {
+              return element;
+            }
+            if (validType) {
+              for (var i = 2; i < arguments.length; i++) {
+                validateChildKeys(arguments[i], type);
+              }
+            }
+            if (type === REACT_FRAGMENT_TYPE) {
+              validateFragmentProps(element);
+            } else {
+              validatePropTypes(element);
+            }
+            return element;
+          }
+          var didWarnAboutDeprecatedCreateFactory = false;
+          function createFactoryWithValidation(type) {
+            var validatedFactory = createElementWithValidation.bind(null, type);
+            validatedFactory.type = type;
+            {
+              if (!didWarnAboutDeprecatedCreateFactory) {
+                didWarnAboutDeprecatedCreateFactory = true;
+                warn3("React.createFactory() is deprecated and will be removed in a future major release. Consider using JSX or use React.createElement() directly instead.");
+              }
+              Object.defineProperty(validatedFactory, "type", {
+                enumerable: false,
+                get: function() {
+                  warn3("Factory.type is deprecated. Access the class directly before passing it to createFactory.");
+                  Object.defineProperty(this, "type", {
+                    value: type
+                  });
+                  return type;
+                }
+              });
+            }
+            return validatedFactory;
+          }
+          function cloneElementWithValidation(element, props, children) {
+            var newElement = cloneElement.apply(this, arguments);
+            for (var i = 2; i < arguments.length; i++) {
+              validateChildKeys(arguments[i], newElement.type);
+            }
+            validatePropTypes(newElement);
+            return newElement;
+          }
+          function startTransition(scope, options) {
+            var prevTransition = ReactCurrentBatchConfig.transition;
+            ReactCurrentBatchConfig.transition = {};
+            var currentTransition = ReactCurrentBatchConfig.transition;
+            {
+              ReactCurrentBatchConfig.transition._updatedFibers = /* @__PURE__ */ new Set();
+            }
+            try {
+              scope();
+            } finally {
+              ReactCurrentBatchConfig.transition = prevTransition;
+              {
+                if (prevTransition === null && currentTransition._updatedFibers) {
+                  var updatedFibersCount = currentTransition._updatedFibers.size;
+                  if (updatedFibersCount > 10) {
+                    warn3("Detected a large number of updates inside startTransition. If this is due to a subscription please re-write it to use React provided hooks. Otherwise concurrent mode guarantees are off the table.");
+                  }
+                  currentTransition._updatedFibers.clear();
+                }
+              }
+            }
+          }
+          var didWarnAboutMessageChannel = false;
+          var enqueueTaskImpl = null;
+          function enqueueTask(task) {
+            if (enqueueTaskImpl === null) {
+              try {
+                var requireString = ("require" + Math.random()).slice(0, 7);
+                var nodeRequire = module && module[requireString];
+                enqueueTaskImpl = nodeRequire.call(module, "timers").setImmediate;
+              } catch (_err) {
+                enqueueTaskImpl = function(callback) {
+                  {
+                    if (didWarnAboutMessageChannel === false) {
+                      didWarnAboutMessageChannel = true;
+                      if (typeof MessageChannel === "undefined") {
+                        error("This browser does not have a MessageChannel implementation, so enqueuing tasks via await act(async () => ...) will fail. Please file an issue at https://github.com/facebook/react/issues if you encounter this warning.");
+                      }
+                    }
+                  }
+                  var channel = new MessageChannel();
+                  channel.port1.onmessage = callback;
+                  channel.port2.postMessage(void 0);
+                };
+              }
+            }
+            return enqueueTaskImpl(task);
+          }
+          var actScopeDepth = 0;
+          var didWarnNoAwaitAct = false;
+          function act(callback) {
+            {
+              var prevActScopeDepth = actScopeDepth;
+              actScopeDepth++;
+              if (ReactCurrentActQueue.current === null) {
+                ReactCurrentActQueue.current = [];
+              }
+              var prevIsBatchingLegacy = ReactCurrentActQueue.isBatchingLegacy;
+              var result;
+              try {
+                ReactCurrentActQueue.isBatchingLegacy = true;
+                result = callback();
+                if (!prevIsBatchingLegacy && ReactCurrentActQueue.didScheduleLegacyUpdate) {
+                  var queue = ReactCurrentActQueue.current;
+                  if (queue !== null) {
+                    ReactCurrentActQueue.didScheduleLegacyUpdate = false;
+                    flushActQueue(queue);
+                  }
+                }
+              } catch (error2) {
+                popActScope(prevActScopeDepth);
+                throw error2;
+              } finally {
+                ReactCurrentActQueue.isBatchingLegacy = prevIsBatchingLegacy;
+              }
+              if (result !== null && typeof result === "object" && typeof result.then === "function") {
+                var thenableResult = result;
+                var wasAwaited = false;
+                var thenable = {
+                  then: function(resolve, reject) {
+                    wasAwaited = true;
+                    thenableResult.then(function(returnValue2) {
+                      popActScope(prevActScopeDepth);
+                      if (actScopeDepth === 0) {
+                        recursivelyFlushAsyncActWork(returnValue2, resolve, reject);
+                      } else {
+                        resolve(returnValue2);
+                      }
+                    }, function(error2) {
+                      popActScope(prevActScopeDepth);
+                      reject(error2);
+                    });
+                  }
+                };
+                {
+                  if (!didWarnNoAwaitAct && typeof Promise !== "undefined") {
+                    Promise.resolve().then(function() {
+                    }).then(function() {
+                      if (!wasAwaited) {
+                        didWarnNoAwaitAct = true;
+                        error("You called act(async () => ...) without await. This could lead to unexpected testing behaviour, interleaving multiple act calls and mixing their scopes. You should - await act(async () => ...);");
+                      }
+                    });
+                  }
+                }
+                return thenable;
+              } else {
+                var returnValue = result;
+                popActScope(prevActScopeDepth);
+                if (actScopeDepth === 0) {
+                  var _queue = ReactCurrentActQueue.current;
+                  if (_queue !== null) {
+                    flushActQueue(_queue);
+                    ReactCurrentActQueue.current = null;
+                  }
+                  var _thenable = {
+                    then: function(resolve, reject) {
+                      if (ReactCurrentActQueue.current === null) {
+                        ReactCurrentActQueue.current = [];
+                        recursivelyFlushAsyncActWork(returnValue, resolve, reject);
+                      } else {
+                        resolve(returnValue);
+                      }
+                    }
+                  };
+                  return _thenable;
+                } else {
+                  var _thenable2 = {
+                    then: function(resolve, reject) {
+                      resolve(returnValue);
+                    }
+                  };
+                  return _thenable2;
+                }
+              }
+            }
+          }
+          function popActScope(prevActScopeDepth) {
+            {
+              if (prevActScopeDepth !== actScopeDepth - 1) {
+                error("You seem to have overlapping act() calls, this is not supported. Be sure to await previous act() calls before making a new one. ");
+              }
+              actScopeDepth = prevActScopeDepth;
+            }
+          }
+          function recursivelyFlushAsyncActWork(returnValue, resolve, reject) {
+            {
+              var queue = ReactCurrentActQueue.current;
+              if (queue !== null) {
+                try {
+                  flushActQueue(queue);
+                  enqueueTask(function() {
+                    if (queue.length === 0) {
+                      ReactCurrentActQueue.current = null;
+                      resolve(returnValue);
+                    } else {
+                      recursivelyFlushAsyncActWork(returnValue, resolve, reject);
+                    }
+                  });
+                } catch (error2) {
+                  reject(error2);
+                }
+              } else {
+                resolve(returnValue);
+              }
+            }
+          }
+          var isFlushing = false;
+          function flushActQueue(queue) {
+            {
+              if (!isFlushing) {
+                isFlushing = true;
+                var i = 0;
+                try {
+                  for (; i < queue.length; i++) {
+                    var callback = queue[i];
+                    do {
+                      callback = callback(true);
+                    } while (callback !== null);
+                  }
+                  queue.length = 0;
+                } catch (error2) {
+                  queue = queue.slice(i + 1);
+                  throw error2;
+                } finally {
+                  isFlushing = false;
+                }
+              }
+            }
+          }
+          var createElement$1 = createElementWithValidation;
+          var cloneElement$1 = cloneElementWithValidation;
+          var createFactory = createFactoryWithValidation;
+          var Children = {
+            map: mapChildren,
+            forEach: forEachChildren,
+            count: countChildren,
+            toArray,
+            only: onlyChild2
+          };
+          exports.Children = Children;
+          exports.Component = Component2;
+          exports.Fragment = REACT_FRAGMENT_TYPE;
+          exports.Profiler = REACT_PROFILER_TYPE;
+          exports.PureComponent = PureComponent;
+          exports.StrictMode = REACT_STRICT_MODE_TYPE;
+          exports.Suspense = REACT_SUSPENSE_TYPE;
+          exports.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED = ReactSharedInternals;
+          exports.cloneElement = cloneElement$1;
+          exports.createContext = createContext;
+          exports.createElement = createElement$1;
+          exports.createFactory = createFactory;
+          exports.createRef = createRef;
+          exports.forwardRef = forwardRef2;
+          exports.isValidElement = isValidElement;
+          exports.lazy = lazy;
+          exports.memo = memo;
+          exports.startTransition = startTransition;
+          exports.unstable_act = act;
+          exports.useCallback = useCallback;
+          exports.useContext = useContext2;
+          exports.useDebugValue = useDebugValue;
+          exports.useDeferredValue = useDeferredValue;
+          exports.useEffect = useEffect3;
+          exports.useId = useId;
+          exports.useImperativeHandle = useImperativeHandle;
+          exports.useInsertionEffect = useInsertionEffect;
+          exports.useLayoutEffect = useLayoutEffect;
+          exports.useMemo = useMemo;
+          exports.useReducer = useReducer;
+          exports.useRef = useRef;
+          exports.useState = useState3;
+          exports.useSyncExternalStore = useSyncExternalStore;
+          exports.useTransition = useTransition;
+          exports.version = ReactVersion;
+          if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop === "function") {
+            __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop(new Error());
+          }
+        })();
+      }
+    }
+  });
+
+  // ../packages/react/node_modules/react/index.js
+  var require_react2 = __commonJS({
+    "../packages/react/node_modules/react/index.js"(exports, module) {
+      "use strict";
+      if (false) {
+        module.exports = null;
+      } else {
+        module.exports = require_react_development2();
+      }
     }
   });
 
@@ -23474,22 +25473,22 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
         };
         return instance;
       }
-      var axios2 = createInstance(defaults);
-      axios2.Axios = Axios;
-      axios2.CanceledError = require_CanceledError();
-      axios2.CancelToken = require_CancelToken();
-      axios2.isCancel = require_isCancel();
-      axios2.VERSION = require_data().version;
-      axios2.toFormData = require_toFormData();
-      axios2.AxiosError = require_AxiosError();
-      axios2.Cancel = axios2.CanceledError;
-      axios2.all = function all(promises) {
+      var axios3 = createInstance(defaults);
+      axios3.Axios = Axios;
+      axios3.CanceledError = require_CanceledError();
+      axios3.CancelToken = require_CancelToken();
+      axios3.isCancel = require_isCancel();
+      axios3.VERSION = require_data().version;
+      axios3.toFormData = require_toFormData();
+      axios3.AxiosError = require_AxiosError();
+      axios3.Cancel = axios3.CanceledError;
+      axios3.all = function all(promises) {
         return Promise.all(promises);
       };
-      axios2.spread = require_spread();
-      axios2.isAxiosError = require_isAxiosError();
-      module.exports = axios2;
-      module.exports.default = axios2;
+      axios3.spread = require_spread();
+      axios3.isAxiosError = require_isAxiosError();
+      module.exports = axios3;
+      module.exports.default = axios3;
     }
   });
 
@@ -23500,2007 +25499,8 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     }
   });
 
-  // ../node_modules/react-side-effect/lib/index.js
-  var require_lib = __commonJS({
-    "../node_modules/react-side-effect/lib/index.js"(exports, module) {
-      "use strict";
-      function _interopDefault(ex) {
-        return ex && typeof ex === "object" && "default" in ex ? ex["default"] : ex;
-      }
-      var React16 = require_react();
-      var React__default = _interopDefault(React16);
-      function _defineProperty(obj, key, value) {
-        if (key in obj) {
-          Object.defineProperty(obj, key, {
-            value,
-            enumerable: true,
-            configurable: true,
-            writable: true
-          });
-        } else {
-          obj[key] = value;
-        }
-        return obj;
-      }
-      function _inheritsLoose2(subClass, superClass) {
-        subClass.prototype = Object.create(superClass.prototype);
-        subClass.prototype.constructor = subClass;
-        subClass.__proto__ = superClass;
-      }
-      var canUseDOM2 = !!(typeof window !== "undefined" && window.document && window.document.createElement);
-      function withSideEffect2(reducePropsToState3, handleStateChangeOnClient, mapStateOnServer3) {
-        if (typeof reducePropsToState3 !== "function") {
-          throw new Error("Expected reducePropsToState to be a function.");
-        }
-        if (typeof handleStateChangeOnClient !== "function") {
-          throw new Error("Expected handleStateChangeOnClient to be a function.");
-        }
-        if (typeof mapStateOnServer3 !== "undefined" && typeof mapStateOnServer3 !== "function") {
-          throw new Error("Expected mapStateOnServer to either be undefined or a function.");
-        }
-        function getDisplayName(WrappedComponent) {
-          return WrappedComponent.displayName || WrappedComponent.name || "Component";
-        }
-        return function wrap(WrappedComponent) {
-          if (typeof WrappedComponent !== "function") {
-            throw new Error("Expected WrappedComponent to be a React component.");
-          }
-          var mountedInstances = [];
-          var state;
-          function emitChange() {
-            state = reducePropsToState3(mountedInstances.map(function(instance) {
-              return instance.props;
-            }));
-            if (SideEffect.canUseDOM) {
-              handleStateChangeOnClient(state);
-            } else if (mapStateOnServer3) {
-              state = mapStateOnServer3(state);
-            }
-          }
-          var SideEffect = /* @__PURE__ */ function(_PureComponent) {
-            _inheritsLoose2(SideEffect2, _PureComponent);
-            function SideEffect2() {
-              return _PureComponent.apply(this, arguments) || this;
-            }
-            SideEffect2.peek = function peek() {
-              return state;
-            };
-            SideEffect2.rewind = function rewind() {
-              if (SideEffect2.canUseDOM) {
-                throw new Error("You may only call rewind() on the server. Call peek() to read the current state.");
-              }
-              var recordedState = state;
-              state = void 0;
-              mountedInstances = [];
-              return recordedState;
-            };
-            var _proto = SideEffect2.prototype;
-            _proto.UNSAFE_componentWillMount = function UNSAFE_componentWillMount() {
-              mountedInstances.push(this);
-              emitChange();
-            };
-            _proto.componentDidUpdate = function componentDidUpdate() {
-              emitChange();
-            };
-            _proto.componentWillUnmount = function componentWillUnmount() {
-              var index2 = mountedInstances.indexOf(this);
-              mountedInstances.splice(index2, 1);
-              emitChange();
-            };
-            _proto.render = function render() {
-              return React__default.createElement(WrappedComponent, this.props);
-            };
-            return SideEffect2;
-          }(React16.PureComponent);
-          _defineProperty(SideEffect, "displayName", "SideEffect(" + getDisplayName(WrappedComponent) + ")");
-          _defineProperty(SideEffect, "canUseDOM", canUseDOM2);
-          return SideEffect;
-        };
-      }
-      module.exports = withSideEffect2;
-    }
-  });
-
-  // ../node_modules/react-fast-compare/index.js
-  var require_react_fast_compare = __commonJS({
-    "../node_modules/react-fast-compare/index.js"(exports, module) {
-      var hasElementType = typeof Element !== "undefined";
-      var hasMap = typeof Map === "function";
-      var hasSet = typeof Set === "function";
-      var hasArrayBuffer = typeof ArrayBuffer === "function" && !!ArrayBuffer.isView;
-      function equal(a, b) {
-        if (a === b)
-          return true;
-        if (a && b && typeof a == "object" && typeof b == "object") {
-          if (a.constructor !== b.constructor)
-            return false;
-          var length, i, keys;
-          if (Array.isArray(a)) {
-            length = a.length;
-            if (length != b.length)
-              return false;
-            for (i = length; i-- !== 0; )
-              if (!equal(a[i], b[i]))
-                return false;
-            return true;
-          }
-          var it;
-          if (hasMap && a instanceof Map && b instanceof Map) {
-            if (a.size !== b.size)
-              return false;
-            it = a.entries();
-            while (!(i = it.next()).done)
-              if (!b.has(i.value[0]))
-                return false;
-            it = a.entries();
-            while (!(i = it.next()).done)
-              if (!equal(i.value[1], b.get(i.value[0])))
-                return false;
-            return true;
-          }
-          if (hasSet && a instanceof Set && b instanceof Set) {
-            if (a.size !== b.size)
-              return false;
-            it = a.entries();
-            while (!(i = it.next()).done)
-              if (!b.has(i.value[0]))
-                return false;
-            return true;
-          }
-          if (hasArrayBuffer && ArrayBuffer.isView(a) && ArrayBuffer.isView(b)) {
-            length = a.length;
-            if (length != b.length)
-              return false;
-            for (i = length; i-- !== 0; )
-              if (a[i] !== b[i])
-                return false;
-            return true;
-          }
-          if (a.constructor === RegExp)
-            return a.source === b.source && a.flags === b.flags;
-          if (a.valueOf !== Object.prototype.valueOf)
-            return a.valueOf() === b.valueOf();
-          if (a.toString !== Object.prototype.toString)
-            return a.toString() === b.toString();
-          keys = Object.keys(a);
-          length = keys.length;
-          if (length !== Object.keys(b).length)
-            return false;
-          for (i = length; i-- !== 0; )
-            if (!Object.prototype.hasOwnProperty.call(b, keys[i]))
-              return false;
-          if (hasElementType && a instanceof Element)
-            return false;
-          for (i = length; i-- !== 0; ) {
-            if ((keys[i] === "_owner" || keys[i] === "__v" || keys[i] === "__o") && a.$$typeof) {
-              continue;
-            }
-            if (!equal(a[keys[i]], b[keys[i]]))
-              return false;
-          }
-          return true;
-        }
-        return a !== a && b !== b;
-      }
-      module.exports = function isEqual2(a, b) {
-        try {
-          return equal(a, b);
-        } catch (error) {
-          if ((error.message || "").match(/stack|recursion/i)) {
-            console.warn("react-fast-compare cannot handle circular refs");
-            return false;
-          }
-          throw error;
-        }
-      };
-    }
-  });
-
-  // ../packages/react/node_modules/react/cjs/react.development.js
-  var require_react_development2 = __commonJS({
-    "../packages/react/node_modules/react/cjs/react.development.js"(exports, module) {
-      "use strict";
-      if (true) {
-        (function() {
-          "use strict";
-          if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart === "function") {
-            __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(new Error());
-          }
-          var ReactVersion = "18.2.0";
-          var REACT_ELEMENT_TYPE = Symbol.for("react.element");
-          var REACT_PORTAL_TYPE = Symbol.for("react.portal");
-          var REACT_FRAGMENT_TYPE = Symbol.for("react.fragment");
-          var REACT_STRICT_MODE_TYPE = Symbol.for("react.strict_mode");
-          var REACT_PROFILER_TYPE = Symbol.for("react.profiler");
-          var REACT_PROVIDER_TYPE = Symbol.for("react.provider");
-          var REACT_CONTEXT_TYPE = Symbol.for("react.context");
-          var REACT_FORWARD_REF_TYPE = Symbol.for("react.forward_ref");
-          var REACT_SUSPENSE_TYPE = Symbol.for("react.suspense");
-          var REACT_SUSPENSE_LIST_TYPE = Symbol.for("react.suspense_list");
-          var REACT_MEMO_TYPE = Symbol.for("react.memo");
-          var REACT_LAZY_TYPE = Symbol.for("react.lazy");
-          var REACT_OFFSCREEN_TYPE = Symbol.for("react.offscreen");
-          var MAYBE_ITERATOR_SYMBOL = Symbol.iterator;
-          var FAUX_ITERATOR_SYMBOL = "@@iterator";
-          function getIteratorFn(maybeIterable) {
-            if (maybeIterable === null || typeof maybeIterable !== "object") {
-              return null;
-            }
-            var maybeIterator = MAYBE_ITERATOR_SYMBOL && maybeIterable[MAYBE_ITERATOR_SYMBOL] || maybeIterable[FAUX_ITERATOR_SYMBOL];
-            if (typeof maybeIterator === "function") {
-              return maybeIterator;
-            }
-            return null;
-          }
-          var ReactCurrentDispatcher = {
-            current: null
-          };
-          var ReactCurrentBatchConfig = {
-            transition: null
-          };
-          var ReactCurrentActQueue = {
-            current: null,
-            isBatchingLegacy: false,
-            didScheduleLegacyUpdate: false
-          };
-          var ReactCurrentOwner = {
-            current: null
-          };
-          var ReactDebugCurrentFrame = {};
-          var currentExtraStackFrame = null;
-          function setExtraStackFrame(stack) {
-            {
-              currentExtraStackFrame = stack;
-            }
-          }
-          {
-            ReactDebugCurrentFrame.setExtraStackFrame = function(stack) {
-              {
-                currentExtraStackFrame = stack;
-              }
-            };
-            ReactDebugCurrentFrame.getCurrentStack = null;
-            ReactDebugCurrentFrame.getStackAddendum = function() {
-              var stack = "";
-              if (currentExtraStackFrame) {
-                stack += currentExtraStackFrame;
-              }
-              var impl = ReactDebugCurrentFrame.getCurrentStack;
-              if (impl) {
-                stack += impl() || "";
-              }
-              return stack;
-            };
-          }
-          var enableScopeAPI = false;
-          var enableCacheElement = false;
-          var enableTransitionTracing = false;
-          var enableLegacyHidden = false;
-          var enableDebugTracing = false;
-          var ReactSharedInternals = {
-            ReactCurrentDispatcher,
-            ReactCurrentBatchConfig,
-            ReactCurrentOwner
-          };
-          {
-            ReactSharedInternals.ReactDebugCurrentFrame = ReactDebugCurrentFrame;
-            ReactSharedInternals.ReactCurrentActQueue = ReactCurrentActQueue;
-          }
-          function warn3(format) {
-            {
-              {
-                for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
-                  args[_key - 1] = arguments[_key];
-                }
-                printWarning("warn", format, args);
-              }
-            }
-          }
-          function error(format) {
-            {
-              {
-                for (var _len2 = arguments.length, args = new Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++) {
-                  args[_key2 - 1] = arguments[_key2];
-                }
-                printWarning("error", format, args);
-              }
-            }
-          }
-          function printWarning(level, format, args) {
-            {
-              var ReactDebugCurrentFrame2 = ReactSharedInternals.ReactDebugCurrentFrame;
-              var stack = ReactDebugCurrentFrame2.getStackAddendum();
-              if (stack !== "") {
-                format += "%s";
-                args = args.concat([stack]);
-              }
-              var argsWithFormat = args.map(function(item) {
-                return String(item);
-              });
-              argsWithFormat.unshift("Warning: " + format);
-              Function.prototype.apply.call(console[level], console, argsWithFormat);
-            }
-          }
-          var didWarnStateUpdateForUnmountedComponent = {};
-          function warnNoop(publicInstance, callerName) {
-            {
-              var _constructor = publicInstance.constructor;
-              var componentName = _constructor && (_constructor.displayName || _constructor.name) || "ReactClass";
-              var warningKey = componentName + "." + callerName;
-              if (didWarnStateUpdateForUnmountedComponent[warningKey]) {
-                return;
-              }
-              error("Can't call %s on a component that is not yet mounted. This is a no-op, but it might indicate a bug in your application. Instead, assign to `this.state` directly or define a `state = {};` class property with the desired state in the %s component.", callerName, componentName);
-              didWarnStateUpdateForUnmountedComponent[warningKey] = true;
-            }
-          }
-          var ReactNoopUpdateQueue = {
-            isMounted: function(publicInstance) {
-              return false;
-            },
-            enqueueForceUpdate: function(publicInstance, callback, callerName) {
-              warnNoop(publicInstance, "forceUpdate");
-            },
-            enqueueReplaceState: function(publicInstance, completeState, callback, callerName) {
-              warnNoop(publicInstance, "replaceState");
-            },
-            enqueueSetState: function(publicInstance, partialState, callback, callerName) {
-              warnNoop(publicInstance, "setState");
-            }
-          };
-          var assign = Object.assign;
-          var emptyObject = {};
-          {
-            Object.freeze(emptyObject);
-          }
-          function Component2(props, context2, updater) {
-            this.props = props;
-            this.context = context2;
-            this.refs = emptyObject;
-            this.updater = updater || ReactNoopUpdateQueue;
-          }
-          Component2.prototype.isReactComponent = {};
-          Component2.prototype.setState = function(partialState, callback) {
-            if (typeof partialState !== "object" && typeof partialState !== "function" && partialState != null) {
-              throw new Error("setState(...): takes an object of state variables to update or a function which returns an object of state variables.");
-            }
-            this.updater.enqueueSetState(this, partialState, callback, "setState");
-          };
-          Component2.prototype.forceUpdate = function(callback) {
-            this.updater.enqueueForceUpdate(this, callback, "forceUpdate");
-          };
-          {
-            var deprecatedAPIs = {
-              isMounted: ["isMounted", "Instead, make sure to clean up subscriptions and pending requests in componentWillUnmount to prevent memory leaks."],
-              replaceState: ["replaceState", "Refactor your code to use setState instead (see https://github.com/facebook/react/issues/3236)."]
-            };
-            var defineDeprecationWarning = function(methodName, info) {
-              Object.defineProperty(Component2.prototype, methodName, {
-                get: function() {
-                  warn3("%s(...) is deprecated in plain JavaScript React classes. %s", info[0], info[1]);
-                  return void 0;
-                }
-              });
-            };
-            for (var fnName in deprecatedAPIs) {
-              if (deprecatedAPIs.hasOwnProperty(fnName)) {
-                defineDeprecationWarning(fnName, deprecatedAPIs[fnName]);
-              }
-            }
-          }
-          function ComponentDummy() {
-          }
-          ComponentDummy.prototype = Component2.prototype;
-          function PureComponent(props, context2, updater) {
-            this.props = props;
-            this.context = context2;
-            this.refs = emptyObject;
-            this.updater = updater || ReactNoopUpdateQueue;
-          }
-          var pureComponentPrototype = PureComponent.prototype = new ComponentDummy();
-          pureComponentPrototype.constructor = PureComponent;
-          assign(pureComponentPrototype, Component2.prototype);
-          pureComponentPrototype.isPureReactComponent = true;
-          function createRef() {
-            var refObject = {
-              current: null
-            };
-            {
-              Object.seal(refObject);
-            }
-            return refObject;
-          }
-          var isArrayImpl = Array.isArray;
-          function isArray(a) {
-            return isArrayImpl(a);
-          }
-          function typeName(value) {
-            {
-              var hasToStringTag = typeof Symbol === "function" && Symbol.toStringTag;
-              var type = hasToStringTag && value[Symbol.toStringTag] || value.constructor.name || "Object";
-              return type;
-            }
-          }
-          function willCoercionThrow(value) {
-            {
-              try {
-                testStringCoercion(value);
-                return false;
-              } catch (e) {
-                return true;
-              }
-            }
-          }
-          function testStringCoercion(value) {
-            return "" + value;
-          }
-          function checkKeyStringCoercion(value) {
-            {
-              if (willCoercionThrow(value)) {
-                error("The provided key is an unsupported type %s. This value must be coerced to a string before before using it here.", typeName(value));
-                return testStringCoercion(value);
-              }
-            }
-          }
-          function getWrappedName(outerType, innerType, wrapperName) {
-            var displayName = outerType.displayName;
-            if (displayName) {
-              return displayName;
-            }
-            var functionName = innerType.displayName || innerType.name || "";
-            return functionName !== "" ? wrapperName + "(" + functionName + ")" : wrapperName;
-          }
-          function getContextName(type) {
-            return type.displayName || "Context";
-          }
-          function getComponentNameFromType(type) {
-            if (type == null) {
-              return null;
-            }
-            {
-              if (typeof type.tag === "number") {
-                error("Received an unexpected object in getComponentNameFromType(). This is likely a bug in React. Please file an issue.");
-              }
-            }
-            if (typeof type === "function") {
-              return type.displayName || type.name || null;
-            }
-            if (typeof type === "string") {
-              return type;
-            }
-            switch (type) {
-              case REACT_FRAGMENT_TYPE:
-                return "Fragment";
-              case REACT_PORTAL_TYPE:
-                return "Portal";
-              case REACT_PROFILER_TYPE:
-                return "Profiler";
-              case REACT_STRICT_MODE_TYPE:
-                return "StrictMode";
-              case REACT_SUSPENSE_TYPE:
-                return "Suspense";
-              case REACT_SUSPENSE_LIST_TYPE:
-                return "SuspenseList";
-            }
-            if (typeof type === "object") {
-              switch (type.$$typeof) {
-                case REACT_CONTEXT_TYPE:
-                  var context2 = type;
-                  return getContextName(context2) + ".Consumer";
-                case REACT_PROVIDER_TYPE:
-                  var provider = type;
-                  return getContextName(provider._context) + ".Provider";
-                case REACT_FORWARD_REF_TYPE:
-                  return getWrappedName(type, type.render, "ForwardRef");
-                case REACT_MEMO_TYPE:
-                  var outerName = type.displayName || null;
-                  if (outerName !== null) {
-                    return outerName;
-                  }
-                  return getComponentNameFromType(type.type) || "Memo";
-                case REACT_LAZY_TYPE: {
-                  var lazyComponent = type;
-                  var payload = lazyComponent._payload;
-                  var init = lazyComponent._init;
-                  try {
-                    return getComponentNameFromType(init(payload));
-                  } catch (x) {
-                    return null;
-                  }
-                }
-              }
-            }
-            return null;
-          }
-          var hasOwnProperty = Object.prototype.hasOwnProperty;
-          var RESERVED_PROPS = {
-            key: true,
-            ref: true,
-            __self: true,
-            __source: true
-          };
-          var specialPropKeyWarningShown, specialPropRefWarningShown, didWarnAboutStringRefs;
-          {
-            didWarnAboutStringRefs = {};
-          }
-          function hasValidRef(config) {
-            {
-              if (hasOwnProperty.call(config, "ref")) {
-                var getter = Object.getOwnPropertyDescriptor(config, "ref").get;
-                if (getter && getter.isReactWarning) {
-                  return false;
-                }
-              }
-            }
-            return config.ref !== void 0;
-          }
-          function hasValidKey(config) {
-            {
-              if (hasOwnProperty.call(config, "key")) {
-                var getter = Object.getOwnPropertyDescriptor(config, "key").get;
-                if (getter && getter.isReactWarning) {
-                  return false;
-                }
-              }
-            }
-            return config.key !== void 0;
-          }
-          function defineKeyPropWarningGetter(props, displayName) {
-            var warnAboutAccessingKey = function() {
-              {
-                if (!specialPropKeyWarningShown) {
-                  specialPropKeyWarningShown = true;
-                  error("%s: `key` is not a prop. Trying to access it will result in `undefined` being returned. If you need to access the same value within the child component, you should pass it as a different prop. (https://reactjs.org/link/special-props)", displayName);
-                }
-              }
-            };
-            warnAboutAccessingKey.isReactWarning = true;
-            Object.defineProperty(props, "key", {
-              get: warnAboutAccessingKey,
-              configurable: true
-            });
-          }
-          function defineRefPropWarningGetter(props, displayName) {
-            var warnAboutAccessingRef = function() {
-              {
-                if (!specialPropRefWarningShown) {
-                  specialPropRefWarningShown = true;
-                  error("%s: `ref` is not a prop. Trying to access it will result in `undefined` being returned. If you need to access the same value within the child component, you should pass it as a different prop. (https://reactjs.org/link/special-props)", displayName);
-                }
-              }
-            };
-            warnAboutAccessingRef.isReactWarning = true;
-            Object.defineProperty(props, "ref", {
-              get: warnAboutAccessingRef,
-              configurable: true
-            });
-          }
-          function warnIfStringRefCannotBeAutoConverted(config) {
-            {
-              if (typeof config.ref === "string" && ReactCurrentOwner.current && config.__self && ReactCurrentOwner.current.stateNode !== config.__self) {
-                var componentName = getComponentNameFromType(ReactCurrentOwner.current.type);
-                if (!didWarnAboutStringRefs[componentName]) {
-                  error('Component "%s" contains the string ref "%s". Support for string refs will be removed in a future major release. This case cannot be automatically converted to an arrow function. We ask you to manually fix this case by using useRef() or createRef() instead. Learn more about using refs safely here: https://reactjs.org/link/strict-mode-string-ref', componentName, config.ref);
-                  didWarnAboutStringRefs[componentName] = true;
-                }
-              }
-            }
-          }
-          var ReactElement = function(type, key, ref, self, source, owner, props) {
-            var element = {
-              $$typeof: REACT_ELEMENT_TYPE,
-              type,
-              key,
-              ref,
-              props,
-              _owner: owner
-            };
-            {
-              element._store = {};
-              Object.defineProperty(element._store, "validated", {
-                configurable: false,
-                enumerable: false,
-                writable: true,
-                value: false
-              });
-              Object.defineProperty(element, "_self", {
-                configurable: false,
-                enumerable: false,
-                writable: false,
-                value: self
-              });
-              Object.defineProperty(element, "_source", {
-                configurable: false,
-                enumerable: false,
-                writable: false,
-                value: source
-              });
-              if (Object.freeze) {
-                Object.freeze(element.props);
-                Object.freeze(element);
-              }
-            }
-            return element;
-          };
-          function createElement12(type, config, children) {
-            var propName;
-            var props = {};
-            var key = null;
-            var ref = null;
-            var self = null;
-            var source = null;
-            if (config != null) {
-              if (hasValidRef(config)) {
-                ref = config.ref;
-                {
-                  warnIfStringRefCannotBeAutoConverted(config);
-                }
-              }
-              if (hasValidKey(config)) {
-                {
-                  checkKeyStringCoercion(config.key);
-                }
-                key = "" + config.key;
-              }
-              self = config.__self === void 0 ? null : config.__self;
-              source = config.__source === void 0 ? null : config.__source;
-              for (propName in config) {
-                if (hasOwnProperty.call(config, propName) && !RESERVED_PROPS.hasOwnProperty(propName)) {
-                  props[propName] = config[propName];
-                }
-              }
-            }
-            var childrenLength = arguments.length - 2;
-            if (childrenLength === 1) {
-              props.children = children;
-            } else if (childrenLength > 1) {
-              var childArray = Array(childrenLength);
-              for (var i = 0; i < childrenLength; i++) {
-                childArray[i] = arguments[i + 2];
-              }
-              {
-                if (Object.freeze) {
-                  Object.freeze(childArray);
-                }
-              }
-              props.children = childArray;
-            }
-            if (type && type.defaultProps) {
-              var defaultProps = type.defaultProps;
-              for (propName in defaultProps) {
-                if (props[propName] === void 0) {
-                  props[propName] = defaultProps[propName];
-                }
-              }
-            }
-            {
-              if (key || ref) {
-                var displayName = typeof type === "function" ? type.displayName || type.name || "Unknown" : type;
-                if (key) {
-                  defineKeyPropWarningGetter(props, displayName);
-                }
-                if (ref) {
-                  defineRefPropWarningGetter(props, displayName);
-                }
-              }
-            }
-            return ReactElement(type, key, ref, self, source, ReactCurrentOwner.current, props);
-          }
-          function cloneAndReplaceKey(oldElement, newKey) {
-            var newElement = ReactElement(oldElement.type, newKey, oldElement.ref, oldElement._self, oldElement._source, oldElement._owner, oldElement.props);
-            return newElement;
-          }
-          function cloneElement(element, config, children) {
-            if (element === null || element === void 0) {
-              throw new Error("React.cloneElement(...): The argument must be a React element, but you passed " + element + ".");
-            }
-            var propName;
-            var props = assign({}, element.props);
-            var key = element.key;
-            var ref = element.ref;
-            var self = element._self;
-            var source = element._source;
-            var owner = element._owner;
-            if (config != null) {
-              if (hasValidRef(config)) {
-                ref = config.ref;
-                owner = ReactCurrentOwner.current;
-              }
-              if (hasValidKey(config)) {
-                {
-                  checkKeyStringCoercion(config.key);
-                }
-                key = "" + config.key;
-              }
-              var defaultProps;
-              if (element.type && element.type.defaultProps) {
-                defaultProps = element.type.defaultProps;
-              }
-              for (propName in config) {
-                if (hasOwnProperty.call(config, propName) && !RESERVED_PROPS.hasOwnProperty(propName)) {
-                  if (config[propName] === void 0 && defaultProps !== void 0) {
-                    props[propName] = defaultProps[propName];
-                  } else {
-                    props[propName] = config[propName];
-                  }
-                }
-              }
-            }
-            var childrenLength = arguments.length - 2;
-            if (childrenLength === 1) {
-              props.children = children;
-            } else if (childrenLength > 1) {
-              var childArray = Array(childrenLength);
-              for (var i = 0; i < childrenLength; i++) {
-                childArray[i] = arguments[i + 2];
-              }
-              props.children = childArray;
-            }
-            return ReactElement(element.type, key, ref, self, source, owner, props);
-          }
-          function isValidElement(object) {
-            return typeof object === "object" && object !== null && object.$$typeof === REACT_ELEMENT_TYPE;
-          }
-          var SEPARATOR = ".";
-          var SUBSEPARATOR = ":";
-          function escape(key) {
-            var escapeRegex = /[=:]/g;
-            var escaperLookup = {
-              "=": "=0",
-              ":": "=2"
-            };
-            var escapedString = key.replace(escapeRegex, function(match) {
-              return escaperLookup[match];
-            });
-            return "$" + escapedString;
-          }
-          var didWarnAboutMaps = false;
-          var userProvidedKeyEscapeRegex = /\/+/g;
-          function escapeUserProvidedKey(text) {
-            return text.replace(userProvidedKeyEscapeRegex, "$&/");
-          }
-          function getElementKey(element, index2) {
-            if (typeof element === "object" && element !== null && element.key != null) {
-              {
-                checkKeyStringCoercion(element.key);
-              }
-              return escape("" + element.key);
-            }
-            return index2.toString(36);
-          }
-          function mapIntoArray(children, array, escapedPrefix, nameSoFar, callback) {
-            var type = typeof children;
-            if (type === "undefined" || type === "boolean") {
-              children = null;
-            }
-            var invokeCallback = false;
-            if (children === null) {
-              invokeCallback = true;
-            } else {
-              switch (type) {
-                case "string":
-                case "number":
-                  invokeCallback = true;
-                  break;
-                case "object":
-                  switch (children.$$typeof) {
-                    case REACT_ELEMENT_TYPE:
-                    case REACT_PORTAL_TYPE:
-                      invokeCallback = true;
-                  }
-              }
-            }
-            if (invokeCallback) {
-              var _child = children;
-              var mappedChild = callback(_child);
-              var childKey = nameSoFar === "" ? SEPARATOR + getElementKey(_child, 0) : nameSoFar;
-              if (isArray(mappedChild)) {
-                var escapedChildKey = "";
-                if (childKey != null) {
-                  escapedChildKey = escapeUserProvidedKey(childKey) + "/";
-                }
-                mapIntoArray(mappedChild, array, escapedChildKey, "", function(c) {
-                  return c;
-                });
-              } else if (mappedChild != null) {
-                if (isValidElement(mappedChild)) {
-                  {
-                    if (mappedChild.key && (!_child || _child.key !== mappedChild.key)) {
-                      checkKeyStringCoercion(mappedChild.key);
-                    }
-                  }
-                  mappedChild = cloneAndReplaceKey(
-                    mappedChild,
-                    escapedPrefix + (mappedChild.key && (!_child || _child.key !== mappedChild.key) ? escapeUserProvidedKey("" + mappedChild.key) + "/" : "") + childKey
-                  );
-                }
-                array.push(mappedChild);
-              }
-              return 1;
-            }
-            var child;
-            var nextName;
-            var subtreeCount = 0;
-            var nextNamePrefix = nameSoFar === "" ? SEPARATOR : nameSoFar + SUBSEPARATOR;
-            if (isArray(children)) {
-              for (var i = 0; i < children.length; i++) {
-                child = children[i];
-                nextName = nextNamePrefix + getElementKey(child, i);
-                subtreeCount += mapIntoArray(child, array, escapedPrefix, nextName, callback);
-              }
-            } else {
-              var iteratorFn = getIteratorFn(children);
-              if (typeof iteratorFn === "function") {
-                var iterableChildren = children;
-                {
-                  if (iteratorFn === iterableChildren.entries) {
-                    if (!didWarnAboutMaps) {
-                      warn3("Using Maps as children is not supported. Use an array of keyed ReactElements instead.");
-                    }
-                    didWarnAboutMaps = true;
-                  }
-                }
-                var iterator = iteratorFn.call(iterableChildren);
-                var step;
-                var ii = 0;
-                while (!(step = iterator.next()).done) {
-                  child = step.value;
-                  nextName = nextNamePrefix + getElementKey(child, ii++);
-                  subtreeCount += mapIntoArray(child, array, escapedPrefix, nextName, callback);
-                }
-              } else if (type === "object") {
-                var childrenString = String(children);
-                throw new Error("Objects are not valid as a React child (found: " + (childrenString === "[object Object]" ? "object with keys {" + Object.keys(children).join(", ") + "}" : childrenString) + "). If you meant to render a collection of children, use an array instead.");
-              }
-            }
-            return subtreeCount;
-          }
-          function mapChildren(children, func, context2) {
-            if (children == null) {
-              return children;
-            }
-            var result = [];
-            var count = 0;
-            mapIntoArray(children, result, "", "", function(child) {
-              return func.call(context2, child, count++);
-            });
-            return result;
-          }
-          function countChildren(children) {
-            var n = 0;
-            mapChildren(children, function() {
-              n++;
-            });
-            return n;
-          }
-          function forEachChildren(children, forEachFunc, forEachContext) {
-            mapChildren(children, function() {
-              forEachFunc.apply(this, arguments);
-            }, forEachContext);
-          }
-          function toArray(children) {
-            return mapChildren(children, function(child) {
-              return child;
-            }) || [];
-          }
-          function onlyChild2(children) {
-            if (!isValidElement(children)) {
-              throw new Error("React.Children.only expected to receive a single React element child.");
-            }
-            return children;
-          }
-          function createContext(defaultValue) {
-            var context2 = {
-              $$typeof: REACT_CONTEXT_TYPE,
-              _currentValue: defaultValue,
-              _currentValue2: defaultValue,
-              _threadCount: 0,
-              Provider: null,
-              Consumer: null,
-              _defaultValue: null,
-              _globalName: null
-            };
-            context2.Provider = {
-              $$typeof: REACT_PROVIDER_TYPE,
-              _context: context2
-            };
-            var hasWarnedAboutUsingNestedContextConsumers = false;
-            var hasWarnedAboutUsingConsumerProvider = false;
-            var hasWarnedAboutDisplayNameOnConsumer = false;
-            {
-              var Consumer = {
-                $$typeof: REACT_CONTEXT_TYPE,
-                _context: context2
-              };
-              Object.defineProperties(Consumer, {
-                Provider: {
-                  get: function() {
-                    if (!hasWarnedAboutUsingConsumerProvider) {
-                      hasWarnedAboutUsingConsumerProvider = true;
-                      error("Rendering <Context.Consumer.Provider> is not supported and will be removed in a future major release. Did you mean to render <Context.Provider> instead?");
-                    }
-                    return context2.Provider;
-                  },
-                  set: function(_Provider) {
-                    context2.Provider = _Provider;
-                  }
-                },
-                _currentValue: {
-                  get: function() {
-                    return context2._currentValue;
-                  },
-                  set: function(_currentValue) {
-                    context2._currentValue = _currentValue;
-                  }
-                },
-                _currentValue2: {
-                  get: function() {
-                    return context2._currentValue2;
-                  },
-                  set: function(_currentValue2) {
-                    context2._currentValue2 = _currentValue2;
-                  }
-                },
-                _threadCount: {
-                  get: function() {
-                    return context2._threadCount;
-                  },
-                  set: function(_threadCount) {
-                    context2._threadCount = _threadCount;
-                  }
-                },
-                Consumer: {
-                  get: function() {
-                    if (!hasWarnedAboutUsingNestedContextConsumers) {
-                      hasWarnedAboutUsingNestedContextConsumers = true;
-                      error("Rendering <Context.Consumer.Consumer> is not supported and will be removed in a future major release. Did you mean to render <Context.Consumer> instead?");
-                    }
-                    return context2.Consumer;
-                  }
-                },
-                displayName: {
-                  get: function() {
-                    return context2.displayName;
-                  },
-                  set: function(displayName) {
-                    if (!hasWarnedAboutDisplayNameOnConsumer) {
-                      warn3("Setting `displayName` on Context.Consumer has no effect. You should set it directly on the context with Context.displayName = '%s'.", displayName);
-                      hasWarnedAboutDisplayNameOnConsumer = true;
-                    }
-                  }
-                }
-              });
-              context2.Consumer = Consumer;
-            }
-            {
-              context2._currentRenderer = null;
-              context2._currentRenderer2 = null;
-            }
-            return context2;
-          }
-          var Uninitialized = -1;
-          var Pending = 0;
-          var Resolved = 1;
-          var Rejected = 2;
-          function lazyInitializer(payload) {
-            if (payload._status === Uninitialized) {
-              var ctor = payload._result;
-              var thenable = ctor();
-              thenable.then(function(moduleObject2) {
-                if (payload._status === Pending || payload._status === Uninitialized) {
-                  var resolved = payload;
-                  resolved._status = Resolved;
-                  resolved._result = moduleObject2;
-                }
-              }, function(error2) {
-                if (payload._status === Pending || payload._status === Uninitialized) {
-                  var rejected = payload;
-                  rejected._status = Rejected;
-                  rejected._result = error2;
-                }
-              });
-              if (payload._status === Uninitialized) {
-                var pending = payload;
-                pending._status = Pending;
-                pending._result = thenable;
-              }
-            }
-            if (payload._status === Resolved) {
-              var moduleObject = payload._result;
-              {
-                if (moduleObject === void 0) {
-                  error("lazy: Expected the result of a dynamic import() call. Instead received: %s\n\nYour code should look like: \n  const MyComponent = lazy(() => import('./MyComponent'))\n\nDid you accidentally put curly braces around the import?", moduleObject);
-                }
-              }
-              {
-                if (!("default" in moduleObject)) {
-                  error("lazy: Expected the result of a dynamic import() call. Instead received: %s\n\nYour code should look like: \n  const MyComponent = lazy(() => import('./MyComponent'))", moduleObject);
-                }
-              }
-              return moduleObject.default;
-            } else {
-              throw payload._result;
-            }
-          }
-          function lazy(ctor) {
-            var payload = {
-              _status: Uninitialized,
-              _result: ctor
-            };
-            var lazyType = {
-              $$typeof: REACT_LAZY_TYPE,
-              _payload: payload,
-              _init: lazyInitializer
-            };
-            {
-              var defaultProps;
-              var propTypes;
-              Object.defineProperties(lazyType, {
-                defaultProps: {
-                  configurable: true,
-                  get: function() {
-                    return defaultProps;
-                  },
-                  set: function(newDefaultProps) {
-                    error("React.lazy(...): It is not supported to assign `defaultProps` to a lazy component import. Either specify them where the component is defined, or create a wrapping component around it.");
-                    defaultProps = newDefaultProps;
-                    Object.defineProperty(lazyType, "defaultProps", {
-                      enumerable: true
-                    });
-                  }
-                },
-                propTypes: {
-                  configurable: true,
-                  get: function() {
-                    return propTypes;
-                  },
-                  set: function(newPropTypes) {
-                    error("React.lazy(...): It is not supported to assign `propTypes` to a lazy component import. Either specify them where the component is defined, or create a wrapping component around it.");
-                    propTypes = newPropTypes;
-                    Object.defineProperty(lazyType, "propTypes", {
-                      enumerable: true
-                    });
-                  }
-                }
-              });
-            }
-            return lazyType;
-          }
-          function forwardRef2(render) {
-            {
-              if (render != null && render.$$typeof === REACT_MEMO_TYPE) {
-                error("forwardRef requires a render function but received a `memo` component. Instead of forwardRef(memo(...)), use memo(forwardRef(...)).");
-              } else if (typeof render !== "function") {
-                error("forwardRef requires a render function but was given %s.", render === null ? "null" : typeof render);
-              } else {
-                if (render.length !== 0 && render.length !== 2) {
-                  error("forwardRef render functions accept exactly two parameters: props and ref. %s", render.length === 1 ? "Did you forget to use the ref parameter?" : "Any additional parameter will be undefined.");
-                }
-              }
-              if (render != null) {
-                if (render.defaultProps != null || render.propTypes != null) {
-                  error("forwardRef render functions do not support propTypes or defaultProps. Did you accidentally pass a React component?");
-                }
-              }
-            }
-            var elementType = {
-              $$typeof: REACT_FORWARD_REF_TYPE,
-              render
-            };
-            {
-              var ownName;
-              Object.defineProperty(elementType, "displayName", {
-                enumerable: false,
-                configurable: true,
-                get: function() {
-                  return ownName;
-                },
-                set: function(name) {
-                  ownName = name;
-                  if (!render.name && !render.displayName) {
-                    render.displayName = name;
-                  }
-                }
-              });
-            }
-            return elementType;
-          }
-          var REACT_MODULE_REFERENCE;
-          {
-            REACT_MODULE_REFERENCE = Symbol.for("react.module.reference");
-          }
-          function isValidElementType2(type) {
-            if (typeof type === "string" || typeof type === "function") {
-              return true;
-            }
-            if (type === REACT_FRAGMENT_TYPE || type === REACT_PROFILER_TYPE || enableDebugTracing || type === REACT_STRICT_MODE_TYPE || type === REACT_SUSPENSE_TYPE || type === REACT_SUSPENSE_LIST_TYPE || enableLegacyHidden || type === REACT_OFFSCREEN_TYPE || enableScopeAPI || enableCacheElement || enableTransitionTracing) {
-              return true;
-            }
-            if (typeof type === "object" && type !== null) {
-              if (type.$$typeof === REACT_LAZY_TYPE || type.$$typeof === REACT_MEMO_TYPE || type.$$typeof === REACT_PROVIDER_TYPE || type.$$typeof === REACT_CONTEXT_TYPE || type.$$typeof === REACT_FORWARD_REF_TYPE || type.$$typeof === REACT_MODULE_REFERENCE || type.getModuleId !== void 0) {
-                return true;
-              }
-            }
-            return false;
-          }
-          function memo(type, compare) {
-            {
-              if (!isValidElementType2(type)) {
-                error("memo: The first argument must be a component. Instead received: %s", type === null ? "null" : typeof type);
-              }
-            }
-            var elementType = {
-              $$typeof: REACT_MEMO_TYPE,
-              type,
-              compare: compare === void 0 ? null : compare
-            };
-            {
-              var ownName;
-              Object.defineProperty(elementType, "displayName", {
-                enumerable: false,
-                configurable: true,
-                get: function() {
-                  return ownName;
-                },
-                set: function(name) {
-                  ownName = name;
-                  if (!type.name && !type.displayName) {
-                    type.displayName = name;
-                  }
-                }
-              });
-            }
-            return elementType;
-          }
-          function resolveDispatcher() {
-            var dispatcher = ReactCurrentDispatcher.current;
-            {
-              if (dispatcher === null) {
-                error("Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:\n1. You might have mismatching versions of React and the renderer (such as React DOM)\n2. You might be breaking the Rules of Hooks\n3. You might have more than one copy of React in the same app\nSee https://reactjs.org/link/invalid-hook-call for tips about how to debug and fix this problem.");
-              }
-            }
-            return dispatcher;
-          }
-          function useContext2(Context) {
-            var dispatcher = resolveDispatcher();
-            {
-              if (Context._context !== void 0) {
-                var realContext = Context._context;
-                if (realContext.Consumer === Context) {
-                  error("Calling useContext(Context.Consumer) is not supported, may cause bugs, and will be removed in a future major release. Did you mean to call useContext(Context) instead?");
-                } else if (realContext.Provider === Context) {
-                  error("Calling useContext(Context.Provider) is not supported. Did you mean to call useContext(Context) instead?");
-                }
-              }
-            }
-            return dispatcher.useContext(Context);
-          }
-          function useState2(initialState) {
-            var dispatcher = resolveDispatcher();
-            return dispatcher.useState(initialState);
-          }
-          function useReducer(reducer, initialArg, init) {
-            var dispatcher = resolveDispatcher();
-            return dispatcher.useReducer(reducer, initialArg, init);
-          }
-          function useRef(initialValue) {
-            var dispatcher = resolveDispatcher();
-            return dispatcher.useRef(initialValue);
-          }
-          function useEffect(create, deps) {
-            var dispatcher = resolveDispatcher();
-            return dispatcher.useEffect(create, deps);
-          }
-          function useInsertionEffect(create, deps) {
-            var dispatcher = resolveDispatcher();
-            return dispatcher.useInsertionEffect(create, deps);
-          }
-          function useLayoutEffect(create, deps) {
-            var dispatcher = resolveDispatcher();
-            return dispatcher.useLayoutEffect(create, deps);
-          }
-          function useCallback(callback, deps) {
-            var dispatcher = resolveDispatcher();
-            return dispatcher.useCallback(callback, deps);
-          }
-          function useMemo(create, deps) {
-            var dispatcher = resolveDispatcher();
-            return dispatcher.useMemo(create, deps);
-          }
-          function useImperativeHandle(ref, create, deps) {
-            var dispatcher = resolveDispatcher();
-            return dispatcher.useImperativeHandle(ref, create, deps);
-          }
-          function useDebugValue(value, formatterFn) {
-            {
-              var dispatcher = resolveDispatcher();
-              return dispatcher.useDebugValue(value, formatterFn);
-            }
-          }
-          function useTransition() {
-            var dispatcher = resolveDispatcher();
-            return dispatcher.useTransition();
-          }
-          function useDeferredValue(value) {
-            var dispatcher = resolveDispatcher();
-            return dispatcher.useDeferredValue(value);
-          }
-          function useId() {
-            var dispatcher = resolveDispatcher();
-            return dispatcher.useId();
-          }
-          function useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot) {
-            var dispatcher = resolveDispatcher();
-            return dispatcher.useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
-          }
-          var disabledDepth = 0;
-          var prevLog;
-          var prevInfo;
-          var prevWarn;
-          var prevError;
-          var prevGroup;
-          var prevGroupCollapsed;
-          var prevGroupEnd;
-          function disabledLog() {
-          }
-          disabledLog.__reactDisabledLog = true;
-          function disableLogs() {
-            {
-              if (disabledDepth === 0) {
-                prevLog = console.log;
-                prevInfo = console.info;
-                prevWarn = console.warn;
-                prevError = console.error;
-                prevGroup = console.group;
-                prevGroupCollapsed = console.groupCollapsed;
-                prevGroupEnd = console.groupEnd;
-                var props = {
-                  configurable: true,
-                  enumerable: true,
-                  value: disabledLog,
-                  writable: true
-                };
-                Object.defineProperties(console, {
-                  info: props,
-                  log: props,
-                  warn: props,
-                  error: props,
-                  group: props,
-                  groupCollapsed: props,
-                  groupEnd: props
-                });
-              }
-              disabledDepth++;
-            }
-          }
-          function reenableLogs() {
-            {
-              disabledDepth--;
-              if (disabledDepth === 0) {
-                var props = {
-                  configurable: true,
-                  enumerable: true,
-                  writable: true
-                };
-                Object.defineProperties(console, {
-                  log: assign({}, props, {
-                    value: prevLog
-                  }),
-                  info: assign({}, props, {
-                    value: prevInfo
-                  }),
-                  warn: assign({}, props, {
-                    value: prevWarn
-                  }),
-                  error: assign({}, props, {
-                    value: prevError
-                  }),
-                  group: assign({}, props, {
-                    value: prevGroup
-                  }),
-                  groupCollapsed: assign({}, props, {
-                    value: prevGroupCollapsed
-                  }),
-                  groupEnd: assign({}, props, {
-                    value: prevGroupEnd
-                  })
-                });
-              }
-              if (disabledDepth < 0) {
-                error("disabledDepth fell below zero. This is a bug in React. Please file an issue.");
-              }
-            }
-          }
-          var ReactCurrentDispatcher$1 = ReactSharedInternals.ReactCurrentDispatcher;
-          var prefix2;
-          function describeBuiltInComponentFrame(name, source, ownerFn) {
-            {
-              if (prefix2 === void 0) {
-                try {
-                  throw Error();
-                } catch (x) {
-                  var match = x.stack.trim().match(/\n( *(at )?)/);
-                  prefix2 = match && match[1] || "";
-                }
-              }
-              return "\n" + prefix2 + name;
-            }
-          }
-          var reentry = false;
-          var componentFrameCache;
-          {
-            var PossiblyWeakMap = typeof WeakMap === "function" ? WeakMap : Map;
-            componentFrameCache = new PossiblyWeakMap();
-          }
-          function describeNativeComponentFrame(fn, construct) {
-            if (!fn || reentry) {
-              return "";
-            }
-            {
-              var frame = componentFrameCache.get(fn);
-              if (frame !== void 0) {
-                return frame;
-              }
-            }
-            var control;
-            reentry = true;
-            var previousPrepareStackTrace = Error.prepareStackTrace;
-            Error.prepareStackTrace = void 0;
-            var previousDispatcher;
-            {
-              previousDispatcher = ReactCurrentDispatcher$1.current;
-              ReactCurrentDispatcher$1.current = null;
-              disableLogs();
-            }
-            try {
-              if (construct) {
-                var Fake = function() {
-                  throw Error();
-                };
-                Object.defineProperty(Fake.prototype, "props", {
-                  set: function() {
-                    throw Error();
-                  }
-                });
-                if (typeof Reflect === "object" && Reflect.construct) {
-                  try {
-                    Reflect.construct(Fake, []);
-                  } catch (x) {
-                    control = x;
-                  }
-                  Reflect.construct(fn, [], Fake);
-                } else {
-                  try {
-                    Fake.call();
-                  } catch (x) {
-                    control = x;
-                  }
-                  fn.call(Fake.prototype);
-                }
-              } else {
-                try {
-                  throw Error();
-                } catch (x) {
-                  control = x;
-                }
-                fn();
-              }
-            } catch (sample) {
-              if (sample && control && typeof sample.stack === "string") {
-                var sampleLines = sample.stack.split("\n");
-                var controlLines = control.stack.split("\n");
-                var s = sampleLines.length - 1;
-                var c = controlLines.length - 1;
-                while (s >= 1 && c >= 0 && sampleLines[s] !== controlLines[c]) {
-                  c--;
-                }
-                for (; s >= 1 && c >= 0; s--, c--) {
-                  if (sampleLines[s] !== controlLines[c]) {
-                    if (s !== 1 || c !== 1) {
-                      do {
-                        s--;
-                        c--;
-                        if (c < 0 || sampleLines[s] !== controlLines[c]) {
-                          var _frame = "\n" + sampleLines[s].replace(" at new ", " at ");
-                          if (fn.displayName && _frame.includes("<anonymous>")) {
-                            _frame = _frame.replace("<anonymous>", fn.displayName);
-                          }
-                          {
-                            if (typeof fn === "function") {
-                              componentFrameCache.set(fn, _frame);
-                            }
-                          }
-                          return _frame;
-                        }
-                      } while (s >= 1 && c >= 0);
-                    }
-                    break;
-                  }
-                }
-              }
-            } finally {
-              reentry = false;
-              {
-                ReactCurrentDispatcher$1.current = previousDispatcher;
-                reenableLogs();
-              }
-              Error.prepareStackTrace = previousPrepareStackTrace;
-            }
-            var name = fn ? fn.displayName || fn.name : "";
-            var syntheticFrame = name ? describeBuiltInComponentFrame(name) : "";
-            {
-              if (typeof fn === "function") {
-                componentFrameCache.set(fn, syntheticFrame);
-              }
-            }
-            return syntheticFrame;
-          }
-          function describeFunctionComponentFrame(fn, source, ownerFn) {
-            {
-              return describeNativeComponentFrame(fn, false);
-            }
-          }
-          function shouldConstruct(Component3) {
-            var prototype = Component3.prototype;
-            return !!(prototype && prototype.isReactComponent);
-          }
-          function describeUnknownElementTypeFrameInDEV(type, source, ownerFn) {
-            if (type == null) {
-              return "";
-            }
-            if (typeof type === "function") {
-              {
-                return describeNativeComponentFrame(type, shouldConstruct(type));
-              }
-            }
-            if (typeof type === "string") {
-              return describeBuiltInComponentFrame(type);
-            }
-            switch (type) {
-              case REACT_SUSPENSE_TYPE:
-                return describeBuiltInComponentFrame("Suspense");
-              case REACT_SUSPENSE_LIST_TYPE:
-                return describeBuiltInComponentFrame("SuspenseList");
-            }
-            if (typeof type === "object") {
-              switch (type.$$typeof) {
-                case REACT_FORWARD_REF_TYPE:
-                  return describeFunctionComponentFrame(type.render);
-                case REACT_MEMO_TYPE:
-                  return describeUnknownElementTypeFrameInDEV(type.type, source, ownerFn);
-                case REACT_LAZY_TYPE: {
-                  var lazyComponent = type;
-                  var payload = lazyComponent._payload;
-                  var init = lazyComponent._init;
-                  try {
-                    return describeUnknownElementTypeFrameInDEV(init(payload), source, ownerFn);
-                  } catch (x) {
-                  }
-                }
-              }
-            }
-            return "";
-          }
-          var loggedTypeFailures = {};
-          var ReactDebugCurrentFrame$1 = ReactSharedInternals.ReactDebugCurrentFrame;
-          function setCurrentlyValidatingElement(element) {
-            {
-              if (element) {
-                var owner = element._owner;
-                var stack = describeUnknownElementTypeFrameInDEV(element.type, element._source, owner ? owner.type : null);
-                ReactDebugCurrentFrame$1.setExtraStackFrame(stack);
-              } else {
-                ReactDebugCurrentFrame$1.setExtraStackFrame(null);
-              }
-            }
-          }
-          function checkPropTypes(typeSpecs, values, location, componentName, element) {
-            {
-              var has = Function.call.bind(hasOwnProperty);
-              for (var typeSpecName in typeSpecs) {
-                if (has(typeSpecs, typeSpecName)) {
-                  var error$1 = void 0;
-                  try {
-                    if (typeof typeSpecs[typeSpecName] !== "function") {
-                      var err = Error((componentName || "React class") + ": " + location + " type `" + typeSpecName + "` is invalid; it must be a function, usually from the `prop-types` package, but received `" + typeof typeSpecs[typeSpecName] + "`.This often happens because of typos such as `PropTypes.function` instead of `PropTypes.func`.");
-                      err.name = "Invariant Violation";
-                      throw err;
-                    }
-                    error$1 = typeSpecs[typeSpecName](values, typeSpecName, componentName, location, null, "SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED");
-                  } catch (ex) {
-                    error$1 = ex;
-                  }
-                  if (error$1 && !(error$1 instanceof Error)) {
-                    setCurrentlyValidatingElement(element);
-                    error("%s: type specification of %s `%s` is invalid; the type checker function must return `null` or an `Error` but returned a %s. You may have forgotten to pass an argument to the type checker creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and shape all require an argument).", componentName || "React class", location, typeSpecName, typeof error$1);
-                    setCurrentlyValidatingElement(null);
-                  }
-                  if (error$1 instanceof Error && !(error$1.message in loggedTypeFailures)) {
-                    loggedTypeFailures[error$1.message] = true;
-                    setCurrentlyValidatingElement(element);
-                    error("Failed %s type: %s", location, error$1.message);
-                    setCurrentlyValidatingElement(null);
-                  }
-                }
-              }
-            }
-          }
-          function setCurrentlyValidatingElement$1(element) {
-            {
-              if (element) {
-                var owner = element._owner;
-                var stack = describeUnknownElementTypeFrameInDEV(element.type, element._source, owner ? owner.type : null);
-                setExtraStackFrame(stack);
-              } else {
-                setExtraStackFrame(null);
-              }
-            }
-          }
-          var propTypesMisspellWarningShown;
-          {
-            propTypesMisspellWarningShown = false;
-          }
-          function getDeclarationErrorAddendum() {
-            if (ReactCurrentOwner.current) {
-              var name = getComponentNameFromType(ReactCurrentOwner.current.type);
-              if (name) {
-                return "\n\nCheck the render method of `" + name + "`.";
-              }
-            }
-            return "";
-          }
-          function getSourceInfoErrorAddendum(source) {
-            if (source !== void 0) {
-              var fileName = source.fileName.replace(/^.*[\\\/]/, "");
-              var lineNumber = source.lineNumber;
-              return "\n\nCheck your code at " + fileName + ":" + lineNumber + ".";
-            }
-            return "";
-          }
-          function getSourceInfoErrorAddendumForProps(elementProps) {
-            if (elementProps !== null && elementProps !== void 0) {
-              return getSourceInfoErrorAddendum(elementProps.__source);
-            }
-            return "";
-          }
-          var ownerHasKeyUseWarning = {};
-          function getCurrentComponentErrorInfo(parentType) {
-            var info = getDeclarationErrorAddendum();
-            if (!info) {
-              var parentName = typeof parentType === "string" ? parentType : parentType.displayName || parentType.name;
-              if (parentName) {
-                info = "\n\nCheck the top-level render call using <" + parentName + ">.";
-              }
-            }
-            return info;
-          }
-          function validateExplicitKey(element, parentType) {
-            if (!element._store || element._store.validated || element.key != null) {
-              return;
-            }
-            element._store.validated = true;
-            var currentComponentErrorInfo = getCurrentComponentErrorInfo(parentType);
-            if (ownerHasKeyUseWarning[currentComponentErrorInfo]) {
-              return;
-            }
-            ownerHasKeyUseWarning[currentComponentErrorInfo] = true;
-            var childOwner = "";
-            if (element && element._owner && element._owner !== ReactCurrentOwner.current) {
-              childOwner = " It was passed a child from " + getComponentNameFromType(element._owner.type) + ".";
-            }
-            {
-              setCurrentlyValidatingElement$1(element);
-              error('Each child in a list should have a unique "key" prop.%s%s See https://reactjs.org/link/warning-keys for more information.', currentComponentErrorInfo, childOwner);
-              setCurrentlyValidatingElement$1(null);
-            }
-          }
-          function validateChildKeys(node, parentType) {
-            if (typeof node !== "object") {
-              return;
-            }
-            if (isArray(node)) {
-              for (var i = 0; i < node.length; i++) {
-                var child = node[i];
-                if (isValidElement(child)) {
-                  validateExplicitKey(child, parentType);
-                }
-              }
-            } else if (isValidElement(node)) {
-              if (node._store) {
-                node._store.validated = true;
-              }
-            } else if (node) {
-              var iteratorFn = getIteratorFn(node);
-              if (typeof iteratorFn === "function") {
-                if (iteratorFn !== node.entries) {
-                  var iterator = iteratorFn.call(node);
-                  var step;
-                  while (!(step = iterator.next()).done) {
-                    if (isValidElement(step.value)) {
-                      validateExplicitKey(step.value, parentType);
-                    }
-                  }
-                }
-              }
-            }
-          }
-          function validatePropTypes(element) {
-            {
-              var type = element.type;
-              if (type === null || type === void 0 || typeof type === "string") {
-                return;
-              }
-              var propTypes;
-              if (typeof type === "function") {
-                propTypes = type.propTypes;
-              } else if (typeof type === "object" && (type.$$typeof === REACT_FORWARD_REF_TYPE || type.$$typeof === REACT_MEMO_TYPE)) {
-                propTypes = type.propTypes;
-              } else {
-                return;
-              }
-              if (propTypes) {
-                var name = getComponentNameFromType(type);
-                checkPropTypes(propTypes, element.props, "prop", name, element);
-              } else if (type.PropTypes !== void 0 && !propTypesMisspellWarningShown) {
-                propTypesMisspellWarningShown = true;
-                var _name = getComponentNameFromType(type);
-                error("Component %s declared `PropTypes` instead of `propTypes`. Did you misspell the property assignment?", _name || "Unknown");
-              }
-              if (typeof type.getDefaultProps === "function" && !type.getDefaultProps.isReactClassApproved) {
-                error("getDefaultProps is only used on classic React.createClass definitions. Use a static property named `defaultProps` instead.");
-              }
-            }
-          }
-          function validateFragmentProps(fragment) {
-            {
-              var keys = Object.keys(fragment.props);
-              for (var i = 0; i < keys.length; i++) {
-                var key = keys[i];
-                if (key !== "children" && key !== "key") {
-                  setCurrentlyValidatingElement$1(fragment);
-                  error("Invalid prop `%s` supplied to `React.Fragment`. React.Fragment can only have `key` and `children` props.", key);
-                  setCurrentlyValidatingElement$1(null);
-                  break;
-                }
-              }
-              if (fragment.ref !== null) {
-                setCurrentlyValidatingElement$1(fragment);
-                error("Invalid attribute `ref` supplied to `React.Fragment`.");
-                setCurrentlyValidatingElement$1(null);
-              }
-            }
-          }
-          function createElementWithValidation(type, props, children) {
-            var validType = isValidElementType2(type);
-            if (!validType) {
-              var info = "";
-              if (type === void 0 || typeof type === "object" && type !== null && Object.keys(type).length === 0) {
-                info += " You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports.";
-              }
-              var sourceInfo = getSourceInfoErrorAddendumForProps(props);
-              if (sourceInfo) {
-                info += sourceInfo;
-              } else {
-                info += getDeclarationErrorAddendum();
-              }
-              var typeString;
-              if (type === null) {
-                typeString = "null";
-              } else if (isArray(type)) {
-                typeString = "array";
-              } else if (type !== void 0 && type.$$typeof === REACT_ELEMENT_TYPE) {
-                typeString = "<" + (getComponentNameFromType(type.type) || "Unknown") + " />";
-                info = " Did you accidentally export a JSX literal instead of a component?";
-              } else {
-                typeString = typeof type;
-              }
-              {
-                error("React.createElement: type is invalid -- expected a string (for built-in components) or a class/function (for composite components) but got: %s.%s", typeString, info);
-              }
-            }
-            var element = createElement12.apply(this, arguments);
-            if (element == null) {
-              return element;
-            }
-            if (validType) {
-              for (var i = 2; i < arguments.length; i++) {
-                validateChildKeys(arguments[i], type);
-              }
-            }
-            if (type === REACT_FRAGMENT_TYPE) {
-              validateFragmentProps(element);
-            } else {
-              validatePropTypes(element);
-            }
-            return element;
-          }
-          var didWarnAboutDeprecatedCreateFactory = false;
-          function createFactoryWithValidation(type) {
-            var validatedFactory = createElementWithValidation.bind(null, type);
-            validatedFactory.type = type;
-            {
-              if (!didWarnAboutDeprecatedCreateFactory) {
-                didWarnAboutDeprecatedCreateFactory = true;
-                warn3("React.createFactory() is deprecated and will be removed in a future major release. Consider using JSX or use React.createElement() directly instead.");
-              }
-              Object.defineProperty(validatedFactory, "type", {
-                enumerable: false,
-                get: function() {
-                  warn3("Factory.type is deprecated. Access the class directly before passing it to createFactory.");
-                  Object.defineProperty(this, "type", {
-                    value: type
-                  });
-                  return type;
-                }
-              });
-            }
-            return validatedFactory;
-          }
-          function cloneElementWithValidation(element, props, children) {
-            var newElement = cloneElement.apply(this, arguments);
-            for (var i = 2; i < arguments.length; i++) {
-              validateChildKeys(arguments[i], newElement.type);
-            }
-            validatePropTypes(newElement);
-            return newElement;
-          }
-          function startTransition(scope, options) {
-            var prevTransition = ReactCurrentBatchConfig.transition;
-            ReactCurrentBatchConfig.transition = {};
-            var currentTransition = ReactCurrentBatchConfig.transition;
-            {
-              ReactCurrentBatchConfig.transition._updatedFibers = /* @__PURE__ */ new Set();
-            }
-            try {
-              scope();
-            } finally {
-              ReactCurrentBatchConfig.transition = prevTransition;
-              {
-                if (prevTransition === null && currentTransition._updatedFibers) {
-                  var updatedFibersCount = currentTransition._updatedFibers.size;
-                  if (updatedFibersCount > 10) {
-                    warn3("Detected a large number of updates inside startTransition. If this is due to a subscription please re-write it to use React provided hooks. Otherwise concurrent mode guarantees are off the table.");
-                  }
-                  currentTransition._updatedFibers.clear();
-                }
-              }
-            }
-          }
-          var didWarnAboutMessageChannel = false;
-          var enqueueTaskImpl = null;
-          function enqueueTask(task) {
-            if (enqueueTaskImpl === null) {
-              try {
-                var requireString = ("require" + Math.random()).slice(0, 7);
-                var nodeRequire = module && module[requireString];
-                enqueueTaskImpl = nodeRequire.call(module, "timers").setImmediate;
-              } catch (_err) {
-                enqueueTaskImpl = function(callback) {
-                  {
-                    if (didWarnAboutMessageChannel === false) {
-                      didWarnAboutMessageChannel = true;
-                      if (typeof MessageChannel === "undefined") {
-                        error("This browser does not have a MessageChannel implementation, so enqueuing tasks via await act(async () => ...) will fail. Please file an issue at https://github.com/facebook/react/issues if you encounter this warning.");
-                      }
-                    }
-                  }
-                  var channel = new MessageChannel();
-                  channel.port1.onmessage = callback;
-                  channel.port2.postMessage(void 0);
-                };
-              }
-            }
-            return enqueueTaskImpl(task);
-          }
-          var actScopeDepth = 0;
-          var didWarnNoAwaitAct = false;
-          function act(callback) {
-            {
-              var prevActScopeDepth = actScopeDepth;
-              actScopeDepth++;
-              if (ReactCurrentActQueue.current === null) {
-                ReactCurrentActQueue.current = [];
-              }
-              var prevIsBatchingLegacy = ReactCurrentActQueue.isBatchingLegacy;
-              var result;
-              try {
-                ReactCurrentActQueue.isBatchingLegacy = true;
-                result = callback();
-                if (!prevIsBatchingLegacy && ReactCurrentActQueue.didScheduleLegacyUpdate) {
-                  var queue = ReactCurrentActQueue.current;
-                  if (queue !== null) {
-                    ReactCurrentActQueue.didScheduleLegacyUpdate = false;
-                    flushActQueue(queue);
-                  }
-                }
-              } catch (error2) {
-                popActScope(prevActScopeDepth);
-                throw error2;
-              } finally {
-                ReactCurrentActQueue.isBatchingLegacy = prevIsBatchingLegacy;
-              }
-              if (result !== null && typeof result === "object" && typeof result.then === "function") {
-                var thenableResult = result;
-                var wasAwaited = false;
-                var thenable = {
-                  then: function(resolve, reject) {
-                    wasAwaited = true;
-                    thenableResult.then(function(returnValue2) {
-                      popActScope(prevActScopeDepth);
-                      if (actScopeDepth === 0) {
-                        recursivelyFlushAsyncActWork(returnValue2, resolve, reject);
-                      } else {
-                        resolve(returnValue2);
-                      }
-                    }, function(error2) {
-                      popActScope(prevActScopeDepth);
-                      reject(error2);
-                    });
-                  }
-                };
-                {
-                  if (!didWarnNoAwaitAct && typeof Promise !== "undefined") {
-                    Promise.resolve().then(function() {
-                    }).then(function() {
-                      if (!wasAwaited) {
-                        didWarnNoAwaitAct = true;
-                        error("You called act(async () => ...) without await. This could lead to unexpected testing behaviour, interleaving multiple act calls and mixing their scopes. You should - await act(async () => ...);");
-                      }
-                    });
-                  }
-                }
-                return thenable;
-              } else {
-                var returnValue = result;
-                popActScope(prevActScopeDepth);
-                if (actScopeDepth === 0) {
-                  var _queue = ReactCurrentActQueue.current;
-                  if (_queue !== null) {
-                    flushActQueue(_queue);
-                    ReactCurrentActQueue.current = null;
-                  }
-                  var _thenable = {
-                    then: function(resolve, reject) {
-                      if (ReactCurrentActQueue.current === null) {
-                        ReactCurrentActQueue.current = [];
-                        recursivelyFlushAsyncActWork(returnValue, resolve, reject);
-                      } else {
-                        resolve(returnValue);
-                      }
-                    }
-                  };
-                  return _thenable;
-                } else {
-                  var _thenable2 = {
-                    then: function(resolve, reject) {
-                      resolve(returnValue);
-                    }
-                  };
-                  return _thenable2;
-                }
-              }
-            }
-          }
-          function popActScope(prevActScopeDepth) {
-            {
-              if (prevActScopeDepth !== actScopeDepth - 1) {
-                error("You seem to have overlapping act() calls, this is not supported. Be sure to await previous act() calls before making a new one. ");
-              }
-              actScopeDepth = prevActScopeDepth;
-            }
-          }
-          function recursivelyFlushAsyncActWork(returnValue, resolve, reject) {
-            {
-              var queue = ReactCurrentActQueue.current;
-              if (queue !== null) {
-                try {
-                  flushActQueue(queue);
-                  enqueueTask(function() {
-                    if (queue.length === 0) {
-                      ReactCurrentActQueue.current = null;
-                      resolve(returnValue);
-                    } else {
-                      recursivelyFlushAsyncActWork(returnValue, resolve, reject);
-                    }
-                  });
-                } catch (error2) {
-                  reject(error2);
-                }
-              } else {
-                resolve(returnValue);
-              }
-            }
-          }
-          var isFlushing = false;
-          function flushActQueue(queue) {
-            {
-              if (!isFlushing) {
-                isFlushing = true;
-                var i = 0;
-                try {
-                  for (; i < queue.length; i++) {
-                    var callback = queue[i];
-                    do {
-                      callback = callback(true);
-                    } while (callback !== null);
-                  }
-                  queue.length = 0;
-                } catch (error2) {
-                  queue = queue.slice(i + 1);
-                  throw error2;
-                } finally {
-                  isFlushing = false;
-                }
-              }
-            }
-          }
-          var createElement$1 = createElementWithValidation;
-          var cloneElement$1 = cloneElementWithValidation;
-          var createFactory = createFactoryWithValidation;
-          var Children = {
-            map: mapChildren,
-            forEach: forEachChildren,
-            count: countChildren,
-            toArray,
-            only: onlyChild2
-          };
-          exports.Children = Children;
-          exports.Component = Component2;
-          exports.Fragment = REACT_FRAGMENT_TYPE;
-          exports.Profiler = REACT_PROFILER_TYPE;
-          exports.PureComponent = PureComponent;
-          exports.StrictMode = REACT_STRICT_MODE_TYPE;
-          exports.Suspense = REACT_SUSPENSE_TYPE;
-          exports.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED = ReactSharedInternals;
-          exports.cloneElement = cloneElement$1;
-          exports.createContext = createContext;
-          exports.createElement = createElement$1;
-          exports.createFactory = createFactory;
-          exports.createRef = createRef;
-          exports.forwardRef = forwardRef2;
-          exports.isValidElement = isValidElement;
-          exports.lazy = lazy;
-          exports.memo = memo;
-          exports.startTransition = startTransition;
-          exports.unstable_act = act;
-          exports.useCallback = useCallback;
-          exports.useContext = useContext2;
-          exports.useDebugValue = useDebugValue;
-          exports.useDeferredValue = useDeferredValue;
-          exports.useEffect = useEffect;
-          exports.useId = useId;
-          exports.useImperativeHandle = useImperativeHandle;
-          exports.useInsertionEffect = useInsertionEffect;
-          exports.useLayoutEffect = useLayoutEffect;
-          exports.useMemo = useMemo;
-          exports.useReducer = useReducer;
-          exports.useRef = useRef;
-          exports.useState = useState2;
-          exports.useSyncExternalStore = useSyncExternalStore;
-          exports.useTransition = useTransition;
-          exports.version = ReactVersion;
-          if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop === "function") {
-            __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop(new Error());
-          }
-        })();
-      }
-    }
-  });
-
-  // ../packages/react/node_modules/react/index.js
-  var require_react2 = __commonJS({
-    "../packages/react/node_modules/react/index.js"(exports, module) {
-      "use strict";
-      if (false) {
-        module.exports = null;
-      } else {
-        module.exports = require_react_development2();
-      }
-    }
-  });
-
   // src/client/_app.tsx
-  var React15 = __toESM(require_react());
+  var React21 = __toESM(require_react());
   var ReactDOM = __toESM(require_react_dom());
 
   // ../node_modules/@babel/runtime/helpers/esm/setPrototypeOf.js
@@ -27030,6 +27030,19 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     };
   }
   var useContext = import_react2.default.useContext;
+  function useHistory() {
+    if (true) {
+      !(typeof useContext === "function") ? true ? invariant(false, "You must use React >= 16.8 in order to use useHistory()") : invariant(false) : void 0;
+    }
+    return useContext(historyContext);
+  }
+  function useParams() {
+    if (true) {
+      !(typeof useContext === "function") ? true ? invariant(false, "You must use React >= 16.8 in order to use useParams()") : invariant(false) : void 0;
+    }
+    var match = useContext(context).match;
+    return match ? match.params : {};
+  }
   if (true) {
     if (typeof window !== "undefined") {
       global2 = window;
@@ -27272,11 +27285,10 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   var ariaCurrentType;
 
   // src/client/router/Router.tsx
-  var React14 = __toESM(require_react());
+  var React20 = __toESM(require_react());
 
-  // src/client/pages/AdminPage.tsx
-  var import_axios = __toESM(require_axios2());
-  var React7 = __toESM(require_react());
+  // src/client/pages/HomePage.tsx
+  var React15 = __toESM(require_react());
 
   // ../node_modules/react-helmet/es/Helmet.js
   var import_prop_types4 = __toESM(require_prop_types());
@@ -27979,245 +27991,553 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   var HelmetExport = Helmet(HelmetSideEffects);
   HelmetExport.renderStatic = HelmetExport.rewind;
 
-  // src/client/components/DynamicRendering.tsx
-  var React6 = __toESM(require_react());
+  // src/client/components/HeaderNavbar.tsx
+  var React14 = __toESM(require_react());
 
-  // src/client/components/StaticRendering.tsx
-  var React5 = __toESM(require_react());
+  // ../packages/react/lib/atoms/ButtonPrimary/ButtonPrimary.js
+  var React5 = __toESM(require_react2());
+  var ButtonPrimary = ({ label }) => {
+    const className = "dsmeli-button-container";
+    return React5.createElement("button", { className, tabIndex: -1 }, label);
+  };
+
+  // ../packages/react/lib/atoms/Image/Image.js
+  var React6 = __toESM(require_react2());
+  var Image = ({ src, thumb, alt = "", width = "", height = "" }) => {
+    const className = "dsmeli-image-container";
+    const handler = (e) => {
+      const url = new URL(e.target.src);
+      if (url.pathname === thumb) {
+        e.target.src = src;
+      }
+    };
+    return React6.createElement(
+      React6.Fragment,
+      null,
+      React6.createElement("img", { onLoad: (e) => handler(e), className, alt, height, width, src: thumb })
+    );
+  };
+
+  // ../packages/react/lib/atoms/InputSearch/InputSearch.js
+  var React7 = __toESM(require_react2());
+  var InputSearch = ({ placeholder = "", value, ariaLabel, tabIndex }) => {
+    const className = "dsmeli-inputsearch";
+    return React7.createElement("input", { defaultValue: value, className, placeholder, "aria-label": ariaLabel, maxLength: 120, tabIndex });
+  };
+
+  // ../packages/react/lib/atoms/Margin/Margin.js
+  var import_react5 = __toESM(require_react2());
+
+  // ../packages/react/lib/atoms/Text/Text.js
+  var React8 = __toESM(require_react2());
+
+  // ../packages/foundation/lib/Spacing.js
+  var spaces = {
+    xxxs: "xxxs",
+    xxs: "xxs",
+    xs: "xs",
+    sm: "sm",
+    md: "md",
+    lg: "lg",
+    xl: "xl",
+    xxl: "xxl",
+    xxxl: "xxxl"
+  };
+  var Spacing_default = Object.freeze(spaces);
+
+  // ../packages/foundation/lib/FontSize.js
+  var fontSizes = {
+    xs: "xs",
+    sm: "sm",
+    base: "base",
+    lg: "lg",
+    xl: "xl"
+  };
+  var FontSize_default = Object.freeze(fontSizes);
+
+  // ../packages/react/lib/molecules/SearchForm/SearchForm.js
+  var React9 = __toESM(require_react2());
+  var SearchForm = ({ placeholder, value, ariaLabel, tabIndex, handleSubmit }) => {
+    const className = "dsmeli-searchform-container";
+    return React9.createElement(
+      "div",
+      { className },
+      React9.createElement(
+        "form",
+        { onSubmit: (e) => handleSubmit(e) },
+        React9.createElement(InputSearch, { value, placeholder, ariaLabel, tabIndex }),
+        React9.createElement(
+          "button",
+          { type: "submit", className: "dsmeli-searchform-submit", "aria-label": "Buscar", tabIndex: -1 },
+          React9.createElement(Image, { src: "/assets/ic_Search@2x.png.png.png", thumb: "/assets/ic_Search.png" })
+        )
+      )
+    );
+  };
+
+  // ../packages/react/lib/organisms/Navbar/Navbar.js
+  var React10 = __toESM(require_react2());
+  var Navbar = ({ logoUrl, logoSrc, logoThumb, placeholder = "Placeholder", value, ariaLabel = "Ingresar texto", handleSubmit }) => {
+    return React10.createElement(
+      "div",
+      { className: "dsmeli-navbar-container" },
+      React10.createElement(
+        "div",
+        { className: "container" },
+        React10.createElement(
+          "div",
+          { className: "row" },
+          React10.createElement("div", { className: "col-0-md col-1-lg" }),
+          React10.createElement(
+            "div",
+            { className: "col-1-md" },
+            React10.createElement(
+              "a",
+              { className: "dsmeli-navbar-logo", href: logoUrl, tabIndex: 1 },
+              React10.createElement(Image, { src: logoSrc, thumb: logoThumb, height: 36, width: 53, alt: "Mercado Libre Argentina - Donde comprar y vender de todo. Click para volver al inicio." })
+            )
+          ),
+          React10.createElement(
+            "div",
+            { className: "col-9-md" },
+            React10.createElement(SearchForm, { value, placeholder, ariaLabel, handleSubmit, tabIndex: 2 })
+          ),
+          React10.createElement("div", { className: "col-0-md col-1-lg" })
+        )
+      )
+    );
+  };
+
+  // ../packages/react/lib/organisms/ItemsResult/ItemsResult.js
+  var React12 = __toESM(require_react2());
+
+  // ../packages/react/lib/atoms/Breadcrumb/Breadcrumb.js
+  var React11 = __toESM(require_react2());
+  var Breadcrumb = ({ items }) => {
+    return React11.createElement(
+      "nav",
+      { className: "dsmeli-breadcrumb-container" },
+      React11.createElement("ol", { className: "dsmeli-breadcrumb" }, items.map((item, index2) => {
+        return React11.createElement(
+          "li",
+          { className: "dsmeli-breadcrumb__item", key: `breadcrum-${index2}` },
+          React11.createElement("span", { className: `dsmeli-breadcrumb__link ${index2 === items.length - 1 && "dsmeli-breadcrum__strong"}` }, item),
+          index2 !== 0 && index2 !== items.length && React11.createElement(
+            "div",
+            { className: "dsmeli-breadcrumb__chevron" },
+            React11.createElement(
+              "svg",
+              { xmlns: "http://www.w3.org/2000/svg", width: "6", height: "8" },
+              React11.createElement("path", { fill: "none", stroke: "#666", d: "M1 0l4 4-4 4" })
+            )
+          )
+        );
+      }))
+    );
+  };
+
+  // ../packages/react/lib/organisms/ItemsResult/ItemsResult.js
+  var ItemsResult = ({ resItems }) => {
+    let categoryText = "Las categor\xEDas de esta secci\xF3n son: ";
+    resItems.categories.forEach((categoria) => {
+      categoryText = `${categoryText} ${categoria}; `;
+    });
+    return React12.createElement(
+      "section",
+      { className: "dsmeli-itemsresult-container" },
+      React12.createElement(
+        "div",
+        { className: "container" },
+        React12.createElement(
+          "div",
+          { className: "row" },
+          React12.createElement("div", { className: "col-1-md" }),
+          React12.createElement(
+            "div",
+            { className: "col-10-md", tabIndex: 3, "aria-label": categoryText },
+            React12.createElement(Breadcrumb, { items: resItems.categories })
+          ),
+          React12.createElement("div", { className: "col-1-md" })
+        ),
+        React12.createElement(
+          "div",
+          { className: "row" },
+          React12.createElement("div", { className: "col-0-md col-1-lg" }),
+          React12.createElement(
+            "div",
+            { className: "col-10-md" },
+            React12.createElement("ol", { className: "container-elements" }, resItems.items.map((item, index2) => {
+              const itemId = item.id;
+              const itemPrice = item.price.amount.toLocaleString("es-ar", {
+                style: "currency",
+                currency: "ARS",
+                minimumFractionDigits: 2
+              });
+              const itemAddress = item?.address;
+              return React12.createElement(
+                "li",
+                { className: "dsmeli-product__list", key: `item-${index2}` },
+                React12.createElement(
+                  "a",
+                  { href: `/items/${itemId}`, className: "dsmeli-productli__image_a", title: item.title, tabIndex: index2 + 3 },
+                  React12.createElement(Image, { src: item.picture, thumb: item.picture, height: 180, width: 180 })
+                ),
+                React12.createElement(
+                  "div",
+                  { className: "dsmeli-productli__body" },
+                  React12.createElement(
+                    "a",
+                    { className: "dsmeli-productli__title_a", href: `/items/${itemId}`, tabIndex: -1 },
+                    React12.createElement("h2", { className: "dsmeli-productli__title" }, item.title)
+                  ),
+                  React12.createElement("p", { className: "dsmeli-productli__price", tabIndex: index2 + 3, "aria-label": `El precio es: ${itemPrice} pesos` }, itemPrice.toString().split(",")[0])
+                ),
+                React12.createElement(
+                  "div",
+                  { className: "dsmeli-productli__ubi" },
+                  React12.createElement("p", { className: "dsmeli-productli__address", tabIndex: index2 + 3, "aria-label": `El producto se encuentra en: ${itemAddress}` }, itemAddress)
+                )
+              );
+            }))
+          ),
+          React12.createElement("div", { className: "col-1-md" })
+        )
+      )
+    );
+  };
+
+  // ../packages/react/lib/organisms/ItemIdResult/ItemIdResult.js
+  var React13 = __toESM(require_react2());
+  var ItemIdResult = ({ resItem }) => {
+    const item = resItem.item;
+    const itemPriceNumber = item.price.amount.toLocaleString("es-ar", {
+      style: "currency",
+      currency: "ARS",
+      minimumFractionDigits: 2
+    });
+    const categories = resItem.item.path_from_root.map((itemCat) => {
+      return itemCat.name;
+    });
+    let itemCondition = "";
+    if (item.condition === "new") {
+      itemCondition = "Nuevo";
+    }
+    if (item.condition === "used") {
+      itemCondition = "Usado";
+    }
+    let categoryText = "Las categor\xEDas de esta secci\xF3n son: ";
+    categories.forEach((categoria) => {
+      categoryText = `${categoryText} ${categoria}; `;
+    });
+    return React13.createElement(
+      "section",
+      { className: "dsmeli-itemidresult-container" },
+      React13.createElement(
+        "div",
+        { className: "container" },
+        React13.createElement(
+          "div",
+          { className: "row" },
+          React13.createElement("div", { className: "col-1-md" }),
+          React13.createElement(
+            "div",
+            { className: "col-10-md", tabIndex: 3, "aria-label": categoryText },
+            React13.createElement(Breadcrumb, { items: categories })
+          ),
+          React13.createElement("div", { className: "col-1-md" })
+        ),
+        React13.createElement(
+          "div",
+          { className: "row" },
+          React13.createElement("div", { className: "col-0-md col-1-lg" }),
+          React13.createElement(
+            "div",
+            { className: "col-10-md" },
+            React13.createElement(
+              "div",
+              { className: "container-elements" },
+              React13.createElement(
+                "div",
+                { className: "dsmeli-product__id" },
+                React13.createElement(
+                  "div",
+                  { className: "dsmeli-productid__image_container", "aria-label": item.title, tabIndex: 4 },
+                  React13.createElement(Image, { src: item.picture, thumb: item.picture })
+                ),
+                React13.createElement(
+                  "div",
+                  { className: "dsmeli-productid__body" },
+                  React13.createElement(
+                    "p",
+                    { className: "dsmeli-productid__status", tabIndex: 5, "aria-label": `El producto es: ${itemCondition}. Cantidad vendida: ${item.sold_quantity}` },
+                    itemCondition,
+                    " - ",
+                    item.sold_quantity,
+                    " vendidos"
+                  ),
+                  React13.createElement(
+                    "div",
+                    { className: "dsmeli-productid__title_a" },
+                    React13.createElement("h1", { className: "dsmeli-productid__title" }, item.title)
+                  ),
+                  React13.createElement("p", { className: "dsmeli-productid__price", tabIndex: 6, "aria-label": `El precio es: ${itemPriceNumber} pesos` }, item.price.amount.toLocaleString("es-ar", {
+                    style: "currency",
+                    currency: "ARS",
+                    minimumFractionDigits: 2
+                  }).split(",")[0]),
+                  React13.createElement(
+                    "div",
+                    { tabIndex: 7, "aria-label": "Para comprar, click aqu\xED" },
+                    React13.createElement(ButtonPrimary, { label: "Comprar" })
+                  )
+                )
+              ),
+              React13.createElement(
+                "div",
+                { className: "dsmeli-product__desc_container" },
+                React13.createElement("h2", { className: "dsmeli-product__subtitle", tabIndex: 7 }, "Descripci\xF3n del producto"),
+                React13.createElement("p", { className: "dsmeli-product__description", tabIndex: 8 }, item.description)
+              )
+            )
+          ),
+          React13.createElement("div", { className: "col-1-md" })
+        )
+      )
+    );
+  };
+
+  // src/client/components/HeaderNavbar.tsx
+  var HeaderNavbar = ({ query }) => {
+    const history = useHistory();
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      const query2 = e.target.querySelector("input").value;
+      console.log(query2);
+      if (query2.length > 1) {
+        history.push(`/${query2}`);
+      }
+    };
+    return /* @__PURE__ */ React14.createElement(Navbar, {
+      value: query,
+      logoUrl: "/",
+      logoSrc: "/assets/Logo_ML@2x.png.png.png",
+      logoThumb: "/assets/Logo_ML.png",
+      placeholder: "Nunca dejes de buscar",
+      ariaLabel: "Ingresa lo que quieras encontrar",
+      handleSubmit
+    });
+  };
+  var HeaderNavbar_default = HeaderNavbar;
+
+  // src/client/pages/HomePage.tsx
+  var Home = () => {
+    return /* @__PURE__ */ React15.createElement(React15.Fragment, null, /* @__PURE__ */ React15.createElement(HelmetExport, null, /* @__PURE__ */ React15.createElement("title", null, "Mercado Libre Argentina - Env\xEDos gratis en el d\xEDa"), /* @__PURE__ */ React15.createElement("meta", {
+      name: "description",
+      content: "Compr\xE1 productos con Env\xEDo Gratis en el d\xEDa en Mercado Libre Argentina. Encontr\xE1 miles de marcas y productos a precios incre\xEDbles.",
+      "data-head-react": "true"
+    }), /* @__PURE__ */ React15.createElement("meta", {
+      name: "keywords",
+      content: "veh\xEDculos, inmueble, supermercado, tecnolog\xEDa, hogar y muebles, electrodom\xE9sticos, herramientas, construcci\xF3n"
+    }), /* @__PURE__ */ React15.createElement("meta", {
+      property: "og:title",
+      content: "Mercado Libre Argentina - Env\xEDos gratis en el d\xEDa"
+    }), /* @__PURE__ */ React15.createElement("meta", {
+      property: "og:image",
+      content: "https://http2.mlstatic.com/static/org-img/homesnw/mercado-libre.png?v=2",
+      "data-head-react": "true"
+    }), /* @__PURE__ */ React15.createElement("meta", {
+      name: "google-site-verification",
+      content: "eLTYYI8nc5Fnsl6MUIz18z_ZWCnNemC0PNIx7Q1p_qQ",
+      "data-head-react": "true"
+    })), /* @__PURE__ */ React15.createElement("header", {
+      role: "banner"
+    }, /* @__PURE__ */ React15.createElement(HeaderNavbar_default, {
+      query: ""
+    })), /* @__PURE__ */ React15.createElement("main", null));
+  };
+  var HomePage_default = {
+    component: Home
+  };
+
+  // src/client/pages/ItemPage.tsx
+  var React18 = __toESM(require_react());
+  var import_axios = __toESM(require_axios2());
+
+  // src/client/hooks/DynamicRendering.tsx
+  var React17 = __toESM(require_react());
+
+  // src/client/hooks/StaticRendering.tsx
+  var React16 = __toESM(require_react());
   var StaticRendering = ({ children }) => {
     if (typeof window === "undefined") {
-      return /* @__PURE__ */ React5.createElement("div", null, children);
+      return /* @__PURE__ */ React16.createElement("div", null, children);
     }
-    return /* @__PURE__ */ React5.createElement("div", {
+    return /* @__PURE__ */ React16.createElement("div", {
       dangerouslySetInnerHTML: { __html: "" },
       suppressHydrationWarning: true
     });
   };
   var StaticRendering_default = StaticRendering;
 
-  // src/client/components/DynamicRendering.tsx
+  // src/client/hooks/DynamicRendering.tsx
   var DynamicRendering = ({ children, isBot }) => {
     if (isBot) {
-      return /* @__PURE__ */ React6.createElement(StaticRendering_default, null, children);
+      return /* @__PURE__ */ React17.createElement(StaticRendering_default, null, children);
     }
     if (typeof window !== "undefined") {
-      return /* @__PURE__ */ React6.createElement("div", null, children);
+      return /* @__PURE__ */ React17.createElement("div", null, children);
     } else {
-      return /* @__PURE__ */ React6.createElement("div", null);
+      return /* @__PURE__ */ React17.createElement("div", null);
     }
   };
   var DynamicRendering_default = DynamicRendering;
 
-  // src/client/pages/AdminPage.tsx
+  // src/client/pages/ItemPage.tsx
   var InsideComponent = ({ ssProps }) => {
-    const [counter, setCounter] = React7.useState(0);
-    console.log(ssProps);
-    return /* @__PURE__ */ React7.createElement(React7.Fragment, null, /* @__PURE__ */ React7.createElement(HelmetExport, null, /* @__PURE__ */ React7.createElement("title", null, "AdminPage of de Local"), /* @__PURE__ */ React7.createElement("meta", {
+    var _a, _b, _c;
+    const [itemCS, setItemCS] = React18.useState();
+    const { id } = useParams();
+    React18.useEffect(() => {
+      import_axios.default.get(`/api/items/${id}`).then((res) => {
+        setItemCS(res == null ? void 0 : res.data);
+      }).catch((e) => {
+        return null;
+      });
+    }, [id]);
+    return /* @__PURE__ */ React18.createElement(React18.Fragment, null, /* @__PURE__ */ React18.createElement(HelmetExport, null, /* @__PURE__ */ React18.createElement("title", null, (_c = (_a = itemCS == null ? void 0 : itemCS.item) == null ? void 0 : _a.title) != null ? _c : (_b = ssProps == null ? void 0 : ssProps.item) == null ? void 0 : _b.title, " - Env\xEDos gratis en el d\xEDa \u{1F4E6}"), /* @__PURE__ */ React18.createElement("meta", {
+      name: "description",
+      content: "Compr\xE1 productos con Env\xEDo Gratis en el d\xEDa en Mercado Libre Argentina. Encontr\xE1 miles de marcas y productos a precios incre\xEDbles.",
+      "data-head-react": "true"
+    }), /* @__PURE__ */ React18.createElement("meta", {
+      name: "keywords",
+      content: "veh\xEDculos, inmueble, supermercado, tecnolog\xEDa, hogar y muebles, electrodom\xE9sticos, herramientas, construcci\xF3n"
+    }), /* @__PURE__ */ React18.createElement("meta", {
       property: "og:title",
-      content: "HomePage of de Local"
-    })), /* @__PURE__ */ React7.createElement("div", null, "Est\xE1s en ", /* @__PURE__ */ React7.createElement("strong", null, "ADMIN"), "!"), /* @__PURE__ */ React7.createElement("h1", null, counter), /* @__PURE__ */ React7.createElement("button", {
-      onClick: () => setCounter((prev) => prev + 1)
-    }, "Aumentar"));
+      content: "Mercado Libre Argentina - Env\xEDos gratis en el d\xEDa"
+    }), /* @__PURE__ */ React18.createElement("meta", {
+      property: "og:image",
+      content: "https://http2.mlstatic.com/static/org-img/homesnw/mercado-libre.png?v=2",
+      "data-head-react": "true"
+    }), /* @__PURE__ */ React18.createElement("meta", {
+      name: "google-site-verification",
+      content: "eLTYYI8nc5Fnsl6MUIz18z_ZWCnNemC0PNIx7Q1p_qQ",
+      "data-head-react": "true"
+    })), /* @__PURE__ */ React18.createElement("header", {
+      role: "banner"
+    }, /* @__PURE__ */ React18.createElement(HeaderNavbar_default, {
+      id
+    })), /* @__PURE__ */ React18.createElement("main", null, ssProps !== void 0 && itemCS === void 0 && /* @__PURE__ */ React18.createElement(ItemIdResult, {
+      resItem: ssProps
+    }), itemCS !== void 0 && /* @__PURE__ */ React18.createElement(ItemIdResult, {
+      resItem: itemCS
+    })));
   };
-  var Admin = ({ ssProps, isBot }) => {
-    return /* @__PURE__ */ React7.createElement(DynamicRendering_default, {
+  var ItemPage = ({ ssProps, isBot }) => {
+    return /* @__PURE__ */ React18.createElement(DynamicRendering_default, {
       isBot
-    }, /* @__PURE__ */ React7.createElement(InsideComponent, {
+    }, /* @__PURE__ */ React18.createElement(InsideComponent, {
       ssProps
     }));
   };
-  var getSsProps = (_0) => __async(void 0, [_0], function* ({ query }) {
-    const response = yield import_axios.default.get(`https://api.mercadolibre.com/sites/MLA/search?q=${query}`);
-    const itemsResponse = {
-      author: {
-        name: "Ari\xE1n",
-        lastname: "Fern\xE1ndez"
-      },
-      categories: [],
-      items: []
-    };
-    response.data.results.forEach((item) => {
-      var _a, _b;
-      itemsResponse.items.push({
-        id: item.id,
-        title: item.title,
-        price: {
-          currency: item.current_id,
-          amount: item.price,
-          decimals: (_b = (_a = item.price.toString().split(".")[1]) == null ? void 0 : _a.length) != null ? _b : 0
-        },
-        picture: item.thumbnail,
-        condition: item.condition,
-        free_shipping: item.shipping.free_shipping
-      });
-    });
-    return { props: itemsResponse };
+  var getSsProps = (_0) => __async(void 0, [_0], function* ({ id }) {
+    var _a, _b;
+    const baseUrl = (_b = (_a = process.env) == null ? void 0 : _a.BASEURL) != null ? _b : "";
+    const response = yield import_axios.default.get(`${baseUrl}/api/items/${id}`);
+    return { props: response.data };
   });
-  var AdminPage_default = {
+  var ItemPage_default = {
     getSsProps,
-    component: Admin
+    component: ItemPage
   };
 
-  // src/client/pages/HomePage.tsx
-  var React12 = __toESM(require_react());
-
-  // ../packages/react/src/organisms/Navbar/Navbar.tsx
-  var React11 = __toESM(require_react2());
-
-  // ../packages/react/src/atoms/Image/Image.tsx
-  var React8 = __toESM(require_react2());
-  var Image = ({ src, thumb, alt = "", width = "", height = "" }) => {
-    const className = "dsmeli-image-container";
-    return /* @__PURE__ */ React8.createElement(React8.Fragment, null, /* @__PURE__ */ React8.createElement("img", {
-      className,
-      alt,
-      height,
-      width,
-      src
-    }));
-  };
-  var Image_default = Image;
-
-  // ../packages/react/src/molecules/SearchForm/SearchForm.tsx
-  var React10 = __toESM(require_react2());
-
-  // ../packages/react/src/atoms/InputSearch/InputSearch.tsx
-  var React9 = __toESM(require_react2());
-  var InputSearch = ({ placeholder = "", ariaLabel, tabIndex }) => {
-    const className = "dsmeli-inputsearch";
-    return /* @__PURE__ */ React9.createElement("input", {
-      className,
-      placeholder,
-      "aria-label": ariaLabel,
-      maxLength: 120,
-      tabIndex
-    });
-  };
-  var InputSearch_default = InputSearch;
-
-  // ../packages/react/src/molecules/SearchForm/SearchForm.tsx
-  var SearchForm = ({ placeholder, ariaLabel, tabIndex }) => {
-    const className = "dsmeli-searchform-container";
-    return /* @__PURE__ */ React10.createElement("div", {
-      className
-    }, /* @__PURE__ */ React10.createElement("form", {
-      action: "/"
-    }, /* @__PURE__ */ React10.createElement(InputSearch_default, {
-      placeholder,
-      ariaLabel,
-      tabIndex
-    }), /* @__PURE__ */ React10.createElement("div", {
-      className: "dsmeli-searchform-icon"
-    }, /* @__PURE__ */ React10.createElement(Image_default, {
-      src: "/assets/ic_Search@2x.png.png.png",
-      thumb: "",
-      alt: "Icono de b\xFAsqueda"
-    }))));
-  };
-  var SearchForm_default = SearchForm;
-
-  // ../packages/react/src/organisms/Navbar/Navbar.tsx
-  var Navbar = ({ logoSrc, logoThumb }) => {
-    return /* @__PURE__ */ React11.createElement("div", {
-      className: "dsmeli-navbar-container"
-    }, /* @__PURE__ */ React11.createElement("div", {
-      className: "container"
-    }, /* @__PURE__ */ React11.createElement("div", {
-      className: "row"
-    }, /* @__PURE__ */ React11.createElement("div", {
-      className: "col-1-xl"
-    }), /* @__PURE__ */ React11.createElement("div", {
-      className: "col-1-xl"
-    }, /* @__PURE__ */ React11.createElement(Image_default, {
-      src: logoSrc,
-      thumb: logoThumb,
-      height: 36,
-      width: 53,
-      alt: "Logo de Mercado Libre"
-    })), /* @__PURE__ */ React11.createElement("div", {
-      className: "col-9-xl"
-    }, /* @__PURE__ */ React11.createElement(SearchForm_default, {
-      placeholder: "Nunca dejes de buscar"
-    })), /* @__PURE__ */ React11.createElement("div", {
-      className: "col-1-xl"
-    }))));
-  };
-  var Navbar_default = Navbar;
-
-  // src/client/pages/HomePage.tsx
-  var Home = ({ ssProps }) => {
-    return /* @__PURE__ */ React12.createElement(React12.Fragment, null, /* @__PURE__ */ React12.createElement(HelmetExport, null, /* @__PURE__ */ React12.createElement("title", null, "Mercado Libre Argentina - Env\xEDos gratis en el d\xEDa"), /* @__PURE__ */ React12.createElement("meta", {
+  // src/client/pages/ResultsPage.tsx
+  var React19 = __toESM(require_react());
+  var import_axios2 = __toESM(require_axios2());
+  var InsideComponent2 = ({ ssProps }) => {
+    const [itemsCS, setItemsCS] = React19.useState();
+    const { query } = useParams();
+    React19.useEffect(() => {
+      import_axios2.default.get(`/api/items?query=${query}`).then((res) => {
+        setItemsCS(res == null ? void 0 : res.data);
+      }).catch((e) => {
+        return null;
+      });
+    }, [query]);
+    const title = query.charAt(0).toUpperCase() + query.slice(1);
+    return /* @__PURE__ */ React19.createElement(React19.Fragment, null, /* @__PURE__ */ React19.createElement(HelmetExport, null, /* @__PURE__ */ React19.createElement("title", null, title, " | Mercado Libre Argentina"), /* @__PURE__ */ React19.createElement("meta", {
+      name: "description",
+      content: "Compr\xE1 productos con Env\xEDo Gratis en el d\xEDa en Mercado Libre Argentina. Encontr\xE1 miles de marcas y productos a precios incre\xEDbles.",
+      "data-head-react": "true"
+    }), /* @__PURE__ */ React19.createElement("meta", {
+      name: "keywords",
+      content: "veh\xEDculos, inmueble, supermercado, tecnolog\xEDa, hogar y muebles, electrodom\xE9sticos, herramientas, construcci\xF3n"
+    }), /* @__PURE__ */ React19.createElement("meta", {
       property: "og:title",
-      content: "HomePage of de Local"
-    })), /* @__PURE__ */ React12.createElement("header", {
+      content: "Mercado Libre Argentina - Env\xEDos gratis en el d\xEDa"
+    }), /* @__PURE__ */ React19.createElement("meta", {
+      property: "og:image",
+      content: "https://http2.mlstatic.com/static/org-img/homesnw/mercado-libre.png?v=2",
+      "data-head-react": "true"
+    }), /* @__PURE__ */ React19.createElement("meta", {
+      name: "google-site-verification",
+      content: "eLTYYI8nc5Fnsl6MUIz18z_ZWCnNemC0PNIx7Q1p_qQ",
+      "data-head-react": "true"
+    })), /* @__PURE__ */ React19.createElement("header", {
       role: "banner"
-    }, /* @__PURE__ */ React12.createElement(Navbar_default, {
-      logoSrc: "/assets/Logo_ML@2x.png.png.png",
-      logoThumb: "/assets/Logo_ML.png"
+    }, /* @__PURE__ */ React19.createElement(HeaderNavbar_default, {
+      query
+    })), /* @__PURE__ */ React19.createElement("main", null, ssProps !== void 0 && itemsCS === void 0 && /* @__PURE__ */ React19.createElement(ItemsResult, {
+      resItems: ssProps
+    }), itemsCS !== void 0 && /* @__PURE__ */ React19.createElement(ItemsResult, {
+      resItems: itemsCS
     })));
   };
-  var getSsProps2 = () => __async(void 0, null, function* () {
-    return { props: "holus" };
+  var ResultsPage = ({ ssProps, isBot }) => {
+    return /* @__PURE__ */ React19.createElement(DynamicRendering_default, {
+      isBot
+    }, /* @__PURE__ */ React19.createElement(InsideComponent2, {
+      ssProps
+    }));
+  };
+  var getSsProps2 = (_0) => __async(void 0, [_0], function* ({ query }) {
+    var _a, _b;
+    const baseUrl = (_b = (_a = process.env) == null ? void 0 : _a.BASEURL) != null ? _b : "";
+    const response = yield import_axios2.default.get(`${baseUrl}/api/items?query=${query}`);
+    return { props: response.data };
   });
-  var HomePage_default = {
+  var ResultsPage_default = {
     getSsProps: getSsProps2,
-    component: Home
-  };
-
-  // src/client/pages/Item.tsx
-  var React13 = __toESM(require_react());
-  var InsideComponent2 = () => {
-    console.log("cliente");
-    return /* @__PURE__ */ React13.createElement("div", null, "Hola!!");
-  };
-  var Item = () => {
-    return /* @__PURE__ */ React13.createElement(StaticRendering_default, null, /* @__PURE__ */ React13.createElement(InsideComponent2, null));
-  };
-  var Item_default = {
-    getSsrProps: null,
-    component: Item
+    component: ResultsPage
   };
 
   // src/client/router/routes.ts
   var routes_default = [
     {
-      getSsProps: HomePage_default.getSsProps,
       component: HomePage_default.component,
-      path: "/home",
+      path: "/",
       exact: true
     },
     {
-      getSsProps: HomePage_default.getSsProps,
-      component: HomePage_default.component,
-      path: "/home/:query",
+      getSsProps: ResultsPage_default.getSsProps,
+      component: ResultsPage_default.component,
+      path: "/:query",
       exact: true
     },
     {
-      getSsProps: AdminPage_default.getSsProps,
-      component: AdminPage_default.component,
-      path: "/admin",
-      exact: true
-    },
-    {
-      getSsProps: AdminPage_default.getSsProps,
-      component: AdminPage_default.component,
-      path: "/admin/nuevo",
-      exact: true
-    },
-    {
-      component: Item_default.component,
-      path: "/item",
+      getSsProps: ItemPage_default.getSsProps,
+      component: ItemPage_default.component,
+      path: "/items/:id",
       exact: true
     }
   ];
 
   // src/client/router/Router.tsx
   var Router2 = ({ ssProps, isBot }) => {
-    return /* @__PURE__ */ React14.createElement(Switch, null, routes_default.map((route, index2) => /* @__PURE__ */ React14.createElement(Route, {
+    return /* @__PURE__ */ React20.createElement(Switch, null, routes_default.map((route, index2) => /* @__PURE__ */ React20.createElement(Route, {
       path: route.path,
       exact: route.exact,
       key: index2
-    }, /* @__PURE__ */ React14.createElement(route.component, {
+    }, /* @__PURE__ */ React20.createElement(route.component, {
       ssProps,
       isBot
     }))));
@@ -28228,7 +28548,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   var root = document.getElementById("root");
   var initialData = window && window.__INITIAL_DATA__;
   ReactDOM.hydrate(
-    /* @__PURE__ */ React15.createElement("div", null, /* @__PURE__ */ React15.createElement(BrowserRouter, null, /* @__PURE__ */ React15.createElement(Router_default, {
+    /* @__PURE__ */ React21.createElement("div", null, /* @__PURE__ */ React21.createElement(BrowserRouter, null, /* @__PURE__ */ React21.createElement(Router_default, {
       ssProps: initialData.props,
       isBot: initialData.isBot
     }))),

@@ -5,20 +5,22 @@
   width: 100%;
 }
 
-.dsmeli-searchform-icon {
+.dsmeli-searchform-submit {
   position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
   top: 0;
+  border: 0;
   height: 39px;
   width: 39px;
   right: 0;
   display: flex;
   background: $grey-extra-light;
   border-radius: 0 2px 2px 0;
+  cursor: pointer;
   & img {
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
   }
 }

@@ -8,6 +8,7 @@
     "build": "npx lerna run build",
     "dev": "npm-run-all --parallel dev:*",
     "dev:packages": "npx lerna run dev",
+    "dev:react": "npx lerna run dev --scope=@meli-project/ds.meli-react",
     "dev:app": "npx lerna run dev --scope=@meli-project/app-meli",
     "prepare": "husky install"
   },

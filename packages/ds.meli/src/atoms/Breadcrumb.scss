@@ -1,0 +1,33 @@
+@import 'foundation/all';
+
+.dsmeli-breadcrumb-container {
+  padding: 0 0;
+}
+
+.dsmeli-breadcrumb {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  list-style-type: none;
+  padding-inline-start: 0;
+  color: $grey-light;
+  font-weight: $fw-light;
+}
+
+.dsmeli-breadcrum__strong {
+  font-weight: $fw-bold;
+}
+
+.dsmeli-breadcrumb__item {
+  float: left;
+}
+
+.dsmeli-breadcrumb__item span{
+  font-size: $fs-sm;
+  text-decoration: none;
+}
+
+.dsmeli-breadcrumb__chevron {
+  float: left;
+  padding: 0 6px;
+}

@@ -1,48 +1,24 @@
 import * as React from 'react'
 import { Helmet } from 'react-helmet'
-import Navbar from '@meli-project/ds.meli-react/src/organisms/Navbar'
+import HeaderNavbar from '../components/HeaderNavbar'
 
-export const Home = ({ ssProps }: { ssProps: any }): React.ReactElement => {
+export const Home: React.FC = (): React.ReactElement => {
   return (<>
     <Helmet>
       <title>Mercado Libre Argentina - Envíos gratis en el día</title>
-      <meta property='og:title' content="HomePage of de Local" />
+      <meta name="description" content="Comprá productos con Envío Gratis en el día en Mercado Libre Argentina. Encontrá miles de marcas y productos a precios increíbles." data-head-react="true" />
+      <meta name="keywords" content="vehículos, inmueble, supermercado, tecnología, hogar y muebles, electrodomésticos, herramientas, construcción" />
+      <meta property='og:title' content="Mercado Libre Argentina - Envíos gratis en el día" />
+      <meta property="og:image" content="https://http2.mlstatic.com/static/org-img/homesnw/mercado-libre.png?v=2" data-head-react="true" />
+      <meta name="google-site-verification" content="eLTYYI8nc5Fnsl6MUIz18z_ZWCnNemC0PNIx7Q1p_qQ" data-head-react="true" />
     </Helmet>
     <header role='banner'>
-      <Navbar logoSrc='/assets/Logo_ML@2x.png.png.png' logoThumb='/assets/Logo_ML.png' />
+      <HeaderNavbar query='' />
     </header>
+    <main></main>
   </>)
 }
 
-const getSsProps = async (): Promise<any> => {
-  // const response = await axios.get(`https://api.mercadolibre.com/sites/MLA/search?q=${query}`)
-  // const itemsResponse: Items = {
-  //   author: {
-  //     name: 'Arián',
-  //     lastname: 'Fernández'
-  //   },
-  //   categories: [],
-  //   items: []
-  // }
-  // response.data.results.forEach((item: any) => {
-  //   itemsResponse.items.push({
-  //     id: item.id,
-  //     title: item.title,
-  //     price: {
-  //       currency: item.current_id,
-  //       amount: item.price,
-  //       decimals: item.price.toString().split('.')[1]?.length ?? 0
-  //     },
-  //     picture: item.thumbnail,
-  //     condition: item.condition,
-  //     free_shipping: item.shipping.free_shipping
-  //   })
-  // })
-
-  return { props: 'holus' }
-}
-
 export default {
-  getSsProps,
   component: Home
 }

@@ -9,6 +9,12 @@
  *
  */
 
+ @mixin mobile {
+  @media (min-width: map-get($breakpoints, "xs")) {
+    @content;
+  }
+}
+
 @mixin tablet {
   @media (min-width: map-get($breakpoints, "md")) {
     @content;
@@ -23,6 +29,12 @@
 
 @mixin desktop {
   @media (min-width: map-get($breakpoints, "xl")) {
+    @content;
+  }
+}
+
+@mixin bigDesktop {
+  @media (min-width: map-get($breakpoints, "xxl")) {
     @content;
   }
 }

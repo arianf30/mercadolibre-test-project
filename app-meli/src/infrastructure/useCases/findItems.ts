@@ -12,6 +12,7 @@ const itemsConstructor = async (itemsFound: []): Promise<Items> => {
     const category = await axios(`https://api.mercadolibre.com/categories/${categoryId}`)
     const categoryName: string = category.data.name
     return {
+      path_from_root: category.data.path_from_root,
       category: categoryName,
       item: {
         id: item.id,
@@ -23,17 +24,18 @@ const itemsConstructor = async (itemsFound: []): Promise<Items> => {
         },
         picture: item.thumbnail,
         condition: item.condition,
-        free_shipping: item.shipping.free_shipping
+        free_shipping: item.shipping.free_shipping,
+        address: item.address.state_name
       }
     }
   })
 
   await Promise.all(list).then(resp => {
-    resp.forEach(item => {
-      const repeatCategory = categories.includes(item.category)
-      if (!repeatCategory) {
-        categories.push(item.category)
+    resp.forEach((item: any, i: number) => {
+      if (i === 0) {
+        item.path_from_root.map((itemCat: any) => categories.push(itemCat.name))
       }
+      delete item.path_from_root
       items.push(item.item)
     })
   }).catch(e => { console.log(e) })
@@ -55,7 +57,7 @@ export const findItemsData: FindItems = {
       if (typeof query === 'string') {
         queryOk = query
       }
-      const response = await axios(`https://api.mercadolibre.com/sites/MLA/search?q=${queryOk}`)
+      const response = await axios(`https://api.mercadolibre.com/sites/MLA/search?q=${queryOk}&limit=4`)
       return await itemsConstructor(response.data.results)
     } catch (e) {
       throw new Error('Internal error.')

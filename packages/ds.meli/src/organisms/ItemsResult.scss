@@ -1,0 +1,72 @@
+@import "foundation/all";
+
+.dsmeli-itemsresult-container {
+  width: 100%;
+  height: 100%;
+}
+
+.container-elements {
+  width: 100%;
+  background-color: $white;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
+  box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
+  padding: 0 map-get($spacing, 'sm');
+  box-sizing: border-box;
+  margin: 0;
+  margin-bottom: map-get($spacing, 'xl');
+}
+
+.dsmeli-product__list {
+  display: flex;
+  padding: map-get($spacing, 'sm') 0;
+  box-sizing: border-box;
+  border-bottom: 1px solid $grey-extra-light;
+}
+
+.dsmeli-productli__image_a {
+  padding-right: map-get($spacing, 'sm');
+  width: 180px;
+  height: 180px;
+  & img {
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    object-fit: contain;
+  }
+}
+
+.dsmeli-productli__body {
+  width: calc(100% - 382px);
+  padding-right: map-get($spacing, 'xxl');
+  box-sizing: border-box;
+  color: $grey-dark;
+}
+
+.dsmeli-productli__title{
+  font-size: 18px;
+  font-weight: $fw-light;
+  line-height: 1.3;
+  margin: 0;
+  padding: 0;
+}
+
+.dsmeli-productli__title_a{
+  display: flex;
+  padding: 16px 0 32px 0;
+  text-decoration: none;
+  color: $grey-dark;
+}
+
+.dsmeli-productli__price{
+  font-size: 24px;
+  font-weight: $fw-normal;
+  margin: 0;
+}
+
+.dsmeli-productli__address{
+  font-size: 12px;
+  font-weight: $fw-normal;
+  margin: 24px 0 0 0;
+  color: $grey-light;
+}

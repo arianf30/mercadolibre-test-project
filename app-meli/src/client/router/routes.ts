@@ -1,35 +1,23 @@
-import AdminPage from '../pages/AdminPage'
 import HomePage from '../pages/HomePage'
-import Item from '../pages/Item'
+import ItemPage from '../pages/ItemPage'
+import ResultsPage from '../pages/ResultsPage'
 
 export default [
   {
-    getSsProps: HomePage.getSsProps,
     component: HomePage.component,
-    path: '/home',
+    path: '/',
     exact: true
   },
   {
-    getSsProps: HomePage.getSsProps,
-    component: HomePage.component,
-    path: '/home/:query',
+    getSsProps: ResultsPage.getSsProps,
+    component: ResultsPage.component,
+    path: '/:query',
     exact: true
   },
   {
-    getSsProps: AdminPage.getSsProps,
-    component: AdminPage.component,
-    path: '/admin',
-    exact: true
-  },
-  {
-    getSsProps: AdminPage.getSsProps,
-    component: AdminPage.component,
-    path: '/admin/nuevo',
-    exact: true
-  },
-  {
-    component: Item.component,
-    path: '/item',
+    getSsProps: ItemPage.getSsProps,
+    component: ItemPage.component,
+    path: '/items/:id',
     exact: true
   }
 ]
